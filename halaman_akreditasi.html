@@ -1,0 +1,877 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    /* Halaman Akreditasi */
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Akreditasi dan Penghargaan - RS Ridhoka Salma</title>
+    <link rel="icon" href="image/logo.png" type="image/png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts - Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Floating Button CSS -->
+    <link rel="stylesheet" href="css/floating_button_style.css">
+    <style>
+        * {
+            font-family: 'Montserrat', sans-serif !important;
+        }
+        
+        :root {
+            --primary: #00928F;
+            --secondary: #00796b;
+            --accent: #a0393d;
+            --light: #ffffff;
+            --dark: #333333;
+            --gray: #f5f5f5;
+        }
+        
+        body {
+            color: #333;
+            background-color: #ffffff;
+        }
+        
+
+
+
+        /* Banner Section */
+        .banner-section {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+        }
+        
+        .banner-image {
+            width: 100%;
+            height: 100%;
+            max-height: 180px;
+            object-fit: cover;
+            display: block;
+        }
+        
+        @media (max-width: 768px) {
+            .banner-section {
+                height: auto;
+            }
+            
+            .banner-image {
+                height: auto;
+            }
+        }
+        
+        /* Content Styles */
+        .content-section {
+            padding: 30px 0;
+        }
+        
+        .content-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+         /* Breadcrumb Styles */
+         .breadcrumb-nav {
+            max-width: 1140px;
+            margin-bottom: 10px !important;
+            margin: 0 auto;
+            padding: 0px  0px 0px 0px;
+            font-size: 14px;
+        }
+        
+        .breadcrumb-item {
+            color: #555;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .breadcrumb-item:hover {
+            color: #00928F;
+            font-weight: 500;
+        }
+        
+        .breadcrumb-current {
+            color: #555;
+            font-weight: 500;
+        }
+        
+        .breadcrumb-separator {
+            color: #999;
+            margin: 0 5px;
+        }
+        
+        .section-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 15px;
+        }
+
+        .section-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #00928F;
+    margin-top: 8px;
+}
+
+        
+        .section-subtitle {
+            color: var(--primary);
+            font-size: 1.4rem;
+            font-weight: 600;
+            margin: 40px 0 20px;
+        }
+        
+        .year-title {
+            font-size: 1.2rem;
+            font-weight: 600;
+            color: #333;
+            margin: 30px 0 20px;
+            padding-bottom: 8px;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .section-description {
+    margin-bottom: 30px;
+    line-height: 1.6;
+    text-align: justify;
+}
+
+        
+        /* Akreditasi Cards */
+        .logo-container-akre {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .logo-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            text-align: center;
+            width: calc(50% - 10px);
+        }
+        
+        .logo-image {
+            width: 100px;
+            height: 100px;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+        
+        .logo-title {
+            font-weight: 600;
+            font-size: 14px;
+            margin-bottom: 5px;
+        }
+        
+        .logo-subtitle {
+            font-size: 12px;
+            color: #666;
+        }
+        
+        /* Certificate Cards */
+        .certificates-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .certificate-card {
+            background-color: white;
+            border-radius: 8px;
+            padding: 15px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            width: calc(50% - 10px);
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            cursor: pointer;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        
+        .certificate-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+        
+        .certificate-card:hover::after {
+            content: "🔍";
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+        
+        .certificate-img {
+            width: 100%;
+            max-height: 180px;
+            max-width: 250px;
+            height: auto;
+            object-fit: contain;
+            margin-bottom: 10px;
+        }
+        
+        .certificate-title {
+            font-weight: 500;
+            font-size: 14px;
+            text-align: center;
+            margin-bottom: 0;
+        }
+        
+        /* Penghargaan Cards */
+        .awards-container {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 20px;
+        }
+        
+        .award-card {
+            background-color: white;
+            border-radius: 8px;
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            width: calc(33.33% - 14px);
+            margin-bottom: 20px;
+            display: flex;
+            flex-direction: column;
+            cursor: pointer;
+            padding: 15px;
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+            position: relative;
+        }
+        
+        .award-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0,0,0,0.15);
+        }
+        
+        .award-card:hover::after {
+            content: "🔍";
+            position: absolute;
+            top: 10px;
+            right: 10px;
+            background-color: rgba(255, 255, 255, 0.8);
+            border-radius: 50%;
+            width: 30px;
+            height: 30px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 18px;
+        }
+        .award-img {
+    width: 100%; /* Biar selalu ikut lebar parent card */
+    height: 220px; /* Tetap 200px */
+    object-fit: contain;
+    display: block;
+    margin: 0 auto 15px auto;
+}
+
+        .award-title {
+            font-size: 14px;
+            font-weight: 500;
+            margin-bottom: 10px;
+            line-height: 1.4;
+        }
+        
+        .award-info {
+            font-size: 12px;
+            color: #666;
+            margin-top: auto;
+        }
+        
+        .award-date {
+            font-size: 12px;
+            font-weight: 500;
+            margin-top: 5px;
+        }
+        
+        @media (max-width: 992px) {
+            .award-card {
+                width: calc(50% - 10px);
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .content-section {
+                padding: 30px 0;
+            }
+            
+            .logo-card, .certificate-card {
+                width: 100%;
+            }
+            
+            .award-card {
+                width: 100%;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .section-title {
+                font-size: 1.5rem;
+            }
+            
+            .section-subtitle {
+                font-size: 1.3rem;
+            }
+        }
+
+    </style>
+</head>
+<body>
+  
+
+<!-- Header -->
+<header class="sticky-header">
+    <link rel="stylesheet" href="css/header_style.css">
+    <script src="javascript/header.js"></script>
+
+    <div class="header-top">
+      <div class="container-fluid px-0">
+        <div class="row align-items-center">
+          
+          <!-- Logo -->
+          <div class="col-md-4 logo-container">
+            <a href="index.html">
+              <img src="image/logo_header.png" alt="RS Ridhoka Salma Logo" class="logo-img">
+            </a>
+          </div>
+  
+          <!-- Search and Contact Info -->
+          <div class="col-md-8">
+            <div class="search-contact-container">
+  
+      <!-- Search Bar -->
+<div class="search-bar-header">
+    <form class="search-form-header" action="halaman_pencarian.html" method="GET">
+      <div class="search-icon-header">
+        <img src="image/icon_search.png" alt="Search Icon">
+      </div>
+      <input type="text" placeholder="Cari yang Anda Butuhkan di Sini" class="search-input-header" name="q">
+      <button type="submit" class="search-button-header">Cari</button>
+    </form>
+  </div>
+  
+              <!-- Contact Center -->
+              <div class="contact-center-header">
+                
+                <div class="contact-title-header">Hubungi Kami</div>
+                
+                <div class="contact-items-header">
+                  <div class="contact-item-header">
+                    <a href="tel:+622189116527"  class="contact-link-header">
+                    <img src="image/icon_call.png" alt="Phone Icon" class="icon-contact-header"-header>
+                    <span>021 8911 6527</span>
+                    </a>
+                  </div>
+                  <div class="contact-item-header">
+                    <a href="https://wa.me/628118252322"  class="contact-link-header">
+                    <img src="image/icon_emergency.png" alt="Ambulance Icon" class="icon-contact-header">
+                    <span>0811 8252 322</span>
+                    </a>
+                  </div>
+                </div>
+  
+              </div>
+  
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+ 
+
+    <!-- Navigation Bar -->
+<nav style="background-color: #00928F; padding: 0;">
+    <div class="container">
+        <!-- Hamburger Menu untuk tampilan mobile -->
+        <div class="mobile-menu-toggle">
+            <span>Menu</span>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <div class="nav-container">
+            <ul class="main-menu">
+                <li class="menu-item">
+                    <a href="index.html" class="menu-link">Beranda</a>
+                </li>
+                
+                <!-- Menu Tentang Kami -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Tentang Kami 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="halaman_sejarah.html">Sejarah</a></li>
+                        <li><a href="halaman_visi_misi.html">Visi Misi</a></li>
+                        <li><a href="halaman_struktur_organisasi.html">Struktur Organisasi</a></li>
+                        <li><a href="halaman_akreditasi.html">Akreditasi dan Penghargaan</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Menu Layanan -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Layanan 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="halaman_layanan.html?tab=fasilitas">Fasilitas</a></li>
+                        <li><a href="halaman_layanan.html?tab=layanan-unggulan">Layanan Unggulan</a></li>
+                        <li><a href="halaman_layanan.html?tab=rawat-inap">Rawat Inap</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Menu Spesialis -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Spesialis Kami 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_klinik_spesialis.php?id=1">Kebidanan dan Kandungan</a></li>
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_klinik_spesialis.php?id=2">Anak</a></li>
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_klinik_spesialis.php?id=3">Penyakit Dalam</a></li>
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_klinik_spesialis.php?id=4">Bedah Umum</a></li>
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_spesialis.php">Lihat Semua</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Menu Informasi -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Informasi 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="halaman_promosi.html">Promosi</a></li>
+                        <li><a href="halaman_artikel_kesehatan.html">Artikel Kesehatan</a></li>
+                        <li><a href="halaman_artikel_islami.html">Artikel Islami</a></li>
+                        <li><a href="halaman_event.html">Event</a></li>
+                        <li><a href="halaman_karir.html">Karir</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Menu Kesyariahan -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Kesyariahan 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="halaman_kms.html">Kebijakan Mutu Syariah</a></li>
+                        <li><a href="halaman_program_kesyariahan.html">Program Kesyariahan</a></li>
+                        <li><a href="halaman_konsultasi_syariah.html">Konsultasi Syariah</a></li>
+                        <li><a href="halaman_profil_dps.html">Profil DPS dan Komite Syariah</a></li>
+                    </ul>
+                </li>
+                
+                <li class="menu-item">
+                    <a href="http://localhost/WebsiteRidhokaSalma/halaman_cari_dokter.php" class="menu-link">Cari Dokter</a>
+                </li>
+                <li class="menu-item">
+                    <a href="http://localhost/WebsiteRidhokaSalma/halaman_janji_temu.php" class="menu-link">Janji Temu</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+</header>
+    <!-- Banner Section -->
+    <section class="banner-section">
+        <img src="image/banner_akreditasi.png" alt="Banner Akreditasi dan Penghargaan RS Ridhoka Salma" class="banner-image">
+    </section>
+    
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="content-container">
+            <div class="breadcrumb-nav">
+                <a href="index.html" class="breadcrumb-item">Beranda</a>
+                <span class="breadcrumb-separator">/</span>
+                <a href="#" class="breadcrumb-item">Tentang Kami</a>
+                <span class="breadcrumb-separator">/</span>
+                <span class="breadcrumb-current">Akreditasi dan Penghargaan</span>
+            </div>
+            <h1 class="section-title">Akreditasi Rumah Sakit</h1>
+            
+            <div class="section-description">
+                <p>Sebagai wujud upaya peningkatan terhadap layanan kesehatan berkualitas dan sesuai syariah (shariah compliance), RS Ridhoka Salma telah mendapatkan akreditasi dari Komisi Akreditasi Rumah Sakit (KARS) dengan predikat PARIPURNA (bintang lima) dan akreditasi syariah dari Dewan Syariah Nasional Majelis Ulama Indonesia (DSN-MUI). Penghargaan ini menjadi bukti berhasilnya kami dalam menjalankan pelayanan kesehatan secara amanah, islami, dan mengutamakan kepuasan pelanggan.</p>
+            </div>
+            
+            <!-- Logo Akreditasi -->
+            <div class="logo-container-akre">
+                <div class="logo-card">
+                    <img src="image/dsn_mui.jpg" alt="Logo DSN MUI" class="logo-image">
+                    <div class="logo-title">Terakreditasi Syariah (Sharia Compliance)</div>
+                    <div class="logo-subtitle">oleh Dewan Syariah Nasional Majelis Ulama Indonesia (DSN-MUI)</div>
+                </div>
+                
+                <div class="logo-card">
+                    <img src="image/kars.png" alt="Logo KARS" class="logo-image">
+                    <div class="logo-title">Terakreditasi PARIPURNA (Bintang 5)</div>
+                    <div class="logo-subtitle">oleh Komisi Akreditasi Rumah Sakit (KARS) </div>
+                </div>
+            </div>
+            
+            <!-- Sertifikat Akreditasi -->
+            <div class="certificates-container">
+                <div class="certificate-card">
+                    <div class="certificate-title">Sertifikat MUI Tahun 2023</div>
+                    <img src="image/sertifikat_mui_2023.png" alt="Sertifikat MUI 2023" class="certificate-img">
+                </div>
+                
+                <div class="certificate-card">
+                    <div class="certificate-title">Sertifikat KARS Tahun 2022</div>
+                    <img src="image/sertifikat_kars_paripurna.png" alt="Sertifikat KARS 2022" class="certificate-img">
+                </div>
+                
+                <div class="certificate-card">
+                    <div class="certificate-title">Sertifikat MUI Tahun 2020</div>
+                    <img src="image/sertifikat_mui_2020.png" alt="Sertifikat MUI 2020" class="certificate-img">
+                </div>
+                
+                <div class="certificate-card">
+                    <div class="certificate-title">Sertifikat KARS Tahun 2018</div>
+                    <img src="image/sertifikat_kars_perdana.png" alt="Sertifikat KARS 2018" class="certificate-img">
+                </div>
+                <div class="certificate-card">
+                    <div class="certificate-title">Sertifikat MUI Tahun 2018</div>
+                    <img src="image/sertifikat_mui_2020.png" alt="Sertifikat MUI 2023" class="certificate-img">
+                </div>
+                
+            </div>
+            
+            <!-- Penghargaan Section -->
+            <h2 class="section-title">Penghargaan & Pencapaian</h2>
+            
+            <div class="section-description">
+                <p>Dedikasi RS Ridhoka Salma dalam memberikan layanan terbaik terus diapresasi melalui berbagai penghargaan di bidang kesehatan. Pencapaian ini menjadi motivasi bagi kami untuk terus meningkatkan kualitas pelayanan dan memberikan pengalaman terbaik bagi setiap pasien.</p>
+            </div>
+            
+            <!-- Penghargaan 2024 -->
+            <h3 class="year-title">Tahun 2024</h3>
+            
+            <div class="awards-container">
+                <div class="award-card">
+                    <img src="image/BPJS 2024 KESSAN.png" alt="Penghargaan 2024" class="award-img">
+                    <div class="award-title">Pencapaian Rating Kessan Terbaik di Rumah Sakit Wilayah Kabupaten Bekasi</div>
+                    <div class="award-info">BPJS Kesehatan</div>
+                    <div class="award-date">13 Juni 2024</div>
+                </div>
+                
+                <div class="award-card">
+                    <img src="image/BPJS 2024 3D.png" alt="Penghargaan 2024" class="award-img">
+                    <div class="award-title">Penghargaan Penyelenggaraan Pelayanan JKN (Jaminan Kesehatan Nasional) Terbaik di RS Wilayah Kabupaten Bekasi</div>
+                    <div class="award-info">BPJS Kesehatan</div>
+                    <div class="award-date">13 Juni 2024</div>
+                </div>
+                
+                <div class="award-card">
+                    <img src="image/BPJS 2024 SALURAN INFORMASI.png" alt="Penghargaan 2024" class="award-img">
+                    <div class="award-title">Penghargaan Pengelolaan Sistem Informasi Manajemen Pengadaan Barang/Jasa Elektronik di Rumah Sakit Wilayah Kabupaten Bekasi</div>
+                    <div class="award-info">BPJS Kesehatan</div>
+                    <div class="award-date">13 Juni 2024</div>
+                </div>
+                
+                <div class="award-card">
+                    <img src="image/Reward warga rw 12.png" alt="Penghargaan 2024" class="award-img">
+                    <div class="award-title">Rumah Sakit dengan Pelayanan Terbaik</div>
+                    <div class="award-info">Warga RW 12 Perumahan Telaga Harapan</div>
+                    <div class="award-date">17 Agustus 2024</div>
+                </div>
+            </div>
+            
+            <!-- Penghargaan 2023 -->
+            <h3 class="year-title">Tahun 2023</h3>
+            
+            <div class="awards-container">
+                <div class="award-card">
+                    <img src="image/BPJS 2023 CUST FEEDBACK.png" alt="Penghargaan 2023" class="award-img">
+                    <div class="award-title">Pencapaian Customer Feedback Tertinggi di Rumah Sakit Wilayah Kabupaten Bekasi</div>
+                    <div class="award-info">BPJS Kesehatan</div>
+                    <div class="award-date">17 Mei 2023</div>
+                </div>
+                
+                <div class="award-card">
+                    <img src="image/BPJS 2023 KESSAN.png" alt="Penghargaan 2023" class="award-img">
+                    <div class="award-title">Pencapaian Rating Kessan Terbaik di Rumah Sakit Wilayah Kabupaten Bekasi</div>
+                    <div class="award-info">BPJS Kesehatan</div>
+                    <div class="award-date">22 November 2023</div>
+                </div>
+                
+                <div class="award-card">
+                    <img src="image/BPJS 2023 SIPP.png" alt="Penghargaan 2023" class="award-img">
+                    <div class="award-title">Pencapaian Pemanfaatan Saluran Informasi Penanganan Pengaduan (SIPP) Tertinggi di Rumah Sakit Wilayah Kabupaten Bekasi</div>
+                    <div class="award-info">BPJS Kesehatan</div>
+                    <div class="award-date">22 November 2023</div>
+                </div>
+            </div>
+            
+            <!-- Penghargaan 2022 -->
+            <h3 class="year-title">Tahun 2022</h3>
+            
+            <div class="awards-container">
+                <div class="award-card">
+                    <img src="image/Reward BPJS 2022 Cust feedback.png" alt="Penghargaan 2022" class="award-img">
+                    <div class="award-title">Pencapaian Customer Feedback Tertinggi di Rumah Sakit Wilayah Kabupaten Bekasi Tahun 2022</div>
+                    <div class="award-info">BPJS Kesehatan</div>
+                    <div class="award-date">11 Oktober 2022</div>
+                </div>
+                
+                <div class="award-card">
+                    <img src="image/BPJS KTNK 2022.png" alt="Penghargaan 2022" class="award-img">
+                    <div class="award-title">Partisipasi dalam Program Gerakan Nasional Peduli Pekerja Rentan (GN Lingkaran) Tahun 2022</div>
+                    <div class="award-info">BPJS Ketenagakerjaan</div>
+                    <div class="award-date">30 Maret 2022</div>
+                </div>
+                
+                <div class="award-card">
+                    <img src="image/Reward kepolisian.png" alt="Penghargaan 2022" class="award-img">
+                    <div class="award-title">Pengabdian dalam Penanganan COVID-19 di Kabupaten Bekasi</div>
+                    <div class="award-info">kepolisian Resort Metro Bekasi</div>
+                    <div class="award-date">2022</div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Lightbox Modal -->
+    <div class="modal fade" id="imageLightbox" tabindex="-1" aria-labelledby="imageLightboxLabel" aria-hidden="true">
+        <div class="modal-dialog modal-dialog-centered modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="imageLightboxLabel">Sertifikat</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body text-center">
+                    <img id="lightboxImage" src="" alt="Sertifikat/Penghargaan" class="img-fluid">
+                </div>
+            </div>
+        </div>
+    </div>
+   <!---------------------------------------------------------------------------------------------------------------------------->
+<!-- Footer -->
+<footer class="footer">
+    <link rel="stylesheet" href="css/footer_style.css">
+    <div class="container">
+        <!-- Top Row: Logo, Info dan Kontak -->
+        <div class="footer-top">
+            <div class="footer-logo">
+                <img src="image/logo_header.png" alt="RS Ridhoka Salma Logo">
+            </div>
+            <div class="footer-address">
+                <p>Jl. Raya Imam Bonjol No.7, Kalijaya,<br>
+                   Kec. Cikarang Bar., Kabupaten<br>
+                   Bekasi, Jawa Barat 17530</p>
+            </div>
+            <div class="footer-contact">
+                <div class="contact-wrapper">
+                    <table class="contact-table">
+                        <tr>
+                            <td class="contact-label">IGD 24 Jam</td>
+                            <td class="contact-separator">:</td>
+                            <td class="contact-value">
+                                <a href="https://wa.me/628118252322" style="color: inherit; text-decoration: none;">0811 8252 322</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="contact-label">Telepon</td>
+                            <td class="contact-separator">:</td>
+                            <td class="contact-value">
+                                <a href="tel:+622189116527" style="color: inherit; text-decoration: none;">021 8911 6527</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="contact-label">WhatsApp</td>
+                            <td class="contact-separator">:</td>
+                            <td class="contact-value">
+                                <a href="https://wa.me/6281317182223" style="color: inherit; text-decoration: none;">0813 1718 2223</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="contact-label">E-mail</td>
+                            <td class="contact-separator">:</td>
+                            <td class="contact-value no-space">
+                                <a href="mailto:info@rsridhokasalma.com" style="color: inherit; text-decoration: none;">info@rsridhokasalma.com</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Divider -->
+        <div class="footer-divider"></div>
+        
+        <!-- Footer Menu -->
+        <div class="footer-menu">
+            <div class="footer-menu-column">
+                <h4>Tentang Kami</h4>
+                <ul>
+                    <li><a href="halaman_sejarah.html">Sejarah</a></li>
+                    <li><a href="halaman_visi_misi.html">Visi Misi</a></li>
+                    <li><a href="halaman_struktur_organisasi.html">Struktur Organisasi</a></li>
+                    <li><a href="halaman_akreditasi.html">Akreditasi dan Penghargaan</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-menu-column">
+                <h4>Layanan</h4>
+                <ul>
+                    <li><a href="halaman_layanan.html?tab=fasilitas">Fasilitas</a></li>
+                    <li><a href="halaman_layanan.html?tab=layanan-unggulan">Layanan Unggulan</a></li>
+                    <li><a href="halaman_layanan.html?tab=rawat-inap">Rawat Inap</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-menu-column">
+                <h4>Informasi</h4>
+                <ul>
+                    <li><a href="halaman_promosi.html">Promosi</a></li>
+                    <li><a href="halaman_artikel_kesehatan.html">Artikel Kesehatan</a></li>
+                    <li><a href="halaman_artikel_islami.html">Artikel Islami</a></li>
+                    <li><a href="halaman_event.html">Event</a></li>
+                    <li><a href="halaman_karir.html">Karir</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-menu-column">
+                <h4>Kesyariahan</h4>
+                <ul>
+                    <li><a href="halaman_kms.html">Kebijakan Mutu Syariah</a></li>
+                    <li><a href="halaman_program_kesyariahan.html">Program Kesyariahan</a></li>
+                    <li><a href="halaman_konsultasi_syariah.html">Konsultasi Syariah</a></li>
+                    <li><a href="halaman_profil_dps.html">Profil DPS dan Komite Syariah</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Divider -->
+        <div class="footer-divider"></div>
+        
+        <!-- Social Media -->
+        <div class="footer-social">
+            <div class="social-label">Ikuti Kami</div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/rumahsakitridhokasalma/?locale=id_ID" class="social-icon">
+                    <img width="20" height="20" src="https://img.icons8.com/ios-filled/150/ffffff/facebook-new.png" alt="facebook-new"/>
+                </a>
+                <a href="https://www.instagram.com/ridhokasalma/" class="social-icon">
+                    <img width="192" height="192" src="https://img.icons8.com/material-outlined/192/ffffff/instagram-new--v1.png" alt="instagram-new--v1"/>    
+                </a>
+                <a href="https://www.youtube.com/@rs.ridhokasalma2727" class="social-icon">
+                    <img width="150" height="150" src="https://img.icons8.com/ios-filled/150/ffffff/youtube-play.png" alt="youtube-play"/>
+                </a>
+                <a href="https://www.tiktok.com/@ridhokasalma" class="social-icon">
+                    <img width="150" height="150" src="https://img.icons8.com/ios-filled/150/ffffff/tiktok--v1.png" alt="tiktok--v1"/>
+                </a>
+                <a href="https://x.com/ridhokasalma" class="social-icon">
+                    <img width="150" height="150" src="https://img.icons8.com/ios-filled/150/ffffff/twitterx--v2.png" alt="twitterx--v2"/>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="footer-copyright">
+            <p>&copy; 2025 RS Ridhoka Salma. All Right Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- HTML untuk Floating WhatsApp Button -->
+<div class="floating-whatsapp">
+    
+    <div class="whatsapp-button" id="whatsappButton">
+        <img src="image/icon_whatsapp.png" alt="WhatsApp Icon" class="whatsapp-icon">
+    </div>
+    <div class="whatsapp-popup" id="whatsappPopup">
+      <div class="whatsapp-popup-header">Mulai Percakapan</div>
+      <p class="whatsapp-popup-text">Klik nomor Customer Care kami untuk memulai percakapan di <strong>WhatsApp</strong>:</p>
+      <a href="https://wa.me/6281317182223" class="whatsapp-popup-number" target="_blank">0813 1718 2223</a>
+    </div>
+  </div>
+
+ <!-- JavaScript untuk WhatsApp Button -->
+    <script src="javascript/floating_button.js"></script>
+<!---------------------------------------------------------------------------------------------------------------------------->
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Fungsi untuk menyesuaikan margin konten agar tidak tertutup header
+        function adjustContentForHeader() {
+            const header = document.querySelector('.sticky-header');
+            const bannerSection = document.querySelector('.banner-section');
+    
+            if (!header || !bannerSection) {
+                console.warn('Elemen header atau banner-section tidak ditemukan!');
+                return;
+            }
+    
+            const headerHeight = header.offsetHeight;
+            bannerSection.style.marginTop = headerHeight + 'px';
+        }
+    
+        // Script lightbox + adjust header
+        document.addEventListener('DOMContentLoaded', function () {
+            // Lightbox sertifikat/penghargaan
+            const certificateCards = document.querySelectorAll('.certificate-card, .award-card');
+            const lightboxModal = new bootstrap.Modal(document.getElementById('imageLightbox'));
+            const lightboxImage = document.getElementById('lightboxImage');
+            const modalTitle = document.getElementById('imageLightboxLabel');
+    
+            certificateCards.forEach(card => {
+                card.addEventListener('click', function () {
+                    const imgElement = this.querySelector('img');
+                    const titleElement = this.querySelector('.certificate-title, .award-title');
+    
+                    lightboxImage.src = imgElement.src;
+                    lightboxImage.alt = imgElement.alt;
+                    modalTitle.textContent = titleElement ? titleElement.textContent : 'Sertifikat/Penghargaan';
+    
+                    lightboxModal.show();
+                });
+            });
+    
+            // Jalankan penyesuaian header saat DOM siap
+            adjustContentForHeader();
+        });
+    
+        // Jalankan ulang penyesuaian saat semua resource sudah dimuat
+        window.addEventListener('load', adjustContentForHeader);
+    
+        // Jalankan ulang penyesuaian saat ukuran layar berubah
+        window.addEventListener('resize', () => {
+            clearTimeout(window.resizeTimeout);
+            window.resizeTimeout = setTimeout(adjustContentForHeader, 100);
+        });
+    </script>
+    
+    
+    
+</body>
+</html>
