@@ -1,0 +1,563 @@
+[
+    {
+      "id_spesialis": 1,
+      "jenis_spesialis": "Kebidanan dan Kandungan",
+      "deskripsi_spesialis": "Spesialis Kebidanan dan Kandungan menangani berbagai kondisi kesehatan sistem reproduksi wanita, termasuk kehamilan, persalinan, gangguan menstruasi, hingga masalah hormonal. Temukan dokter spesialis yang sesuai dengan kebutuhan Anda dan buat janji temu dengan mudah.",
+      "img_spesialis": "image/klinik_kebidanan.png",
+      "dokter": [
+        {
+          "id_dokter": 1,
+          "nama": "dr. Murniati, Sp.OG",
+          "foto": "image/dr_murniati.png",
+          "deskripsi": "dr. Murniati, Sp.OG adalah Dokter Spesialis Obstetri dan Ginekologi dengan pengalaman lebih dari 21 tahun dalam menangani kesehatan reproduksi perempuan. Beliau memiliki keahlian dalam penanganan kehamilan risiko tinggi, fertilisasi in vitro (IVF), dan prosedur ginekologi minimal invasif seperti laparoskopi.",
+            "jadwal_praktek": [
+            { "hari": "Senin", "jam": "08:00 - 12:00" },
+            { "hari": "Selasa", "jam": "08:00 - 12:00" },
+            { "hari": "Rabu", "jam": "08:00 - 12:00" },
+            { "hari": "Kamis", "jam": "08:00 - 12:00" },
+            { "hari": "Jumat", "jam": "08:00 - 12:00" },
+            { "hari": "Sabtu", "jam": "09:00 - 11:00" }
+          ],
+          "pendidikan": [
+            "Sarjana Kedokteran, Universitas Hasanuddin",
+            "Spesialis Obstetri dan Ginekologi, Universitas Gadjah Mada"
+          ],
+          "penghargaan": [
+            "Penghargaan 1",
+            "Penghargaan 2"
+          ]
+        },
+        {
+          "id_dokter": 2,
+          "nama": "dr. Djoni N., Sp. OG (K)",
+          "foto": "image/dr_djoni.png",
+          "deskripsi": "Dokter Spesialis Kebidanan dan Kandungan dengan fokus pada kesehatan ibu dan bayi, serta penanganan masalah reproduksi wanita.",
+          "jadwal_praktek": [
+            { "hari": "Senin", "jam": "13:00 - 15:00" },
+            { "hari": "Selasa", "jam": "13:00 - 15:00" },
+            { "hari": "Rabu", "jam": "13:00 - 15:00" },
+            { "hari": "Kamis", "jam": "13:00 - 15:00" },
+            { "hari": "Jumat", "jam": "13:00 - 15:00" }
+          ],
+          "pendidikan": [
+            "Sarjana Kedokteran, Universitas Gadjah Mada",
+            "Spesialis Obstetri dan Ginekologi, Universitas Airlangga"
+          ],
+          "penghargaan": [
+            "Penghargaan atas Dedikasi dalam Penanganan Kehamilan Berisiko Tinggi"
+          ]
+        },
+        {
+          "id_dokter": 3,
+          "nama": "dr. Rita F., Sp.OG",
+          "foto": "image/dr_rita.png",
+          "deskripsi": "Dokter yang berpengalaman dalam perawatan kehamilan, persalinan, dan masalah kesehatan reproduksi wanita.",
+          "jadwal_praktek": [
+            { "hari": "Senin", "jam": "16:00 - 19:00" },
+            { "hari": "Selasa", "jam": "16:00 - 19:00" },
+            { "hari": "Rabu", "jam": "16:00 - 19:00" },
+            { "hari": "Jumat", "jam": "16:00 - 19:00" },
+            { "hari": "Sabtu", "jam": "16:00 - 19:00" }
+          ],
+          "pendidikan": [
+            "Sarjana Kedokteran, Universitas Diponegoro",
+            "Spesialis Obstetri dan Ginekologi, Universitas Hasanuddin"
+          ],
+          "penghargaan": [
+            "Penghargaan Layanan Terbaik dalam Bedah Caesar 2021"
+          ]
+        }
+      ]
+    },
+    {
+      "id_spesialis": 2,
+      "jenis_spesialis": "Anak",
+      "deskripsi_spesialis": "",
+      "img_spesialis": "image/klinik_anak.png",
+      "dokter": [
+        {
+          "id_dokter": 4,
+          "nama": "dr. Nelly Rosari, Sp.A",
+          "foto": "image/dr_nelly.png",
+          "deskripsi": "dr. Murniati, Sp.OG adalah Dokter Spesialis Obstetri dan Ginekologi dengan pengalaman lebih dari 21 tahun dalam menangani kesehatan reproduksi perempuan. Beliau memiliki keahlian dalam penanganan kehamilan risiko tinggi, fertilisasi in vitro (IVF), dan prosedur ginekologi minimal invasif seperti laparoskopi.",
+            "jadwal_praktek": [
+            { "hari": "Senin", "jam": "10:30 - 13:30" },
+            { "hari": "Selasa", "jam": "10:30 - 13:30" },
+            { "hari": "Rabu", "jam": "10:30 - 13:30" },
+            { "hari": "Kamis", "jam": "10:30 - 13:30" },
+            { "hari": "Jumat", "jam": "11:30 - 13:30" },
+            { "hari": "Sabtu", "jam": "11:30 - 13:30" }
+          ],
+          "pendidikan": [
+            "Sarjana Kedokteran, Universitas Hasanuddin",
+            "Spesialis Obstetri dan Ginekologi, Universitas Gadjah Mada"
+          ],
+          "penghargaan": [
+            "Penghargaan 1",
+            "Penghargaan 2"
+          ]
+        },
+        {
+          "id_dokter": 5,
+          "nama": "dr. Puni Oktisari.,Sp.A",
+          "foto": "image/dr_puni.png",
+          "deskripsi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+             "jadwal_praktek": [
+            { "hari": "Senin", "jam": "07:30 - 09:30" },
+            { "hari": "Selasa", "jam": "07:30 - 09:30" },
+            { "hari": "Rabu", "jam": "07:30 - 09:30" },
+            { "hari": "Kamis", "jam": "07:30 - 09:30" },
+            { "hari": "Jumat", "jam": "07:30 - 09:30" },
+            { "hari": "Sabtu", "jam": "07:30 - 09:30" }
+          ],
+          "pendidikan": [
+            "Lorem ipsum dolor sit amet",
+            "Consectetur adipiscing elit"
+          ],
+          "penghargaan": [
+            "Lorem ipsum dolor sit amet",
+            "Consectetur adipiscing elit"  
+          ]
+        }
+      ]
+    },
+    {
+      "id_spesialis": 3,
+      "jenis_spesialis": "Penyakit Dalam",
+      "deskripsi_spesialis": "",
+      "img_spesialis": "image/klinik_pd.png",
+      "dokter": [
+        {
+          "id_dokter": 6,
+          "nama": "dr. Driyakara, Sp.PD",
+          "foto": "image/dr_driyakara.png",
+          "deskripsi": "dr. Murniati, Sp.OG adalah Dokter Spesialis Obstetri dan Ginekologi dengan pengalaman lebih dari 21 tahun dalam menangani kesehatan reproduksi perempuan. Beliau memiliki keahlian dalam penanganan kehamilan risiko tinggi, fertilisasi in vitro (IVF), dan prosedur ginekologi minimal invasif seperti laparoskopi.",
+            "jadwal_praktek": [
+            { "hari": "Senin", "jam": "08:00 - 11:00" },
+            { "hari": "Selasa", "jam": "08:00 - 11:00" },
+            { "hari": "Rabu", "jam": "08:00 - 11:00" },
+            { "hari": "Kamis", "jam": "08:00 - 11:00" },
+            { "hari": "Jumat", "jam": "08:00 - 11:00" }
+          ],
+          "pendidikan": [
+            "Sarjana Kedokteran, Universitas Hasanuddin",
+            "Spesialis Obstetri dan Ginekologi, Universitas Gadjah Mada"
+          ],
+          "penghargaan": [
+            "Penghargaan 1",
+            "Penghargaan 2"
+          ]
+        },
+        {
+          "id_dokter": 7,
+          "nama": "dr. Muhipah, Sp.PD",
+          "foto": "image/dr_muhipah.png",
+          "deskripsi": "Dokter Spesialis Kebidanan dan Kandungan dengan fokus pada kesehatan ibu dan bayi, serta penanganan masalah reproduksi wanita.",
+          "jadwal_praktek": [
+            { "hari": "Senin", "jam": "14:30 - 16:30" },
+            { "hari": "Selasa", "jam":  "14:30 - 16:30" },
+            { "hari": "Rabu", "jam":  "14:30 - 16:30" },
+            { "hari": "Kamis", "jam":  "14:30 - 16:30" },
+            { "hari": "Jumat", "jam":  "14:30 - 16:30" }
+          ],
+          "pendidikan": [
+            "Sarjana Kedokteran, Universitas Gadjah Mada",
+            "Spesialis Obstetri dan Ginekologi, Universitas Airlangga"
+          ],
+          "penghargaan": [
+            "Penghargaan atas Dedikasi dalam Penanganan Kehamilan Berisiko Tinggi"
+          ]
+        },
+        {
+          "id_dokter": 8,
+          "nama": "dr. Teuku Emir, Sp.PD",
+          "foto": "image/dr_teukuemir.png",
+          "deskripsi": "Dokter yang berpengalaman dalam perawatan kehamilan, persalinan, dan masalah kesehatan reproduksi wanita.",
+          "jadwal_praktek": [
+            { "hari": "Senin", "jam": "16:00 - 20:00" },
+            { "hari": "Selasa", "jam": "16:00 - 20:00" },
+            { "hari": "Rabu", "jam": "18:30 - 20:30" },
+            { "hari": "Kamis", "jam": "16:00 - 20:00" },
+            { "hari": "Jumat", "jam": "16:00 - 20:00" },
+            { "hari": "Sabtu", "jam": "08:00 - 10:00" }
+          ],
+          "pendidikan": [
+            "Sarjana Kedokteran, Universitas Diponegoro",
+            "Spesialis Obstetri dan Ginekologi, Universitas Hasanuddin"
+          ],
+          "penghargaan": [
+            "Penghargaan Layanan Terbaik dalam Bedah Caesar 2021"
+          ]
+        }
+      ]
+    },
+    {
+      "id_spesialis": 4,
+      "jenis_spesialis": "Bedah Umum",
+      "deskripsi_spesialis": "",
+      "img_spesialis": "image/klinik_bedah.png",
+      "dokter": [
+        {
+          "id_dokter": 9,
+          "nama": "dr. Gema Putra, Sp.B",
+          "foto": "image/dr_gema.png",
+          "deskripsi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+           "jadwal_praktek": [
+            { "hari": "Senin", "jam": "08:00 - 10:45" },
+            { "hari": "Rabu", "jam": "08:00 - 10:45" },
+            { "hari": "Jumat", "jam": "08:00 - 10:45" },
+            { "hari": "Sabtu", "jam": "16:30 - 18:30" }
+          ],
+          "pendidikan": [
+            "Lorem ipsum dolor sit amet",
+            "Consectetur adipiscing elit"
+          ],
+          "penghargaan": [
+            "Lorem ipsum dolor sit amet",
+            "Consectetur adipiscing elit"  
+          ]
+        },
+        {
+          "id_dokter": 10,
+          "nama": "dr. Ali Farhan, Sp.B",
+          "foto": "image/dr_alifarhan.png",
+          "deskripsi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+             "jadwal_praktek": [
+            { "hari": "Senin", "jam": "14:30 - 16:30" },
+            { "hari": "Selasa", "jam": "09:00 - 14:00" },
+            { "hari": "Rabu", "jam": "14:30 - 16:30" },
+            { "hari": "Kamis", "jam": "09:00 - 14:00" },
+            { "hari": "Jumat", "jam": "14:30 - 16:30" }
+          ],
+          "pendidikan": [
+            "Lorem ipsum dolor sit amet",
+            "Consectetur adipiscing elit"
+          ],
+          "penghargaan": [
+            "Lorem ipsum dolor sit amet",
+            "Consectetur adipiscing elit"  
+          ]
+        }
+      ]
+    },
+    {
+      "id_spesialis": 5,
+      "jenis_spesialis": "Paru",
+      "deskripsi_spesialis": "",
+      "img_spesialis": "image/klinik_paru.png",
+      "dokter": [
+        {
+          "id_dokter": 11,
+          "nama": "dr. Tantrie D., Sp.P",
+          "foto": "image/dr_tantrie.png",
+          "deskripsi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+           "jadwal_praktek": [
+            { "hari": "Selasa", "jam": "16:30 - 19:00" },
+            { "hari": "Kamis", "jam": "16:30 - 19:00" },
+            { "hari": "Sabtu", "jam": "13:30 - 16:00" }
+          ],
+          "pendidikan": [
+            "Lorem ipsum dolor sit amet",
+            "Consectetur adipiscing elit"
+          ],
+          "penghargaan": [
+            "Lorem ipsum dolor sit amet",
+            "Consectetur adipiscing elit"  
+          ]
+        }
+      ]
+    },
+    {
+      "id_spesialis": 6,
+      "jenis_spesialis": "Jantung dan Pembuluh Darah",
+      "deskripsi_spesialis": "",
+      "img_spesialis": "image/klinik_jp.jpg",
+      "dokter": [
+        {
+          "id_dokter": 12,
+          "nama": "dr. Tania Andriani, Sp.JP",
+          "foto": "image/dr_tania.png",
+          "deskripsi": "dr. Murniati, Sp.OG adalah Dokter Spesialis Obstetri dan Ginekologi dengan pengalaman lebih dari 21 tahun dalam menangani kesehatan reproduksi perempuan. Beliau memiliki keahlian dalam penanganan kehamilan risiko tinggi, fertilisasi in vitro (IVF), dan prosedur ginekologi minimal invasif seperti laparoskopi.",
+            "jadwal_praktek": [
+              { "hari": "Senin", "jam": "08.00 - 10.30" },
+              { "hari": "Kamis", "jam": "08.00 - 09.30" }
+          ],
+          "pendidikan": [
+            "Lorem ipsum dolor sit amet",
+            "Consectetur adipiscing elit"
+          ],
+          "penghargaan": [
+            "Lorem ipsum dolor sit amet",
+            "Consectetur adipiscing elit"  
+          ]
+        }
+      ]
+    },
+    {
+      "id_spesialis": 7,
+      "jenis_spesialis": "Bedah Urologi",
+      "deskripsi_spesialis": "",
+      "img_spesialis": "image/klinik_urologi.png",
+      "dokter": [
+        {
+          "id_dokter": 13,
+          "nama": "dr. Kurniadi Yusuf S., Sp. U",
+          "foto": "image/dr_kurniadi.png",
+          "deskripsi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+           "jadwal_praktek": [
+            { "hari": "Senin", "jam": "08.00 - 11.00" },
+            { "hari": "Rabu", "jam": "08.00 - 11.00" },
+            { "hari": "Jumat", "jam": "16:00 - 19:00" }
+          ],
+          "pendidikan": [
+            "Lorem ipsum dolor sit amet",
+            "Consectetur adipiscing elit"
+          ],
+          "penghargaan": [
+            "Lorem ipsum dolor sit amet",
+            "Consectetur adipiscing elit"  
+          ]
+        }
+      ]
+    },
+    {
+      "id_spesialis": 8,
+      "jenis_spesialis": "Mata",
+      "deskripsi_spesialis": "",
+      "img_spesialis": "image/klinik_mata.jpg",
+      "dokter": [
+        {
+          "id_dokter": 14,
+          "nama": "dr. Sukirman, Sp.M",
+          "foto": "image/dr_sukirman.png",
+          "deskripsi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+           "jadwal_praktek": [
+            { "hari": "Senin", "jam": "11.00 - 13.00" },
+            { "hari": "Selasa", "jam": "11.00 - 13.00" },
+            { "hari": "Rabu", "jam": "11.00 - 13.00" },
+            { "hari": "Jumat", "jam": "11.00 - 13.00" }
+          ],
+          "pendidikan": [
+            "Lorem ipsum dolor sit amet",
+            "Consectetur adipiscing elit"
+          ],
+          "penghargaan": [
+            "Lorem ipsum dolor sit amet",
+            "Consectetur adipiscing elit"  
+          ]
+        }
+      ]
+    },
+    {
+      "id_spesialis": 9,
+      "jenis_spesialis": "Saraf",
+      "deskripsi_spesialis": "",
+      "img_spesialis": "image/klinik_saraf.png",
+      "dokter": [
+        {
+          "id_dokter": 15,
+          "nama": "dr. Nurita Hidayati, Sp.S",
+          "foto": "image/dr_nurita.png",
+          "deskripsi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+           "jadwal_praktek": [
+            { "hari": "Senin", "jam": "09.00 - 10.00" },
+            { "hari": "Selasa", "jam": "15.00 - 17.00" },
+            { "hari": "Rabu", "jam": "15.00 - 17.00" },
+            { "hari": "Kamis", "jam": "09.00 - 10.00" }
+          ],
+          "pendidikan": [
+            "Lorem ipsum dolor sit amet",
+            "Consectetur adipiscing elit"
+          ],
+          "penghargaan": [
+            "Lorem ipsum dolor sit amet",
+            "Consectetur adipiscing elit"  
+          ]
+        },
+        {
+          "id_dokter": 16,
+          "nama": "dr. Kinanta, Sp.N",
+          "foto": "image/dr_kinanta.png",
+          "deskripsi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+           "jadwal_praktek": [
+            { "hari": "Rabu", "jam": "08.00 - 10.00" },
+            { "hari": "Jumat", "jam": "08.00 - 10.00" },
+            { "hari": "Sabtu", "jam": "08.00 - 10.00" }
+          ],
+          "pendidikan": [
+            "Lorem ipsum dolor sit amet",
+            "Consectetur adipiscing elit"
+          ],
+          "penghargaan": [
+            "Lorem ipsum dolor sit amet",
+            "Consectetur adipiscing elit"  
+          ]
+        }
+      ]
+    },
+    {
+      "id_spesialis": 10,
+      "jenis_spesialis": "THT",
+      "deskripsi_spesialis": "",
+      "img_spesialis": "image/klinik_tht.png",
+      "dokter": [
+        {
+          "id_dokter": 17,
+          "nama": "dr. Ferry Herjanto, Sp. THT-KL",
+          "foto": "image/dr_ferry.png",
+          "deskripsi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+           "jadwal_praktek": [
+            { "hari": "Senin", "jam": "16.45 - 19.00" },
+            { "hari": "Rabu", "jam": "16.30 - 19.00" },
+            { "hari": "Jumat", "jam": "16.45 - 19.00" }
+          ],
+          "pendidikan": [
+            "Lorem ipsum dolor sit amet",
+            "Consectetur adipiscing elit"
+          ],
+          "penghargaan": [
+            "Lorem ipsum dolor sit amet",
+            "Consectetur adipiscing elit"  
+          ]
+        }
+      ]
+    },
+    {
+      "id_spesialis": 11,
+      "jenis_spesialis": "Ortopedi",
+      "deskripsi_spesialis": "",
+      "img_spesialis": "image/klinik_ortopedi.png",
+      "dokter": [
+        {
+          "id_dokter": 18,
+          "nama": "dr. Zecky E., T., Sp.OT, MARS",
+          "foto": "image/dr_zecky.png",
+          "deskripsi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+           "jadwal_praktek": [
+            { "hari": "Senin", "jam": "16.00 - 18.00" },
+            { "hari": "Kamis", "jam": "16.00 - 18.00" }
+          ],
+          "pendidikan": [
+            "Lorem ipsum dolor sit amet",
+            "Consectetur adipiscing elit"
+          ],
+          "penghargaan": [
+            "Lorem ipsum dolor sit amet",
+            "Consectetur adipiscing elit"  
+          ]
+        }
+      ]
+    },
+    {
+      "id_spesialis": 12,
+      "jenis_spesialis": "Kulit dan Kelamin",
+      "deskripsi_spesialis": "",
+      "img_spesialis": "image/klinik_kulit.jpg",
+      "dokter": [
+        {
+          "id_dokter": 19,
+          "nama": "dr. Ketut Alit P. S., Sp.D.V.E",
+          "foto": "image/dr_ketut.png",
+          "deskripsi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+           "jadwal_praktek": [
+            { "hari": "Senin", "jam": "15.00 - 19.00" },
+            { "hari": "Rabu", "jam": "15.00 - 19.00" },
+            { "hari": "Jumat", "jam": "14.00 - 18.00" }
+          ],
+          "pendidikan": [
+            "Lorem ipsum dolor sit amet",
+            "Consectetur adipiscing elit"
+          ],
+          "penghargaan": [
+            "Lorem ipsum dolor sit amet",
+            "Consectetur adipiscing elit"  
+          ]
+        }
+      ]
+    },
+    {
+      "id_spesialis": 13,
+      "jenis_spesialis": "Gigi dan Mulut",
+      "deskripsi_spesialis": "",
+      "img_spesialis": "image/klinik_gigi.jpg",
+      "dokter": [
+        {
+          "id_dokter": 20,
+          "nama": "drg. Arif",
+          "foto": "image/dr_arif.png",
+          "deskripsi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+             "jadwal_praktek": [
+            { "hari": "Selasa", "jam": "16.30 - 19.00" },
+            { "hari": "Kamis", "jam": "16.30 - 19.00" },
+            { "hari": "Sabtu", "jam": "13.00 - 15.00" }
+          ],
+          "pendidikan": [
+            "Lorem ipsum dolor sit amet",
+            "Consectetur adipiscing elit"
+          ],
+          "penghargaan": [
+            "Lorem ipsum dolor sit amet",
+            "Consectetur adipiscing elit"  
+          ]
+        },
+        {
+          "id_dokter": 21,
+          "nama": "drg. Heru",
+          "foto": "image/dr_heru.png",
+          "deskripsi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+             "jadwal_praktek": [
+            { "hari": "Senin", "jam": "10.00 - 12.00" },
+            { "hari": "Rabu", "jam": "10.00 - 12.00" },
+            { "hari": "Kamis", "jam": "10.00 - 12.00" }
+          ],
+          "pendidikan": [
+            "Lorem ipsum dolor sit amet",
+            "Consectetur adipiscing elit"
+          ],
+          "penghargaan": [
+            "Lorem ipsum dolor sit amet",
+            "Consectetur adipiscing elit"  
+          ]
+        },
+        {
+          "id_dokter": 22,
+          "nama": "drg. Bening",
+          "foto": "image/dr_bening.png",
+          "deskripsi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+             "jadwal_praktek": [
+            { "hari": "Senin", "jam": "17.00 - 19.00" },
+            { "hari": "Rabu", "jam": "17.00 - 19.00" },
+            { "hari": "Jumat", "jam": "17.00 - 19.00" }
+          ],
+          "pendidikan": [
+            "Lorem ipsum dolor sit amet",
+            "Consectetur adipiscing elit"
+          ],
+          "penghargaan": [
+            "Lorem ipsum dolor sit amet",
+            "Consectetur adipiscing elit"  
+          ]
+        },
+        {
+          "id_dokter": 23,
+          "nama": "drg. Mikail",
+          "foto": "image/dr_mikail.png",
+          "deskripsi": "Lorem ipsum dolor sit amet, consectetur adipiscing elit. Sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident.",
+             "jadwal_praktek": [
+            { "hari": "Senin", "jam": "08.30 - 12.00" },
+            { "hari": "Jumat", "jam":  "08.30 - 12.00" },
+            { "hari": "Sabtu", "jam":  "08.30 - 11.30" }
+          ],
+          "pendidikan": [
+            "Lorem ipsum dolor sit amet",
+            "Consectetur adipiscing elit"
+          ],
+          "penghargaan": [
+            "Lorem ipsum dolor sit amet",
+            "Consectetur adipiscing elit"  
+          ]
+        }
+      ]
+    }
+  ]
+  
