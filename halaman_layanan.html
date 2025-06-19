@@ -1,0 +1,1590 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Layanan - RS Ridhoka Salma</title>
+    <link rel="icon" href="image/logo.png" type="image/png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- Google Fonts - Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Floating Button CSS -->
+    <link rel="stylesheet" href="css/floating_button_style.css">
+    <style>
+      body, button, input, select, textarea, a, p, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+        :root {
+            --primary: #00928F;
+            --secondary: #00796b;
+            --accent: #e91e63;
+            --light: #ffffff;
+            --dark: #333333;
+            --gray: #f5f5f5;
+            --neutral200: #F1F5F8;
+            --neutral700: #E6E9EC;
+        }
+        
+        body {
+            color: #333;
+            background-color: #ffffff;
+        }
+        
+        /* Banner Section */
+        .banner-section {
+            width: 100%;
+            height: 180px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .banner-image {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            display: block;
+        }
+        
+          /* Breadcrumb Styles */
+          .breadcrumb-nav {
+     
+            margin-bottom: 0px !important;
+            margin: 0 auto;
+            padding: 0px  0px 0px 0px;
+            font-size: 14px;
+        }
+        
+        .breadcrumb-item {
+            color: #555;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .breadcrumb-item:hover {
+            color: #00928F;
+            font-weight: 500;
+        }
+        
+        .breadcrumb-current {
+            color: #555;
+            font-weight: 500;
+        }
+        
+        .breadcrumb-separator {
+            color: #999;
+            margin: 0 5px;
+        }
+        
+    
+        .page-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+            margin: 10px 0;
+            text-align: left;
+        }
+    
+        .page-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #00928F;
+    margin-top: 8px;
+}
+
+        .banner-text h1 {
+            margin: 0;
+            font-size: 2rem;
+            font-weight: 700;
+        }
+        
+        /* Content Styles */
+        .content-section {
+            padding: 50px 0;
+            min-height: 800px; /* Tambahan minimum height untuk keseluruhan konten */
+            margin-bottom: 100px;
+        }
+        
+        .content-container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        .intro-text {
+            text-align: justify;
+            margin-bottom: 30px;
+            line-height: 1.6;
+        }
+        
+        /* Tab Navigation Styles */
+        .tab-navigation {
+            display: flex;
+            justify-content: space-around;
+            border-bottom: 2px solid #eaeaea;
+            margin-bottom: 20px;
+            max-width: 1200px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .tab-button {
+            flex: 1;
+            text-align: center;
+            padding: 12px 25px;
+            cursor: pointer;
+            font-weight: 600;
+            color: #666;
+            background-color: transparent;
+            border: none;
+            border-bottom: 3px solid transparent;
+            transition: all 0.3s ease;
+        }
+        
+        .tab-button.active {
+            color: var(--primary);
+            border-bottom: 3px solid var(--primary);
+        }
+        
+        .tab-button:hover:not(.active) {
+            color: var(--secondary);
+            border-bottom: 3px solid #eaeaea;
+        }
+        
+        /* Content Layout */
+        .content-layout {
+            display: flex;
+            flex-wrap: wrap;
+            margin-top: 30px;
+            min-height: 600px; /* Menambahkan minimal height */
+        }
+        
+        .services-menu {
+            width: 300px;
+            background: #fff;
+            border-radius: 4px;
+            overflow: hidden;
+            box-shadow: none;
+        }
+        
+        .service-button {
+            display: block;
+            width: 100%;
+            padding: 15px 20px;
+            text-align: left;
+            background-color: transparent;
+            border: none;
+            font-weight: 500;
+            color: #333;
+            cursor: pointer;
+            transition: all 0.3s ease;
+            border-radius: 0;
+        }
+        
+        .service-button:last-child {
+            border-bottom: none;
+        }
+        
+        .service-button.active {
+            background-color: var(--neutral200);
+            color: #333;
+            font-weight: 600;
+            border-radius: 10px;
+        }
+        
+        .service-button:hover:not(.active) {
+            background-color: var(--neutral200);
+            border-radius: 10px;
+        }
+        
+        .service-content {
+            flex: 1;
+            min-width: 0;
+            padding-left: 30px;
+        }
+        
+        .service-detail {
+            display: none;
+        }
+        
+        .service-detail.active {
+            display: block;
+            animation: fadeIn 0.5s ease;
+        }
+        
+        @keyframes fadeIn {
+            from { opacity: 0; }
+            to { opacity: 1; }
+        }
+        
+        .service-image {
+            width: 100%;
+            height: auto;
+            border-radius: 8px;
+            overflow: hidden;
+            margin-bottom: 20px;
+        }
+        
+        .service-image img {
+            width: 100%;
+            height: 220px;
+            object-fit: cover;
+        }
+        
+        .service-description h3 {
+            color: var(--primary);
+            font-weight: 600;
+            margin-bottom: 15px;
+            font-size: 1.4rem;
+        }
+        
+        .service-description p {
+            line-height: 1.6;
+            margin-bottom: 15px;
+            text-align: justify;
+        }
+        
+        /* Contact Box */
+        .contact-box {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f5f5f5;
+            border-radius: 8px;
+            border-left: 4px solid var(--primary);
+        }
+        .contact-description{
+            color: #333;
+            font-weight: 500;
+            font-size: 18px;
+      }
+        
+        .contact-item-layanan {
+            display: flex;
+            align-items: center;
+            margin-bottom: 10px;
+        }
+        
+        .contact-item-layanan:last-child {
+            margin-bottom: 0;
+        }
+        .contact-icon-layanan {
+    width: 30px;
+    height: 30px;
+    background-color: var(--primary);
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+    color: white;
+}
+
+.contact-icon-layanan i {
+    width: 15px;
+    height: 15px;
+}
+
+        
+        .contact-text {
+            font-weight: 500;
+        }
+        
+        .contact-phone {
+            color: var(--primary);
+            font-weight: 600;
+            text-decoration: none;
+        }
+        
+        /* Responsive Styles */
+        @media (max-width: 992px) {
+            .content-layout {
+                flex-direction: column;
+            }
+            
+            .services-menu {
+                width: 100%;
+                margin-bottom: 20px;
+            }
+            
+            .service-content {
+                padding-left: 0;
+                margin-top: 20px;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .banner-section {
+                height: auto;
+            }
+            
+            .banner-text h1 {
+                font-size: 1.5rem;
+            }
+            
+            .tab-navigation {
+                flex-wrap: wrap;
+            }
+            
+            .tab-button {
+                padding: 10px 15px;
+                font-size: 14px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .tab-button {
+                flex: 1;
+                text-align: center;
+                padding: 10px 5px;
+                font-size: 13px;
+            }
+            
+            .content-section {
+                padding: 30px 0;
+            }
+            
+            .service-button {
+                padding: 12px 15px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    
+<!-- Header -->
+<header class="sticky-header">
+    <link rel="stylesheet" href="css/header_style.css">
+    <script src="javascript/header.js"></script>
+
+    <div class="header-top">
+      <div class="container-fluid px-0">
+        <div class="row align-items-center">
+          
+          <!-- Logo -->
+          <div class="col-md-4 logo-container">
+            <a href="index.html">
+              <img src="image/logo_header.png" alt="RS Ridhoka Salma Logo" class="logo-img">
+            </a>
+          </div>
+  
+          <!-- Search and Contact Info -->
+          <div class="col-md-8">
+            <div class="search-contact-container">
+  
+      <!-- Search Bar -->
+<div class="search-bar-header">
+    <form class="search-form-header" action="halaman_pencarian.html" method="GET">
+      <div class="search-icon-header">
+        <img src="image/icon_search.png" alt="Search Icon">
+      </div>
+      <input type="text" placeholder="Cari yang Anda Butuhkan di Sini" class="search-input-header" name="q">
+      <button type="submit" class="search-button-header">Cari</button>
+    </form>
+  </div>
+  
+              <!-- Contact Center -->
+              <div class="contact-center-header">
+                
+                <div class="contact-title-header">Hubungi Kami</div>
+                
+                <div class="contact-items-header">
+                  <div class="contact-item-header">
+                    <a href="tel:+622189116527"  class="contact-link-header">
+                    <img src="image/icon_call.png" alt="Phone Icon" class="icon-contact-header"-header>
+                    <span>021 8911 6527</span>
+                    </a>
+                  </div>
+                  <div class="contact-item-header">
+                    <a href="https://wa.me/628118252322"  class="contact-link-header">
+                    <img src="image/icon_emergency.png" alt="Ambulance Icon" class="icon-contact-header">
+                    <span>0811 8252 322</span>
+                    </a>
+                  </div>
+                </div>
+  
+              </div>
+  
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+ 
+
+    <!-- Navigation Bar -->
+<nav style="background-color: #00928F; padding: 0;">
+    <div class="container">
+        <!-- Hamburger Menu untuk tampilan mobile -->
+        <div class="mobile-menu-toggle">
+            <span>Menu</span>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <div class="nav-container">
+            <ul class="main-menu">
+                <li class="menu-item">
+                    <a href="index.html" class="menu-link">Beranda</a>
+                </li>
+                
+                <!-- Menu Tentang Kami -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Tentang Kami 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="halaman_sejarah.html">Sejarah</a></li>
+                        <li><a href="halaman_visi_misi.html">Visi Misi</a></li>
+                        <li><a href="halaman_struktur_organisasi.html">Struktur Organisasi</a></li>
+                        <li><a href="halaman_akreditasi.html">Akreditasi dan Penghargaan</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Menu Layanan -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Layanan 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="halaman_layanan.html?tab=fasilitas">Fasilitas</a></li>
+                        <li><a href="halaman_layanan.html?tab=layanan-unggulan">Layanan Unggulan</a></li>
+                        <li><a href="halaman_layanan.html?tab=rawat-inap">Rawat Inap</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Menu Spesialis -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Spesialis Kami 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_klinik_spesialis.php?id=1">Kebidanan dan Kandungan</a></li>
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_klinik_spesialis.php?id=2">Anak</a></li>
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_klinik_spesialis.php?id=3">Penyakit Dalam</a></li>
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_klinik_spesialis.php?id=4">Bedah Umum</a></li>
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_spesialis.php">Lihat Semua</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Menu Informasi -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Informasi 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="halaman_promosi.html">Promosi</a></li>
+                        <li><a href="halaman_artikel_kesehatan.html">Artikel Kesehatan</a></li>
+                        <li><a href="halaman_artikel_islami.html">Artikel Islami</a></li>
+                        <li><a href="halaman_event.html">Event</a></li>
+                        <li><a href="halaman_karir.html">Karir</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Menu Kesyariahan -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Kesyariahan 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="halaman_kms.html">Kebijakan Mutu Syariah</a></li>
+                        <li><a href="halaman_program_kesyariahan.html">Program Kesyariahan</a></li>
+                        <li><a href="halaman_konsultasi_syariah.html">Konsultasi Syariah</a></li>
+                        <li><a href="halaman_profil_dps.html">Profil DPS dan Komite Syariah</a></li>
+                    </ul>
+                </li>
+                
+                <li class="menu-item">
+                    <a href="http://localhost/WebsiteRidhokaSalma/halaman_cari_dokter.php" class="menu-link">Cari Dokter</a>
+                </li>
+                <li class="menu-item">
+                    <a href="http://localhost/WebsiteRidhokaSalma/halaman_janji_temu.php" class="menu-link">Janji Temu</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+</header>
+
+    <!-- Banner Section -->
+    <section class="banner-section">
+        <img src="image/banner_layanan.png" alt="Banner Layanan RS Ridhoka Salma" class="banner-image">
+    </section>
+    
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="content-container">
+                  <!-- Breadcrumb -->
+                  <div class="breadcrumb-nav">
+                    <a href="index.html" class="breadcrumb-item">Beranda</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-current">Layanan</span>
+                </div>
+            <h1 class="page-title">Fasilitas dan Layanan</h1>
+            <div class="intro-text">
+                <p>RS Ridhoka Salma menyediakan berbagai layanan medis dengan dukungan dokter spesialis yang berpengalaman. Kami berkomitmen memberikan perawatan terbaik bagi Anda dan keluarga, dengan layanan kesehatan yang profesional, nyaman, dan sesuai dengan prinsip syariah.</p>
+            </div>
+            
+            <!-- Tab Navigation -->
+            <div class="tab-navigation">
+                <button class="tab-button active" data-tab="fasilitas">Fasilitas</button>
+                <button class="tab-button" data-tab="layanan-unggulan">Layanan Unggulan</button>
+                <button class="tab-button" data-tab="rawat-inap">Rawat Inap</button>
+            </div>
+            
+            <!-- Content Layout -->
+            <div class="content-layout">
+                <!-- Services Menu - Fasilitas -->
+                <div class="services-menu" id="fasilitas-menu">
+                    <button class="service-button active" data-service="igd">IGD 24 JAM</button>
+                    <button class="service-button" data-service="poliklinik">Poliklinik</button>
+                    <button class="service-button" data-service="icu">ICU</button>
+                    <button class="service-button" data-service="nicu">NICU</button>
+                    <button class="service-button" data-service="picu">PICU</button>
+                    <button class="service-button" data-service="laboratorium">Laboratorium</button>
+                    <button class="service-button" data-service="radiologi">Radiologi</button>
+                    <button class="service-button" data-service="fisioterapi">Fisioterapi</button>
+                    <button class="service-button" data-service="kamar-operasi">Kamar Operasi</button>
+                    <button class="service-button" data-service="ruangan-bersalin">Ruangan Bersalin</button>
+                </div>
+                
+                <!-- Services Menu - Layanan Unggulan (Initially Hidden) -->
+                <div class="services-menu" id="layanan-unggulan-menu" style="display: none;">
+                    <button class="service-button" data-service="mcu">Medical Check Up (MCU)</button>
+                    <button class="service-button" data-service="klinik-tumbuh-kembang">Klinik Tumbuh Kembang</button>
+                    <button class="service-button" data-service="rose-aesthetic-clinic">Rose Aesthetic Clinic</button>
+                    <button class="service-button" data-service="endoskopi">Endoskopi</button>
+                    <button class="service-button" data-service="hemodialisa">Hemodialisa</button>
+                    <button class="service-button" data-service="pelayanan-vaksinasi">Vaksinasi</button>
+                </div>
+                
+                <!-- Services Menu - Rawat Inap (Initially Hidden) -->
+                <div class="services-menu" id="rawat-inap-menu" style="display: none;">
+                    <button class="service-button" data-service="kelas-evvip">Ruang Eksekutif VVIP</button>
+                    <button class="service-button" data-service="kelas-evip">Ruang Eksekutif VIP</button>
+                    <button class="service-button" data-service="kelas-vvip">Ruang VVIP</button>
+                    <button class="service-button" data-service="kelas-vip">Ruang VIP</button>
+                    <button class="service-button" data-service="kelas-utama">Ruang Utama</button>
+                    <button class="service-button" data-service="kelas-1">Ruang Kelas 1</button>
+                    <button class="service-button" data-service="kelas-2">Ruang Kelas 2</button>
+                    <button class="service-button" data-service="kelas-standar">Ruang Kelas Standar</button>
+                    <button class="service-button" data-service="kelas-isolasi">Ruang Isolasi</button>
+                </div>
+                
+                <!-- Service Content -->
+                <div class="service-content">
+                    <!-- Fasilitas Content -->
+                    <div class="service-detail active" id="igd">
+                        <div class="service-image">
+                            <img src="image/Foto_igd.png" alt="IGD 24 JAM RS Ridhoka Salma">
+                        </div>
+                        <div class="service-description">
+                            <h3>IGD 24 JAM</h3>
+                            <p>Instalasi Gawat Darurat (IGD) RS Ridhoka Salma dirancang untuk memberikan layanan medis cepat dan tanggap bagi pasien dengan kondisi darurat. Dengan tenaga medis profesional yang siap siaga 24/7, IGD kami dilengkapi dengan peralatan medis canggih untuk menangani berbagai situasi kritis, termasuk trauma, serangan jantung, stroke, dan kegawatdaruratan lainnya. Setiap pasien akan ditangani sesuai dengan tingkat urgensi medis untuk memastikan penanganan yang tepat dan efisien.</p>
+                            <p>Guna mendukung respons cepat dalam kondisi darurat, RS Ridhoka Salma menyediakan saluran komunikasi yang mudah diakses agar masyarakat dapat segera mendapatkan bantuan medis yang dibutuhkan. Baik untuk keperluan konsultasi awal, konfirmasi ketersediaan layanan, maupun permintaan ambulans, pengguna dapat menghubungi kontak yang dapat dihubungi 24 jam.</p>
+                            
+                            <div class="contact-box">
+                                <h5 class="contact-description">Informasi kontak penting yang dapat dihubungi adalah sebagai berikut:</h5>
+                                <div class="contact-item-layanan">
+                                    <div class="contact-icon-layanan">
+                                        <i class="fas fa-phone"></i> <!-- Atau class ikon lain sesuai font-awesome / icon library yang kamu pakai -->
+                                    </div>
+                                    
+                                    <div class="contact-text">
+                                        IGD (24 Jam) : <a href="tel:08118252322" class="contact-phone">0811 8252 322</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-detail" id="poliklinik">
+                        <div class="service-image">
+                            <img src="image/rajal.png" alt="Poliklinik RS Ridhoka Salma">
+                        </div>
+                        <div class="service-description">
+                            <h3>Poliklinik Rawat Jalan</h3>
+                            <p>Klinik RS Ridhoka Salma merupakan layanan rawat jalan dengan berbagai spesialisasi yang dirancang untuk memenuhi kebutuhan kesehatan pasien dari segala usia. Pemeriksaan dilakukan oleh dokter spesialis dan dokter umum berpengalaman dengan pendekatan yang profesional, komunikatif, dan berorientasi pada kebutuhan pasien.</p>
+                        
+                            <p>Daftar klinik yang tersedia di RS Ridhoka Salma:</p>
+                            <ul>
+                                <li>Klinik umum</li>
+                                <li>Klinik kebidanan dan kandungan</li>
+                                <li>Klinik anak</li>
+                                <li>Klinik penyakit dalam</li>
+                                <li>Klinik bedah umum</li>
+                                <li>Klinik paru</li>
+                                <li>Klinik jantung dan pembuluh darah</li>
+                                <li>Klinik bedah urologi</li>
+                                <li>Klinik mata</li>
+                                <li>Klinik saraf</li>
+                                <li>Klinik THT</li>
+                                <li>Klinik ortopedi</li>
+                                <li>Klinik kulit dan kelamin</li>
+                                <li>Klinik gigi dan mulut</li>
+                                
+                            </ul>
+                        
+                            <p>Seluruh ruang periksa dilengkapi dengan alat diagnostik modern dan sistem antrean terintegrasi untuk meningkatkan kenyamanan pasien. Kami juga menyediakan layanan reservasi online dan konsultasi awal via WhatsApp.</p>
+                        
+                            <div class="contact-box">
+                                <h5 class="contact-description">Untuk jadwal praktik dokter dan pendaftaran layanan klinik, hubungi:</h5>
+                                <div class="contact-item-layanan">
+                                    <div class="contact-icon-layanan"><i class="fas fa-phone-alt"></i></div>
+                                    <div class="contact-text">Call Center: <a href="tel:02189116527" class="contact-phone">021 8911 6527</a></div>
+                                </div>
+                                <div class="contact-item-layanan">
+                                    <div class="contact-icon-layanan"><i class="fab fa-whatsapp"></i></div>
+                                    <div class="contact-text">WhatsApp: <a href="tel:081317182223" class="contact-phone">0813 1718 2223</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="service-detail" id="icu">
+                        <div class="service-image">
+                            <img src="image/Foto_icu.png" alt="ICU RS Ridhoka Salma">
+                        </div>
+                        <div class="service-description">
+                            <h3>ICU (Intensive Care Unit)</h3>
+                            <p>ICU RS Ridhoka Salma merupakan unit perawatan intensif bagi pasien dewasa yang mengalami kondisi kritis dan membutuhkan pengawasan medis secara ketat dan berkelanjutan. ICU kami terletak di <strong>Ruangan Zam-Zam</strong> dan dilengkapi dengan fasilitas mutakhir yang mendukung stabilisasi dan penyelamatan nyawa pasien secara optimal.</p>
+                        
+                            <p>Fasilitas utama di ICU meliputi:</p>
+                            <ul>
+                                <li><strong>Sistem pemantauan 24 jam:</strong> mencakup tekanan darah, EKG, oksigen, dan suhu tubuh</li>
+                                <li><strong>Ventilator:</strong> untuk membantu pernapasan pasien dengan gangguan paru berat</li>
+                                <li><strong>Infus pompa dan nutrisi parenteral:</strong> untuk penanganan pasien yang tidak bisa makan secara oral</li>
+                                <li><strong>Alat resusitasi dan pacu jantung:</strong> siap digunakan dalam situasi darurat</li>
+                                <li><strong>Tim medis multidisiplin:</strong> terdiri dari dokter ICU, spesialis penyakit dalam, dan perawat intensif</li>
+                            </ul>
+                        
+                            <p>Dengan pendekatan perawatan holistik dan komunikasi terbuka dengan keluarga, kami memastikan pasien mendapat penanganan terbaik secara medis dan emosional.</p>
+                        
+                            <div class="contact-box">
+                                <h5 class="contact-description">Informasi lebih lanjut tentang layanan ICU, hubungi:</h5>
+                                <div class="contact-item-layanan">
+                                    <div class="contact-icon-layanan"><i class="fas fa-phone-alt"></i></div>
+                                    <div class="contact-text">Call Center: <a href="tel:02189116527" class="contact-phone">021 8911 6527</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="service-detail" id="nicu">
+                        <div class="service-image">
+                            <img src="image/Foto_nicu.png" alt="NICU RS Ridhoka Salma">
+                        </div>
+                        <div class="service-description">
+                            <h3>NICU (Neonatal Intensive Care Unit)</h3>
+                            <p>NICU RS Ridhoka Salma adalah unit perawatan intensif yang dikhususkan bagi bayi baru lahir yang memerlukan pemantauan ketat dan penanganan medis intensif, seperti bayi prematur, bayi dengan berat lahir rendah, atau mengalami gangguan napas dan infeksi. NICU kami berlokasi di <strong>Ruangan Zam-Zam</strong>, bersama ICU dan PICU.</p>
+                        
+                            <p>Peralatan dan layanan NICU meliputi:</p>
+                            <ul>
+                                <li><strong>Inkubator modern:</strong> menjaga suhu tubuh bayi tetap stabil</li>
+                                <li><strong>Ventilator neonatal:</strong> membantu pernapasan bayi dengan gangguan paru</li>
+                                <li><strong>Monitor vital bayi:</strong> untuk memantau denyut jantung, pernapasan, dan saturasi oksigen</li>
+                                <li><strong>Fototerapi:</strong> untuk menangani bayi dengan kadar bilirubin tinggi (kuning)</li>
+                                <li><strong>Dokter spesialis anak dan neonatologi:</strong> menangani setiap kasus dengan pendekatan individual</li>
+                                <li><strong>Edukasi orang tua:</strong> tentang perawatan dan nutrisi bayi setelah pulang</li>
+                            </ul>
+                        
+                            <p>Dengan suasana yang tenang dan protokol kebersihan ketat, kami mendukung pemulihan optimal bagi bayi sekaligus memberi ketenangan bagi orang tua.</p>
+                        
+                            <div class="contact-box">
+                                <h5 class="contact-description">Untuk informasi tentang perawatan neonatal di NICU, hubungi:</h5>
+                                <div class="contact-item-layanan">
+                                    <div class="contact-icon-layanan"><i class="fas fa-phone-alt"></i></div>
+                                    <div class="contact-text">Call Center: <a href="tel:02189116527" class="contact-phone">021 8911 6527</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+            
+                    <div class="service-detail" id="picu">
+                        <div class="service-image">
+                            <img src="/api/placeholder/600/350" alt="ICU RS Ridhoka Salma">
+                        </div>
+                        <div class="service-description">
+                            <h3>PICU (Pediatric Intensive Care Unit)</h3>
+                            <p>PICU RS Ridhoka Salma adalah unit perawatan intensif khusus bagi anak-anak dengan kondisi kritis atau mengancam jiwa. Penanganan dilakukan secara intensif oleh dokter spesialis anak dan tenaga medis yang kompeten, didukung peralatan medis berteknologi tinggi yang disesuaikan dengan kebutuhan pediatrik.</p>
+                        
+                            <p>Layanan PICU mencakup:</p>
+                            <ul>
+                                <li><strong>Ventilator pediatrik:</strong> membantu pernapasan bayi dan anak-anak yang mengalami gagal napas</li>
+                                <li><strong>Monitoring hemodinamik:</strong> untuk memantau tekanan darah, denyut jantung, dan saturasi oksigen secara real-time</li>
+                                <li><strong>Pompa infus nutrisi dan obat-obatan:</strong> untuk terapi cairan dan nutrisi penting bagi anak</li>
+                                <li><strong>Peralatan pemantauan otak:</strong> untuk pasien dengan trauma kepala atau gangguan neurologis</li>
+                                <li><strong>Tim dokter dan perawat PICU:</strong> dengan pelatihan khusus dan pendekatan empatik terhadap keluarga</li>
+                            </ul>
+                        
+                            <p>Kami juga menyediakan dukungan emosional bagi orang tua, serta pembaruan kondisi pasien secara berkala agar keluarga tetap tenang dan terlibat dalam proses perawatan.</p>
+                        
+                            <div class="contact-box">
+                                <h5 class="contact-description">Informasi lebih lanjut dapat menghubungi:</h5>
+                                <div class="contact-item-layanan">
+                                    <div class="contact-icon-layanan"><i class="fas fa-phone-alt"></i></div>
+                                    <div class="contact-text">Call Center: <a href="tel:02189116527" class="contact-phone">021 8911 6527</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    
+                    <div class="service-detail" id="laboratorium">
+                        <div class="service-image">
+                            <img src="image/laboratorium.png" alt="ICU RS Ridhoka Salma">
+                        </div>
+                        <div class="service-description">
+                            <h3>Laboratorium</h3>
+                            <p>Laboratorium RS Ridhoka Salma mendukung diagnosis penyakit secara akurat, cepat, dan terpercaya. Pemeriksaan dilakukan oleh tenaga ahli analis kesehatan dan ditinjau oleh dokter spesialis patologi klinik dengan hasil yang terintegrasi ke sistem rekam medis pasien.</p>
+                        
+                            <p>Jenis pemeriksaan meliputi:</p>
+                            <ul>
+                                <li><strong>Urinalisa:</strong> deteksi infeksi saluran kemih, diabetes, hingga gangguan ginjal melalui pemeriksaan urin</li>
+                                <li><strong>Elektrolit:</strong> untuk memeriksa keseimbangan natrium, kalium, dan kalsium dalam darah</li>
+                                <li><strong>Hematologi:</strong> analisis darah lengkap (HB, sel darah putih, trombosit) untuk mendeteksi anemia, infeksi, dll.</li>
+                                <li><strong>Kimia darah:</strong> evaluasi fungsi hati, ginjal, dan kadar gula darah</li>
+                                <li><strong>Mikrobiologi:</strong> identifikasi bakteri, jamur atau virus penyebab infeksi</li>
+                                <li><strong>Immunoserologi:</strong> deteksi antibodi, autoimun, atau penyakit menular seperti hepatitis, HIV</li>
+                                <li><strong>Analisa gas darah:</strong> untuk pasien ICU/IGD yang memerlukan pemantauan pernapasan intensif</li>
+                                <li><strong>Pap smear dan patologi anatomi:</strong> skrining kanker serviks dan pemeriksaan jaringan</li>
+                                <li><strong>Pemeriksaan narkoba:</strong> melalui urin, dengan hasil bersifat rahasia dan valid</li>
+                                <li><strong>Paket MCU:</strong> tersedia sesuai usia dan kebutuhan (pranikah, kerja, tahunan)</li>
+                            </ul>
+                        
+                            <p>Hasil laboratorium dapat diakses melalui layanan cetak maupun online, dan digunakan langsung oleh dokter penanggung jawab pasien untuk penanganan lanjutan.</p>
+                        
+                            <div class="contact-box">
+                                <h5 class="contact-description">Untuk jadwal pemeriksaan atau informasi paket laboratorium, hubungi:</h5>
+                                <div class="contact-item-layanan">
+                                    <div class="contact-icon-layanan"><i class="fas fa-phone-alt"></i></div>
+                                    <div class="contact-text">Call Center: <a href="tel:02189116527" class="contact-phone">021 8911 6527</a></div>
+                                </div>
+                            </div>
+                        </div>                        
+                    </div>
+                    
+                    <div class="service-detail" id="radiologi">
+                        <div class="service-image">
+                            <img src="image/radiologi.png" alt="ICU RS Ridhoka Salma">
+                        </div>
+                        <div class="service-description">
+                            <h3>Radiologi</h3>
+                            <p>Unit Radiologi RS Ridhoka Salma menyediakan layanan pencitraan medis yang membantu dokter dalam mendiagnosis penyakit secara akurat dan cepat. Setiap pemeriksaan dilakukan oleh tenaga radiografer profesional dan ditinjau oleh dokter spesialis radiologi.</p>
+                        
+                            <p>Layanan radiologi mencakup:</p>
+                            <ul>
+                                <li><strong>Rontgen (X-ray):</strong> pemeriksaan struktur tulang, paru-paru, dan abdomen untuk deteksi patah tulang, infeksi, atau sumbatan</li>
+                                <li><strong>USG Abdomen:</strong> evaluasi organ dalam seperti hati, ginjal, kandung empedu, dan saluran kemih</li>
+                                <li><strong>Appendicogram:</strong> mendeteksi radang usus buntu melalui pencitraan khusus</li>
+                                <li><strong>BNO IVP:</strong> pencitraan saluran kemih menggunakan kontras, untuk deteksi batu ginjal atau kelainan saluran urin</li>
+                            </ul>
+                        
+                            <p>Pemeriksaan dilakukan dengan aman, efisien, dan sesuai prosedur radiasi minimal untuk kenyamanan pasien.</p>
+                        
+                            <div class="contact-box">
+                                <h5 class="contact-description">Untuk informasi jadwal atau persiapan sebelum pemeriksaan radiologi, hubungi:</h5>
+                                <div class="contact-item-layanan">
+                                    <div class="contact-icon-layanan"><i class="fas fa-phone-alt"></i></div>
+                                    <div class="contact-text">Call Center: <a href="tel:02189116527" class="contact-phone">021 8911 6527</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                      <div class="service-detail" id="fisioterapi">
+                        <div class="service-image">
+                            <img src="image/fisioterapi.png" alt="ICU RS Ridhoka Salma">
+                        </div>
+                        <div class="service-description">
+                            <h3>Fisioterapi</h3>
+                            <p>Layanan fisioterapi RS Ridhoka Salma bertujuan membantu pemulihan fungsi tubuh dan meningkatkan kualitas hidup pasien yang mengalami gangguan gerak, nyeri otot, cedera, atau masalah pernapasan. Terapi dilakukan oleh fisioterapis profesional berdasarkan hasil asesmen medis dan kebutuhan masing-masing pasien.</p>
+                        
+                            <p>Layanan fisioterapi yang tersedia meliputi:</p>
+                            <ul>
+                                <li><strong>Manual therapy:</strong> terapi dengan teknik tangan untuk mengurangi nyeri, ketegangan otot, dan memperbaiki fleksibilitas sendi</li>
+                                <li><strong>Nebulizer therapy:</strong> untuk membantu melonggarkan saluran napas, biasanya pada pasien asma atau bronkitis</li>
+                                <li><strong>Exercise therapy:</strong> latihan khusus untuk meningkatkan kekuatan otot, keseimbangan, dan koordinasi</li>
+                                <li><strong>Heating therapy:</strong> terapi panas untuk mengurangi nyeri otot dan meningkatkan sirkulasi darah</li>
+                                <li><strong>Chest physiotherapy:</strong> terapi pernapasan untuk membantu pengeluaran lendir, khususnya pada pasien paru-paru</li>
+                                <li><strong>Electrical stimulation therapy:</strong> stimulasi listrik ringan untuk merangsang saraf dan otot yang lemah</li>
+                            </ul>
+                        
+                            <p>Program fisioterapi disusun secara individual, baik untuk pasien rawat jalan maupun rawat inap, termasuk pasien pasca stroke, pasca operasi, atau pasien anak dengan keterlambatan perkembangan motorik.</p>
+                        
+                            <div class="contact-box">
+                                <h5 class="contact-description">Untuk informasi jadwal terapi dan reservasi, hubungi:</h5>
+                                <div class="contact-item-layanan">
+                                    <div class="contact-icon-layanan"><i class="fas fa-phone-alt"></i></div>
+                                    <div class="contact-text">Call Center: <a href="tel:02189116527" class="contact-phone">021 8911 6527</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="service-detail" id="kamar-operasi">
+                        <div class="service-image">
+                            <img src="/api/placeholder/600/350" alt="ICU RS Ridhoka Salma">
+                        </div>
+                        <div class="service-description">
+                            <h3>Kamar Operasi</h3>
+                            <p>Kamar operasi (OK) RS Ridhoka Salma didesain dengan standar sterilisasi tinggi dan dilengkapi teknologi terkini untuk mendukung berbagai prosedur pembedahan secara aman dan efisien. Tim medis kami terdiri dari dokter bedah, anestesi, perawat instrumen, serta tenaga pemulihan pascaoperasi.</p>
+                        
+                            <p>Jenis tindakan operasi yang dilakukan meliputi:</p>
+                            <ul>
+                                <li><strong>Bedah umum:</strong> seperti operasi hernia, usus buntu, batu empedu, dll.</li>
+                                <li><strong>Bedah ortopedi:</strong> untuk tulang, sendi, dan otot seperti fraktur atau artroskopi</li>
+                                <li><strong>Bedah urologi:</strong> seperti operasi batu ginjal, prostat, dan saluran kemih</li>
+                                <li><strong>Bedah kandungan:</strong> seperti operasi caesar atau kista ovarium</li>
+                            </ul>
+                        
+                            <p>Ruang OK kami dilengkapi sistem sirkulasi udara steril (HEPA), pencahayaan khusus bedah, monitor vital real-time, dan recovery room. Kami memastikan keselamatan pasien melalui prosedur pre-op hingga post-op dengan komunikasi terbuka pada keluarga.</p>
+                        
+                            <div class="contact-box">
+                                <h5 class="contact-description">Untuk informasi jadwal tindakan dan konsultasi pra-operasi, hubungi:</h5>
+                                <div class="contact-item-layanan">
+                                    <div class="contact-icon-layanan"><i class="fas fa-phone-alt"></i></div>
+                                    <div class="contact-text">Call Center: <a href="tel:02189116527" class="contact-phone">021 8911 6527</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+                    
+                    <div class="service-detail" id="ruangan-bersalin">
+                        <div class="service-image">
+                            <img src="/api/placeholder/600/350" alt="ICU RS Ridhoka Salma">
+                        </div>
+                        <div class="service-description">
+                            <h3>Ruang Bersalin</h3>
+                            <p>Ruang bersalin RS Ridhoka Salma hadir untuk mendukung proses kelahiran yang aman, nyaman, dan bermartabat. Kami melayani persalinan normal, tindakan operatif, serta layanan khusus untuk ibu dan bayi dengan risiko tinggi. Semua layanan bersalin kami berbasis pendekatan ramah ibu dan bayi.</p>
+                        
+                            <p>Fasilitas dan layanan ruang bersalin meliputi:</p>
+                            <ul>
+                                <li><strong>Ruang bersalin modern:</strong> dengan tempat tidur multifungsi dan alat monitoring janin</li>
+                                <li><strong>Tenaga medis 24 jam:</strong> dokter kandungan dan bidan profesional siap mendampingi proses persalinan kapan saja</li>
+                                <li><strong>Inisiasi menyusu dini (IMD):</strong> sebagai bagian dari dukungan awal menyusui dan bonding</li>
+                                <li><strong>Layanan konsultasi laktasi:</strong> oleh konselor bersertifikat untuk memudahkan ibu menyusui</li>
+                                <li><strong>Perawatan pasca persalinan:</strong> termasuk edukasi perawatan bayi dan pemulihan fisik ibu</li>
+                            </ul>
+                        
+                            <p>Dengan pelayanan yang hangat dan berorientasi pada keselamatan ibu dan bayi, kami berkomitmen memberikan pengalaman melahirkan yang tenang dan terpercaya.</p>
+                        
+                            <div class="contact-box">
+                                <h5 class="contact-description">Untuk informasi paket persalinan dan reservasi ruang bersalin, hubungi:</h5>
+                                <div class="contact-item-layanan">
+                                    <div class="contact-icon-layanan"><i class="fas fa-phone-alt"></i></div>
+                                    <div class="contact-text">Call Center: <a href="tel:02189116527" class="contact-phone">021 8911 6527</a></div>
+                                </div>
+                            </div>
+                        </div>
+                        
+                    </div>
+
+                    <!-- Layanan Unggulan Content -->
+                    <div class="service-detail" id="mcu">
+                        <div class="service-image">
+                            <img src="image/layananmcu.png" alt="Medical Check Up RS Ridhoka Salma">
+                        </div>
+                        <div class="service-description">
+                            <h3>Medical Check Up (MCU)</h3>
+                            <p>Layanan Medical Check Up (MCU) RS Ridhoka Salma dirancang untuk membantu Anda memantau kondisi kesehatan secara menyeluruh dan mengidentifikasi potensi masalah kesehatan sejak dini. Dengan pendekatan preventif, MCU dapat menjadi langkah awal yang efektif untuk menjaga kesehatan jangka panjang.</p>
+                            <p>Kami menawarkan berbagai paket MCU yang dapat disesuaikan dengan kebutuhan individu, kelompok, atau perusahaan. Setiap paket MCU dilengkapi dengan pemeriksaan komprehensif yang dilakukan oleh tim medis profesional dengan menggunakan peralatan diagnostik modern.</p>
+                            <p>Paket MCU kami meliputi:</p>
+                            <ul>
+                                <li>Paket Basic - pemeriksaan dasar untuk semua usia</li>
+                                <li>Paket Executive - pemeriksaan komprehensif untuk profesional</li>
+                                <li>Paket Khusus Wanita - dengan fokus pada kesehatan reproduksi wanita</li>
+                                <li>Paket Khusus Pria - dengan fokus pada kesehatan reproduksi pria</li>
+                                <li>Paket Lansia - khusus untuk kebutuhan kesehatan lansia</li>
+                                <li>Paket Corporate - disesuaikan untuk kebutuhan perusahaan</li>
+                            </ul>
+                            <p>Semua pemeriksaan dilakukan dalam satu hari dengan hasil yang dapat diterima dalam waktu singkat. Konsultasi dengan dokter spesialis juga tersedia untuk menjelaskan hasil pemeriksaan dan memberikan rekomendasi kesehatan yang sesuai.</p>
+                            
+                            <div class="contact-box">
+                                <h5>Untuk informasi lebih lanjut dan pendaftaran MCU, silakan hubungi:</h5>
+                                <div class="contact-item-layanan">
+                                    <div class="contact-icon-layanan">
+                                        <i class="fas fa-phone-alt"></i>
+                                    </div>
+                                    <div class="contact-text">
+                                        Telepon: <a href="tel:0218911626" class="contact-phone">021 8911 6527</a>
+                                    </div>
+                                </div>
+                                <div class="contact-item-layanan">
+                                    <div class="contact-icon-layanan">
+                                        <i class="fab fa-whatsapp"></i>
+                                    </div>
+                                    <div class="contact-text">
+                                        WhatsApp: <a href="tel:081317182223" class="contact-phone">0813 1718 2223</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-detail" id="klinik-tumbuh-kembang">
+                        <div class="service-image">
+                            <img src="image/klinik_tumbuh_kembang.png" alt="Klinik Tumbuh Kembang Al-Fatih Kids">
+                        </div>
+                        <div class="service-description">
+                            <h3>Klinik Tumbuh Kembang Al-Fatih Kids</h3>
+                            <p>Klinik Tumbuh Kembang Al-Fatih Kids adalah layanan khusus di RS Ridhoka Salma yang fokus pada pemantauan dan intervensi dini terhadap perkembangan anak. Klinik ini hadir sebagai solusi terpadu bagi orang tua untuk memastikan bahwa anak-anak tumbuh dan berkembang sesuai tahap usia serta potensi terbaiknya.</p>
+                            <p>Kami melayani berbagai evaluasi dan terapi anak, termasuk:</p>
+                            <ul>
+                                <li>Evaluasi perkembangan umum (motorik, bahasa, sosial)</li>
+                                <li>Terapi wicara untuk anak dengan gangguan bicara dan bahasa</li>
+                                <li>Terapi okupasi untuk melatih kemandirian dan keterampilan aktivitas sehari-hari</li>
+                                <li>Terapi perilaku untuk anak dengan tantangan perilaku atau spektrum autisme</li>
+                                <li>Konsultasi tumbuh kembang bersama dokter spesialis anak dan psikolog klinis</li>
+                            </ul>
+                            <p>Al-Fatih Kids didukung oleh tim profesional multidisiplin yang peduli, berpengalaman, dan menggunakan pendekatan yang menyenangkan dan edukatif untuk anak dan orang tua.</p>
+                    
+                            <div class="contact-box">
+                                <h5>Untuk informasi jadwal dan pendaftaran layanan tumbuh kembang, silakan hubungi:</h5>
+                                <div class="contact-item-layanan">
+                                    <div class="contact-icon-layanan"><i class="fas fa-phone-alt"></i></div>
+                                    <div class="contact-text">Call Center: <a href="tel:02189116527" class="contact-phone">021 8911 6527</a></div>
+                                </div>
+                                <div class="contact-item-layanan">
+                                    <div class="contact-icon-layanan"><i class="fab fa-whatsapp"></i></div>
+                                    <div class="contact-text">WhatsApp: <a href="tel:081317182223" class="contact-phone">0813 1718 2223</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-detail" id="rose-aesthetic-clinic">
+                        <div class="service-image">
+                            <img src="image/rose_aesthetic_clinic.png" alt="Rose Aesthetic Clinic RS Ridhoka Salma">
+                        </div>
+                        <div class="service-description">
+                            <h3>Rose Aesthetic Clinic</h3>
+                            <p>Rose Aesthetic Clinic adalah layanan kecantikan dan perawatan kulit di bawah naungan RS Ridhoka Salma yang dipimpin oleh <strong>Dr. Tuti Hartati, M.Biomed (AAM)</strong>. Mengusung konsep <em>beauty with safety</em>, kami memberikan perawatan kulit dan tubuh dengan pendekatan medis yang aman, profesional, dan berstandar klinis.</p>
+                            <p>Layanan yang tersedia meliputi:</p>
+                            <ul>
+                                <li>Facial treatment – perawatan wajah untuk membersihkan dan meremajakan kulit</li>
+                                <li>Chemical peeling – untuk mengatasi flek, jerawat, dan kulit kusam</li>
+                                <li>Skin booster – menyegarkan dan melembapkan kulit dari dalam</li>
+                                <li>Thread lift – prosedur tarik benang untuk mengencangkan wajah</li>
+                                <li>Botox – mengurangi kerutan dan garis halus</li>
+                                <li>Radio frequency – mengencangkan kulit dengan energi frekuensi tinggi</li>
+                                <li>Slimming – pembentukan tubuh non-invasif</li>
+                                <li>Filler – menambah volume area wajah tertentu seperti bibir dan pipi</li>
+                                <li>Scar Go Forever – perawatan khusus untuk mengurangi bekas luka</li>
+                                <li>Hair treatment – mengatasi kerontokan dan merangsang pertumbuhan rambut</li>
+                            </ul>
+                            <p>Untuk melihat katalog lengkap treatment kami, silakan buka <a href="https://drive.google.com/file/d/1fF1ShYig5qcLdo85Gf1YDMw8u8FL6fx4/view" target="_blank">tautan ini</a>.</p>
+                    
+                            <div class="contact-box">
+                                <h5>Reservasi treatment dan konsultasi bisa langsung melalui WhatsApp berikut:</h5>
+                                <div class="contact-item-layanan">
+                                    <div class="contact-icon-layanan"><i class="fab fa-whatsapp"></i></div>
+                                    <div class="contact-text">
+                                        <a href="https://api.whatsapp.com/send/?phone=6285215702554&text&type=phone_number&app_absent=0" class="contact-phone" target="_blank">Hubungi Rose Aesthetic Clinic</a>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    <div class="service-detail" id="endoskopi">
+                        <div class="service-image">
+                            <img src="image/layanan_endoskopi.png" alt="Layanan Endoskopi RS Ridhoka Salma">
+                        </div>
+                        <div class="service-description">
+                            <h3>Endoskopi</h3>
+                            <p>Unit endoskopi RS Ridhoka Salma melayani prosedur diagnostik dan terapeutik untuk melihat kondisi organ dalam secara langsung, tanpa perlu pembedahan besar. Prosedur ini dilakukan menggunakan alat endoskop yang dimasukkan melalui saluran tubuh seperti mulut atau anus, dan memungkinkan dokter mendeteksi kelainan dengan cepat dan akurat.</p>
+                    
+                            <p>Layanan endoskopi yang tersedia antara lain:</p>
+                            <ul>
+                                <li><strong>Gastroskopi:</strong> pemeriksaan saluran cerna bagian atas seperti lambung dan kerongkongan</li>
+                                <li><strong>Kolonoskopi:</strong> pemeriksaan usus besar untuk mendeteksi polip, perdarahan, atau kanker</li>
+                                <li><strong>Prosedur biopsi:</strong> pengambilan sampel jaringan selama endoskopi untuk dianalisis lebih lanjut</li>
+                                <li><strong>Terapi perdarahan saluran cerna:</strong> seperti pemasangan klip atau injeksi zat hemostatik</li>
+                            </ul>
+                    
+                            <p>Seluruh prosedur dilakukan oleh dokter spesialis penyakit dalam konsultan gastroenterologi, dengan persiapan yang aman dan monitoring ketat. Hasil pemeriksaan biasanya dapat dievaluasi di hari yang sama.</p>
+                    
+                            <div class="contact-box">
+                                <h5>Untuk informasi jadwal pemeriksaan atau konsultasi endoskopi, hubungi:</h5>
+                                <div class="contact-item-layanan">
+                                    <div class="contact-icon-layanan"><i class="fas fa-phone-alt"></i></div>
+                                    <div class="contact-text">Call Center: <a href="tel:02189116527" class="contact-phone">021 8911 6527</a></div>
+                                </div>
+                                <div class="contact-item-layanan">
+                                    <div class="contact-icon-layanan"><i class="fab fa-whatsapp"></i></div>
+                                    <div class="contact-text">WhatsApp: <a href="tel:081317182223" class="contact-phone">0813 1718 2223</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="service-detail" id="hemodialisa">
+                        <div class="service-image">
+                            <img src="image/layanan_hemodialisa.png" alt="Layanan Hemodialisa RS Ridhoka Salma">
+                        </div>
+                        <div class="service-description">
+                            <h3>Hemodialisa</h3>
+                            <p>Unit Hemodialisa RS Ridhoka Salma melayani pasien dengan gangguan ginjal kronis yang membutuhkan terapi cuci darah secara rutin. Prosedur ini berfungsi untuk menggantikan fungsi ginjal dalam menyaring zat racun, kelebihan cairan, dan elektrolit dari dalam tubuh.</p>
+                    
+                            <p>Fasilitas hemodialisa kami mencakup:</p>
+                            <ul>
+                                <li>Mesin dialisis modern dengan standar keamanan tinggi</li>
+                                <li>Tempat tidur pasien yang nyaman dan area privasi</li>
+                                <li>Tenaga perawat hemodialisa bersertifikat dan dokter jaga</li>
+                                <li>Monitoring tekanan darah dan tanda vital selama prosedur</li>
+                                <li>Edukasi gizi dan perawatan mandiri untuk pasien gagal ginjal</li>
+                            </ul>
+                    
+                            <p>Prosedur cuci darah dilakukan sesuai jadwal rutin dan pasien dimonitor secara ketat selama tindakan. Kami juga menyediakan layanan konsultasi dengan dokter spesialis penyakit dalam konsultan ginjal-hipertensi untuk perencanaan terapi jangka panjang.</p>
+                    
+                            <div class="contact-box">
+                                <h5>Informasi jadwal hemodialisa dan pendaftaran pasien baru dapat diperoleh melalui:</h5>
+                                <div class="contact-item-layanan">
+                                    <div class="contact-icon-layanan"><i class="fas fa-phone-alt"></i></div>
+                                    <div class="contact-text">Call Center: <a href="tel:02189116527" class="contact-phone">021 8911 6527</a></div>
+                                </div>
+                                <div class="contact-item-layanan">
+                                    <div class="contact-icon-layanan"><i class="fab fa-whatsapp"></i></div>
+                                    <div class="contact-text">WhatsApp: <a href="tel:081317182223" class="contact-phone">0813 1718 2223</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <div class="service-detail" id="pelayanan-vaksinasi">
+                        <div class="service-image">
+                            <img src="image/layanan_vaksinasi.png" alt="Pelayanan Vaksinasi RS Ridhoka Salma">
+                        </div>
+                        <div class="service-description">
+                            <h3>Vaksinasi</h3>
+                            <p>RS Ridhoka Salma menyediakan layanan vaksinasi untuk berbagai kebutuhan medis, baik untuk pencegahan penyakit infeksi umum, vaksinasi anak, hingga vaksinasi khusus untuk perjalanan umrah dan haji. Pelayanan dilakukan oleh tim medis yang berpengalaman dan sesuai dengan standar Kementerian Kesehatan.</p>
+                    
+                            <p>Jenis vaksin yang tersedia antara lain:</p>
+                            <ul>
+                                <li><strong>Vaksin meningitis:</strong> wajib bagi jamaah haji dan umrah, untuk mencegah infeksi bakteri Neisseria meningitidis</li>
+                                <li><strong>Vaksin influenza:</strong> mencegah flu musiman, penting bagi lansia, jamaah umrah/haji, dan pasien komorbid</li>
+                                <li><strong>Vaksin polio (oral/injeksi):</strong> khususnya bagi jamaah ke negara endemik polio</li>
+                                <li><strong>Vaksin hepatitis, DPT, HPV, dan vaksin anak:</strong> tersedia berdasarkan jadwal dan kebutuhan pasien</li>
+                            </ul>
+                    
+                            <p>Sertifikat vaksinasi resmi dan kartu kuning (IHR Yellow Card) untuk haji/umrah dapat langsung diterbitkan setelah penyuntikan. Jadwal vaksin fleksibel dan dapat disesuaikan dengan kebutuhan Anda atau keluarga.</p>
+                    
+                            <div class="contact-box">
+                                <h5>Untuk informasi jenis vaksin, jadwal, dan pendaftaran, hubungi:</h5>
+                                <div class="contact-item-layanan">
+                                    <div class="contact-icon-layanan"><i class="fas fa-phone-alt"></i></div>
+                                    <div class="contact-text">Call Center: <a href="tel:02189116527" class="contact-phone">021 8911 6527</a></div>
+                                </div>
+                                <div class="contact-item-layanan">
+                                    <div class="contact-icon-layanan"><i class="fab fa-whatsapp"></i></div>
+                                    <div class="contact-text">WhatsApp: <a href="tel:081317182223" class="contact-phone">0813 1718 2223</a></div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    
+                    
+                    <!-- Rawat Inap Content -->
+                    <div class="service-detail" id="kelas-evvip">
+                        <div class="service-image">
+                            <img src="image/ranap_eksekutifvvip.png" alt="Ruang Rawat VVIP RS Ridhoka Salma">
+                        </div>
+                        <div class="service-description">
+                            <h3>Kamar Eksekutif VVIP</h3>
+                            <p>Kamar Eksekutif VVIP merupakan kamar perawatan paling eksklusif di RS Ridhoka Salma. Dirancang untuk menghadirkan kenyamanan dan privasi maksimal, kamar ini cocok bagi pasien yang menginginkan fasilitas premium serta ruang perawatan yang lapang dan representatif untuk keluarga yang mendampingi.</p>
+                            <p>Fasilitas di dalam kamar meliputi:</p>
+                            <ul>
+                                <li>1 bed elektrik</li>
+                                <li>Bantal dan guling</li>
+                                <li>Selimut</li>
+                                <li>Bedside cabinet</li>
+                                <li>Kursi tunggu</li>
+                                <li>Sofa bed dan bantal sofa</li>
+                                <li>TV dan AC</li>
+                                <li>Lemari pakaian dan lemari es 2 pintu</li>
+                                <li>Meja makan</li>
+                                <li>Water heater (pemanas air)</li>
+                                <li>Perlengkapan mandi dan perlengkapan salat</li>
+                                <li>Free Wi-Fi</li>
+                                <li>Free souvenir</li>
+                            </ul>
+                        </div>                        
+                    </div>
+              
+
+                    <div class="service-detail" id="kelas-evip">
+                        <div class="service-image">
+                            <img src="image/ranap_eksekutifvip.png" alt="Ruang Rawat VVIP RS Ridhoka Salma">
+                        </div>
+                        <div class="service-description">
+                            <h3>Kamar Eksekutif VIP</h3>
+                            <p>Kamar Eksekutif VIP menawarkan kenyamanan kelas atas bagi pasien yang menginginkan privasi, fasilitas lengkap, dan suasana tenang selama masa perawatan. Dengan desain ruang modern dan fungsional, kamar ini cocok untuk pasien pribadi atau eksekutif.</p>
+                            <p>Fasilitas di dalam kamar meliputi:</p>
+                            <ul>
+                                <li>1 bed elektrik</li>
+                                <li>Bantal dan guling</li>
+                                <li>Selimut</li>
+                                <li>Bedside cabinet</li>
+                                <li>Kursi tunggu</li>
+                                <li>Sofa bed dan bantal sofa</li>
+                                <li>TV dan AC</li>
+                                <li>Lemari pakaian dan lemari es mini</li>
+                                <li>Water heater</li>
+                                <li>Perlengkapan mandi dan perlengkapan salat</li>
+                                <li>Free Wi-Fi</li>
+                                <li>Free souvenir</li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+
+                
+
+                    <div class="service-detail" id="kelas-vvip">
+                        <div class="service-image">
+                            <img src="image/ranap_vvip.png" alt="Ruang Rawat VVIP RS Ridhoka Salma">
+                        </div>
+                        <div class="service-description">
+                            <h3>Kamar VVIP</h3>
+                            <p>Kamar VVIP dirancang untuk memberikan kenyamanan dengan fasilitas lengkap dalam suasana ruang privat yang tenang dan mendukung proses penyembuhan. Kamar ini cocok untuk pasien dengan kebutuhan istirahat berkualitas dan privasi lebih tinggi.</p>
+                            <p>Fasilitas di dalam kamar meliputi:</p>
+                            <ul>
+                                <li>Tempat tidur</li>
+                                <li>Kursi tunggu dan sofa set</li>
+                                <li>Nakas lemari</li>
+                                <li>Kulkas</li>
+                                <li>Meja makan pasien</li>
+                                <li>Kitchen set</li>
+                                <li>AC dan TV</li>
+                                <li>Kamar mandi dengan shower air panas dan dingin</li>
+                                <li>Oksigen sentral</li>
+                                <li>Bell pasien</li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+
+                    <div class="service-detail" id="kelas-vip">
+                        <div class="service-image">
+                            <img src="image/ranap_vip.png" alt="Ruang Rawat VVIP RS Ridhoka Salma">
+                        </div>
+                        <div class="service-description">
+                            <h3>Kamar VIP</h3>
+                            <p>Kamar VIP RS Ridhoka Salma menawarkan ruang rawat inap pribadi yang nyaman dan modern. Didesain untuk mendukung pemulihan optimal pasien dengan fasilitas lengkap yang menunjang aktivitas sehari-hari.</p>
+                            <p>Fasilitas di dalam kamar meliputi:</p>
+                            <ul>
+                                <li>Tempat tidur</li>
+                                <li>Kursi tunggu dan sofa</li>
+                                <li>Nakas lemari dan kulkas</li>
+                                <li>Meja makan pasien</li>
+                                <li>Kitchen set</li>
+                                <li>AC dan TV</li>
+                                <li>Kamar mandi dengan shower</li>
+                                <li>Oksigen sentral</li>
+                                <li>Bell pasien</li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+
+
+                    <div class="service-detail" id="kelas-utama">
+                        <div class="service-image">
+                            <img src="image/ranap_utama.png" alt="Ruang Rawat VVIP RS Ridhoka Salma">
+                        </div>
+                        <div class="service-description">
+                            <h3>Kamar Utama</h3>
+                            <p>Kamar Utama menyediakan kenyamanan standar bagi pasien yang menginginkan fasilitas pribadi dengan harga terjangkau. Dengan suasana yang tenang dan perawatan optimal, kamar ini cocok untuk berbagai kebutuhan rawat inap.</p>
+                            <p>Fasilitas di dalam kamar meliputi:</p>
+                            <ul>
+                                <li>Tempat tidur</li>
+                                <li>Kursi tunggu</li>
+                                <li>Nakas lemari</li>
+                                <li>Kulkas</li>
+                                <li>AC dan TV</li>
+                                <li>Kamar mandi dengan shower</li>
+                                <li>Oksigen sentral</li>
+                                <li>Bell pasien</li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+
+                    <div class="service-detail" id="kelas-1">
+                        <div class="service-image">
+                            <img src="image/ranap_kelas1.png" alt="Ruang Rawat VVIP RS Ridhoka Salma">
+                        </div>
+                        <div class="service-description">
+                            <h3>Kamar Kelas 1</h3>
+                            <p>Kamar Kelas 1 RS Ridhoka Salma merupakan pilihan rawat inap dengan dua tempat tidur dalam satu ruangan. Kamar ini cocok untuk pasien yang tetap ingin kenyamanan pribadi namun dalam skema perawatan bersama. Setiap pasien tetap mendapatkan pelayanan setara dengan pengawasan medis yang optimal.</p>
+                            <p>Fasilitas di dalam kamar meliputi:</p>
+                            <ul>
+                                <li>Tempat tidur (2 bed)</li>
+                                <li>Kursi tunggu</li>
+                                <li>Nakas lemari</li>
+                                <li>Kulkas</li>
+                                <li>AC dan TV</li>
+                                <li>Kamar mandi dengan shower</li>
+                                <li>Oksigen sentral</li>
+                                <li>Bell pasien</li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+
+                    <div class="service-detail" id="kelas-2">
+                        <div class="service-image">
+                            <img src="image/ranap_kelas2.png" alt="Ruang Rawat VVIP RS Ridhoka Salma">
+                        </div>
+                        <div class="service-description">
+                            <h3>Kamar Kelas 2</h3>
+                            <p>Kamar Kelas 2 diperuntukkan bagi pasien yang dirawat bersama dalam satu ruangan berisi tiga tempat tidur. Meskipun bersifat bersama, pasien tetap mendapatkan pelayanan profesional dan fasilitas dasar yang memadai untuk mendukung kenyamanan selama perawatan.</p>
+                            <p>Fasilitas di dalam kamar meliputi:</p>
+                            <ul>
+                                <li>Tempat tidur (3 bed)</li>
+                                <li>Kursi tunggu</li>
+                                <li>Nakas lemari</li>
+                                <li>Kulkas mini</li>
+                                <li>AC dan TV</li>
+                                <li>Kamar mandi dengan shower</li>
+                                <li>Bell pasien</li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+
+
+                    <div class="service-detail" id="kelas-standar">
+                        <div class="service-image">
+                            <img src="image/ranap_kelasstandar.png" alt="Ruang Rawat VVIP RS Ridhoka Salma">
+                        </div>
+                        <div class="service-description">
+                            <h3>Kamar Kelas Standar</h3>
+                            <p>Kamar Kelas Standar RS Ridhoka Salma merupakan pilihan ekonomis dengan kapasitas 4 hingga 6 tempat tidur per ruangan. Meskipun dalam bentuk kamar bersama, kebersihan dan kenyamanan tetap dijaga, serta pasien tetap mendapatkan pengawasan medis yang teratur.</p>
+                            <p>Fasilitas di dalam kamar meliputi:</p>
+                            <ul>
+                                <li>Tempat tidur (4–6 bed)</li>
+                                <li>Kursi tunggu</li>
+                                <li>Nakas lemari</li>
+                                <li>Kulkas</li>
+                                <li>2 unit AC</li>
+                                <li>TV</li>
+                                <li>Kamar mandi dengan shower</li>
+                                <li>Bell pasien</li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+
+
+                    <div class="service-detail" id="kelas-isolasi">
+                        <div class="service-image">
+                            <img src="image/ranap_kelasisolasi.png" alt="Ruang Rawat VVIP RS Ridhoka Salma">
+                        </div>
+                        <div class="service-description">
+                            <h3>Ruang Isolasi</h3>
+                            <p>Ruang Isolasi disediakan untuk pasien dengan penyakit menular atau kondisi yang memerlukan pemisahan dari pasien lain. Setiap ruang isolasi dilengkapi fasilitas penunjang pemantauan pasien dan kebersihan udara, dengan tetap menjaga kenyamanan pasien selama masa perawatan.</p>
+                            <p>Fasilitas di dalam kamar meliputi:</p>
+                            <ul>
+                                <li>Tempat tidur (2–4 bed)</li>
+                                <li>Kursi tunggu</li>
+                                <li>Nakas lemari</li>
+                                <li>Kulkas mini</li>
+                                <li>AC dan TV</li>
+                                <li>Kamar mandi dengan shower</li>
+                                <li>Bell pasien</li>
+                            </ul>
+                        </div>
+                        
+                    </div>
+
+
+                </div>
+            </div>
+        </div>
+    </section>
+  
+    <!---------------------------------------------------------------------------------------------------------------------------->
+<!-- Footer -->
+<footer class="footer">
+    <link rel="stylesheet" href="css/footer_style.css">
+    <div class="container">
+        <!-- Top Row: Logo, Info dan Kontak -->
+        <div class="footer-top">
+            <div class="footer-logo">
+                <img src="image/logo_header.png" alt="RS Ridhoka Salma Logo">
+            </div>
+            <div class="footer-address">
+                <p>Jl. Raya Imam Bonjol No.7, Kalijaya,<br>
+                   Kec. Cikarang Bar., Kabupaten<br>
+                   Bekasi, Jawa Barat 17530</p>
+            </div>
+            <div class="footer-contact">
+                <div class="contact-wrapper">
+                    <table class="contact-table">
+                        <tr>
+                            <td class="contact-label">IGD 24 Jam</td>
+                            <td class="contact-separator">:</td>
+                            <td class="contact-value">
+                                <a href="https://wa.me/628118252322" style="color: inherit; text-decoration: none;">0811 8252 322</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="contact-label">Telepon</td>
+                            <td class="contact-separator">:</td>
+                            <td class="contact-value">
+                                <a href="tel:+622189116527" style="color: inherit; text-decoration: none;">021 8911 6527</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="contact-label">WhatsApp</td>
+                            <td class="contact-separator">:</td>
+                            <td class="contact-value">
+                                <a href="https://wa.me/6281317182223" style="color: inherit; text-decoration: none;">0813 1718 2223</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="contact-label">E-mail</td>
+                            <td class="contact-separator">:</td>
+                            <td class="contact-value no-space">
+                                <a href="mailto:info@rsridhokasalma.com" style="color: inherit; text-decoration: none;">info@rsridhokasalma.com</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Divider -->
+        <div class="footer-divider"></div>
+        
+        <!-- Footer Menu -->
+        <div class="footer-menu">
+            <div class="footer-menu-column">
+                <h4>Tentang Kami</h4>
+                <ul>
+                    <li><a href="halaman_sejarah.html">Sejarah</a></li>
+                    <li><a href="halaman_visi_misi.html">Visi Misi</a></li>
+                    <li><a href="halaman_struktur_organisasi.html">Struktur Organisasi</a></li>
+                    <li><a href="halaman_akreditasi.html">Akreditasi dan Penghargaan</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-menu-column">
+                <h4>Layanan</h4>
+                <ul>
+                    <li><a href="halaman_layanan.html?tab=fasilitas">Fasilitas</a></li>
+                    <li><a href="halaman_layanan.html?tab=layanan-unggulan">Layanan Unggulan</a></li>
+                    <li><a href="halaman_layanan.html?tab=rawat-inap">Rawat Inap</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-menu-column">
+                <h4>Informasi</h4>
+                <ul>
+                    <li><a href="halaman_promosi.html">Promosi</a></li>
+                    <li><a href="halaman_artikel_kesehatan.html">Artikel Kesehatan</a></li>
+                    <li><a href="halaman_artikel_islami.html">Artikel Islami</a></li>
+                    <li><a href="halaman_event.html">Event</a></li>
+                    <li><a href="halaman_karir.html">Karir</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-menu-column">
+                <h4>Kesyariahan</h4>
+                <ul>
+                    <li><a href="halaman_kms.html">Kebijakan Mutu Syariah</a></li>
+                    <li><a href="halaman_program_kesyariahan.html">Program Kesyariahan</a></li>
+                    <li><a href="halaman_konsultasi_syariah.html">Konsultasi Syariah</a></li>
+                    <li><a href="halaman_profil_dps.html">Profil DPS dan Komite Syariah</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Divider -->
+        <div class="footer-divider"></div>
+        
+        <!-- Social Media -->
+        <div class="footer-social">
+            <div class="social-label">Ikuti Kami</div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/rumahsakitridhokasalma/?locale=id_ID" class="social-icon">
+                    <img width="20" height="20" src="https://img.icons8.com/ios-filled/150/ffffff/facebook-new.png" alt="facebook-new"/>
+                </a>
+                <a href="https://www.instagram.com/ridhokasalma/" class="social-icon">
+                    <img width="192" height="192" src="https://img.icons8.com/material-outlined/192/ffffff/instagram-new--v1.png" alt="instagram-new--v1"/>    
+                </a>
+                <a href="https://www.youtube.com/@rs.ridhokasalma2727" class="social-icon">
+                    <img width="150" height="150" src="https://img.icons8.com/ios-filled/150/ffffff/youtube-play.png" alt="youtube-play"/>
+                </a>
+                <a href="https://www.tiktok.com/@ridhokasalma" class="social-icon">
+                    <img width="150" height="150" src="https://img.icons8.com/ios-filled/150/ffffff/tiktok--v1.png" alt="tiktok--v1"/>
+                </a>
+                <a href="https://x.com/ridhokasalma" class="social-icon">
+                    <img width="150" height="150" src="https://img.icons8.com/ios-filled/150/ffffff/twitterx--v2.png" alt="twitterx--v2"/>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="footer-copyright">
+            <p>&copy; 2025 RS Ridhoka Salma. All Right Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- HTML untuk Floating WhatsApp Button -->
+<div class="floating-whatsapp">
+    
+    <div class="whatsapp-button" id="whatsappButton">
+        <img src="image/icon_whatsapp.png" alt="WhatsApp Icon" class="whatsapp-icon">
+    </div>
+    <div class="whatsapp-popup" id="whatsappPopup">
+      <div class="whatsapp-popup-header">Mulai Percakapan</div>
+      <p class="whatsapp-popup-text">Klik nomor Customer Care kami untuk memulai percakapan di <strong>WhatsApp</strong>:</p>
+      <a href="https://wa.me/6281317182223" class="whatsapp-popup-number" target="_blank">0813 1718 2223</a>
+    </div>
+  </div>
+
+ <!-- JavaScript untuk WhatsApp Button -->
+    <script src="javascript/floating_button.js"></script>
+<!---------------------------------------------------------------------------------------------------------------------------->
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    
+    <!-- Custom JS -->
+    <script>
+        
+  
+  function adjustContentForHeader() {
+    const header = document.querySelector('.sticky-header');
+    const bannerSection = document.querySelector('.banner-section');
+    
+    if (!header || !bannerSection) return;
+
+    setTimeout(() => {
+        const headerRect = header.getBoundingClientRect();
+        const headerHeight = headerRect.height;
+        
+        bannerSection.style.marginTop = headerHeight + 'px';
+
+        document.body.style.paddingTop = '0';
+    }, 10);
+}
+
+document.addEventListener('DOMContentLoaded', adjustContentForHeader);
+window.addEventListener('load', adjustContentForHeader);
+window.addEventListener('resize', () => {
+    clearTimeout(window.resizeTimeout);
+    window.resizeTimeout = setTimeout(adjustContentForHeader, 100);
+});
+
+        document.addEventListener('DOMContentLoaded', function() {
+            // Tab Navigation
+            const tabButtons = document.querySelectorAll('.tab-button');
+            const servicesMenus = {
+                'fasilitas': document.getElementById('fasilitas-menu'),
+                'layanan-unggulan': document.getElementById('layanan-unggulan-menu'),
+                'rawat-inap': document.getElementById('rawat-inap-menu')
+            };
+            
+            // Service Buttons
+            const allServiceButtons = document.querySelectorAll('.service-button');
+            const serviceDetails = document.querySelectorAll('.service-detail');
+            
+            // Initial Active Services
+            const initialServices = {
+                'fasilitas': 'igd',
+                'layanan-unggulan': 'mcu',
+                'rawat-inap': 'kelas-evvip'
+            };
+            
+            // Tab Click Handler
+            tabButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const tabId = this.getAttribute('data-tab');
+                    
+                    // Update active tab
+                    tabButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Update visible menu
+                    Object.keys(servicesMenus).forEach(menuId => {
+                        servicesMenus[menuId].style.display = menuId === tabId ? 'block' : 'none';
+                    });
+                    
+                    // Reset service buttons in all menus
+                    allServiceButtons.forEach(btn => btn.classList.remove('active'));
+                    
+                    // Set active service button and detail for current tab
+                    const activeServiceId = initialServices[tabId];
+                    const activeServiceButton = document.querySelector(`.service-button[data-service="${activeServiceId}"]`);
+                    if (activeServiceButton) {
+                        activeServiceButton.classList.add('active');
+                    }
+                    
+                    // Update visible service detail
+                    serviceDetails.forEach(detail => {
+                        detail.classList.remove('active');
+                        if (detail.id === activeServiceId) {
+                            detail.classList.add('active');
+                        }
+                    });
+                });
+            });
+            
+            // Service Button Click Handler
+            allServiceButtons.forEach(button => {
+                button.addEventListener('click', function() {
+                    const serviceId = this.getAttribute('data-service');
+                    
+                    // Update active service button
+                    allServiceButtons.forEach(btn => btn.classList.remove('active'));
+                    this.classList.add('active');
+                    
+                    // Update visible service detail
+                    serviceDetails.forEach(detail => {
+                        detail.classList.remove('active');
+                        if (detail.id === serviceId) {
+                            detail.classList.add('active');
+                        }
+                    });
+                });
+            });
+
+            const urlParams = new URLSearchParams(window.location.search);
+    const tabParam = urlParams.get('tab');
+    
+    if (tabParam) {
+        const tabButton = document.querySelector(`.tab-button[data-tab="${tabParam}"]`);
+        if (tabButton) {
+            tabButton.click();
+        }
+    }
+        });
+    </script>
+</body>
+</html>

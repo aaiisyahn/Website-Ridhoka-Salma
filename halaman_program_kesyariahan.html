@@ -1,0 +1,631 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Program Kesyariahan - RS Ridhoka Salma</title>
+    <link rel="icon" href="image/logo.png" type="image/png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Google Fonts - Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+     <!-- Floating Button CSS -->
+     <link rel="stylesheet" href="css/floating_button_style.css">
+    <style>
+        body {
+            font-family: 'Montserrat', sans-serif;
+        }
+        .content-container {
+            max-width: 1140px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        .breadcrumb-item a {
+            color: #555;
+            text-decoration: none;
+            transition: color 0.3s;
+            font-size: 14px !important;
+        }
+        .breadcrumb-item a:hover {
+            color: #00928F;
+        }
+        .breadcrumb-item.active {
+            font-weight: 500;
+            color: #333;
+            font-size: 14px !important;
+        }
+        .banner-container {
+            background-color: #f5f5f5;
+            position: relative;
+            overflow: hidden;
+            max-height: 180px;
+        }
+        .banner-container img {
+            width: 100%;
+            height: auto;
+            max-height: 180px;
+            object-fit: cover;
+        }
+        .banner-text {
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            right: 0;
+            padding: 15px 20px;
+            background: rgba(0, 146, 143, 0.8);
+            color: white;
+        }
+        .page-title{
+            color: #333 !important;
+            font-weight: 600;
+            font-size: 24px !important;
+        }
+        .page-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #00928F;
+    margin-top: 8px;
+}
+
+        
+        h2 {
+            color: #00928F;
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-top: 2rem;
+
+        }
+        .program-item {
+            margin-bottom: 0.5rem;
+        }
+        .program-icon {
+            color: #00928F;
+            margin-right: 10px;
+        }
+        .program-card {
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+            height: 100%;
+            transition: transform 0.3s;
+            margin-bottom: 0 !important;
+        }
+        .program-card:hover {
+            transform: translateY(-5px);
+        }
+        .program-card img {
+            height: 200px;
+            object-fit: cover;
+        }
+        .program-card .card-body {
+            padding: 1.5rem;
+        }
+        .btn-primary {
+            background-color: #00928F;
+            border-color: #00928F;
+        }
+        .btn-primary:hover {
+            background-color: #007A78;
+            border-color: #007A78;
+        }
+        .section-title {
+            position: relative;
+            font-size: 20px;
+            color: #000;
+            padding-bottom: 10px;
+            margin-top: 0px;
+            margin-bottom: 20px;
+        }
+        .section-title::after {
+            content: '';
+            position: absolute;
+            left: 0;
+            bottom: 0;
+            width: 50px;
+            height: 3px;
+            background-color: #00928F;
+        }
+        .h3 {
+    font-size: 16px;
+    font-weight: 400;
+    line-height: 1.6;
+    color: #000;
+    text-align: justify;
+    margin-top: 0 !important;
+}
+
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="sticky-header">
+    <link rel="stylesheet" href="css/header_style.css">
+    <script src="javascript/header.js"></script>
+
+    <div class="header-top">
+      <div class="container-fluid px-0">
+        <div class="row align-items-center">
+          
+          <!-- Logo -->
+          <div class="col-md-4 logo-container">
+            <a href="index.html">
+              <img src="image/logo_header.png" alt="RS Ridhoka Salma Logo" class="logo-img">
+            </a>
+          </div>
+  
+          <!-- Search and Contact Info -->
+          <div class="col-md-8">
+            <div class="search-contact-container">
+  
+      <!-- Search Bar -->
+<div class="search-bar-header">
+    <form class="search-form-header" action="halaman_pencarian.html" method="GET">
+      <div class="search-icon-header">
+        <img src="image/icon_search.png" alt="Search Icon">
+      </div>
+      <input type="text" placeholder="Cari yang Anda Butuhkan di Sini" class="search-input-header" name="q">
+      <button type="submit" class="search-button-header">Cari</button>
+    </form>
+  </div>
+  
+              <!-- Contact Center -->
+              <div class="contact-center-header">
+                
+                <div class="contact-title-header">Hubungi Kami</div>
+                
+                <div class="contact-items-header">
+                  <div class="contact-item-header">
+                    <a href="tel:+622189116527"  class="contact-link-header">
+                    <img src="image/icon_call.png" alt="Phone Icon" class="icon-contact-header"-header>
+                    <span>021 8911 6527</span>
+                    </a>
+                  </div>
+                  <div class="contact-item-header">
+                    <a href="https://wa.me/628118252322"  class="contact-link-header">
+                    <img src="image/icon_emergency.png" alt="Ambulance Icon" class="icon-contact-header">
+                    <span>0811 8252 322</span>
+                    </a>
+                  </div>
+                </div>
+  
+              </div>
+  
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+ 
+
+    <!-- Navigation Bar -->
+<nav style="background-color: #00928F; padding: 0;">
+    <div class="container">
+        <!-- Hamburger Menu untuk tampilan mobile -->
+        <div class="mobile-menu-toggle">
+            <span>Menu</span>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <div class="nav-container">
+            <ul class="main-menu">
+                <li class="menu-item">
+                    <a href="index.html" class="menu-link">Beranda</a>
+                </li>
+                
+                <!-- Menu Tentang Kami -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Tentang Kami 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="halaman_sejarah.html">Sejarah</a></li>
+                        <li><a href="halaman_visi_misi.html">Visi Misi</a></li>
+                        <li><a href="halaman_struktur_organisasi.html">Struktur Organisasi</a></li>
+                        <li><a href="halaman_akreditasi.html">Akreditasi dan Penghargaan</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Menu Layanan -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Layanan 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="halaman_layanan.html?tab=fasilitas">Fasilitas</a></li>
+                        <li><a href="halaman_layanan.html?tab=layanan-unggulan">Layanan Unggulan</a></li>
+                        <li><a href="halaman_layanan.html?tab=rawat-inap">Rawat Inap</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Menu Spesialis -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Spesialis Kami 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_klinik_spesialis.php?id=1">Kebidanan dan Kandungan</a></li>
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_klinik_spesialis.php?id=2">Anak</a></li>
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_klinik_spesialis.php?id=3">Penyakit Dalam</a></li>
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_klinik_spesialis.php?id=4">Bedah Umum</a></li>
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_spesialis.php">Lihat Semua</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Menu Informasi -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Informasi 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="halaman_promosi.html">Promosi</a></li>
+                        <li><a href="halaman_artikel_kesehatan.html">Artikel Kesehatan</a></li>
+                        <li><a href="halaman_artikel_islami.html">Artikel Islami</a></li>
+                        <li><a href="halaman_event.html">Event</a></li>
+                        <li><a href="halaman_karir.html">Karir</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Menu Kesyariahan -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Kesyariahan 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="halaman_kms.html">Kebijakan Mutu Syariah</a></li>
+                        <li><a href="halaman_program_kesyariahan.html">Program Kesyariahan</a></li>
+                        <li><a href="halaman_konsultasi_syariah.html">Konsultasi Syariah</a></li>
+                        <li><a href="halaman_profil_dps.html">Profil DPS dan Komite Syariah</a></li>
+                    </ul>
+                </li>
+                
+                <li class="menu-item">
+                    <a href="http://localhost/WebsiteRidhokaSalma/halaman_cari_dokter.php" class="menu-link">Cari Dokter</a>
+                </li>
+                <li class="menu-item">
+                    <a href="http://localhost/WebsiteRidhokaSalma/halaman_janji_temu.php" class="menu-link">Janji Temu</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+</header>
+
+    <!-- Main Content -->
+    <main>
+        <!-- Banner -->
+        <div class="banner-container mb-4">
+            <img src="image/banner_ps.png" alt="Banner Program Kesyariahan">
+        </div>
+        <div class="content-container">
+        <div class="container mb-5">
+            <!-- Breadcrumb -->
+            <div class="row">
+                <div class="col-12">
+                    <nav aria-label="breadcrumb">
+                        <ol class="breadcrumb">
+                            <li class="breadcrumb-item"><a href="index.html">Beranda</a></li>
+                            <li class="breadcrumb-item"><a href="#">Kesyariahan</a></li>
+                            <li class="breadcrumb-item active">Program Kesyariahan</li>
+                        </ol>
+                    </nav>
+                </div>
+            </div>
+    
+            <!-- Page Title -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h1 class="page-title">Program Kesyariahan RS Ridhoka Salma</h1>
+                </div>
+            </div>
+
+            <!-- Program Gallery -->
+            <div class="row mb-5">
+                <div class="col-md-4 mb-4">
+                    <div class="program-card">
+                        <img src="image/programsyariah_1.png" alt="Program Kesyariahan Internal" class="card-img-top">
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="program-card">
+                        <img src="image/programsyariah_2.png" alt="Program Kesyariahan Eksternal" class="card-img-top">
+                    </div>
+                </div>
+                <div class="col-md-4 mb-4">
+                    <div class="program-card">
+                        <img src="image/programsyariah_3.png" alt="Komite Syariah" class="card-img-top">
+                    </div>
+                </div>
+            </div>
+
+            <!-- Description -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <p class="h3">
+                        RS Ridhoka Salma menyediakan berbagai layanan medis dengan dukungan dokter spesialis yang berpengalaman. 
+                        Kami berkomitmen memberikan perawatan terbaik bagi Anda dan keluarga, dengan layanan kesehatan yang 
+                        menjunjung tinggi nilai-nilai syariah.
+                    </p>
+                </div>
+            </div>
+
+            <!-- Program Kesyariahan Internal -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h2 class="section-title">Program Kesyariahan Internal</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="program-item"><i class="fas fa-check-circle program-icon"></i> Program Tahsin/Tahfizh Al-Qur'an</li>
+                                <li class="program-item"><i class="fas fa-check-circle program-icon"></i> Program Budaya Tilawah Al-Qur'an Setiap Pagi</li>
+                                <li class="program-item"><i class="fas fa-check-circle program-icon"></i> Program Sholat Berjama'ah (dzuhur & ashar)</li>
+                                <li class="program-item"><i class="fas fa-check-circle program-icon"></i> Diklat Mandatory Training Fikih Pasien</li>
+                                <li class="program-item"><i class="fas fa-check-circle program-icon"></i> Kredensial Syariah (Uji Kompetensi Syariah)</li>
+                                <li class="program-item"><i class="fas fa-check-circle program-icon"></i> Program Semarak Ramadhan</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="program-item"><i class="fas fa-check-circle program-icon"></i> Program Idul Qurban</li>
+                                <li class="program-item"><i class="fas fa-check-circle program-icon"></i> Reward Bulanan Santri/wati terbaik dari para karyawan</li>
+                                <li class="program-item"><i class="fas fa-check-circle program-icon"></i> Reward Tahunan Ibadah Umroh</li>
+                                <li class="program-item"><i class="fas fa-check-circle program-icon"></i> Haflah Tahfizh Al-Qur'an Juz 30 para karyawan</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Program Kesyariahan Eksternal -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h2 class="section-title">Program Kesyariahan Eksternal (Pasien)</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="program-item"><i class="fas fa-check-circle program-icon"></i> Layanan Pendoa Pasien Rawat Inap setiap harinya</li>
+                                <li class="program-item"><i class="fas fa-check-circle program-icon"></i> Pendampingan doa pasien sebelum tindakan dan minum obat</li>
+                                <li class="program-item"><i class="fas fa-check-circle program-icon"></i> Bimbingan thaharah (wudhu/tayamum) dan sholat pasien</li>
+                                <li class="program-item"><i class="fas fa-check-circle program-icon"></i> Pendampingan talqin pasien sakaratul maut</li>
+                                <li class="program-item"><i class="fas fa-check-circle program-icon"></i> Pemasangan DC dan EKG sesuai gender</li>
+                                <li class="program-item"><i class="fas fa-check-circle program-icon"></i> Fasilitas & sarana prasarana ruangan memenuhi standar syariah</li>
+                                <li class="program-item"><i class="fas fa-check-circle program-icon"></i> Kebijakan jaminan halal di gizi, farmasi, linen, dan produk chemical lainnya</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="program-item"><i class="fas fa-check-circle program-icon"></i> Surat Kecil Pasien (hadis/quotes islami) di setiap wantu makan pasien rawat inap</li>
+                                <li class="program-item"><i class="fas fa-check-circle program-icon"></i> Pemutaran murottal Al-Qur'an</li>
+                                <li class="program-item"><i class="fas fa-check-circle program-icon"></i> Channel TV Edukasi Islami</li>
+                                <li class="program-item"><i class="fas fa-check-circle program-icon"></i> Lembar Leaflet Edukasi Islam</li>
+                                <li class="program-item"><i class="fas fa-check-circle program-icon"></i> Media Dakwah</li>
+                                <li class="program-item"><i class="fas fa-check-circle program-icon"></i> Syuhada Mini Library Corner</li>
+                                <li class="program-item"><i class="fas fa-check-circle program-icon"></i> Pemulasaran Jenazah</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Program Komite Syariah -->
+            <div class="row mb-4">
+                <div class="col-12">
+                    <h2 class="section-title">Program-program Komite Syariah</h2>
+                    <div class="row">
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="program-item"><i class="fas fa-check-circle program-icon"></i> Mutu Syariah</li>
+                                <li class="program-item"><i class="fas fa-check-circle program-icon"></i> Rekomendasi Syariah</li>
+                                <li class="program-item"><i class="fas fa-check-circle program-icon"></i> Kredensial Syariah (Uji Kompetensi Syariah)</li>
+                                <li class="program-item"><i class="fas fa-check-circle program-icon"></i> Diklat Mandatory Training Fikih Pasien</li>
+                                <li class="program-item"><i class="fas fa-check-circle program-icon"></i> Ronde Syariah (audit internal kesyariahan)</li>
+                                <li class="program-item"><i class="fas fa-check-circle program-icon"></i> Konsolidasi Kesyariahan dengan DPS dan Manajemen RS</li>
+                            </ul>
+                        </div>
+                        <div class="col-md-6">
+                            <ul class="list-unstyled">
+                                <li class="program-item"><i class="fas fa-check-circle program-icon"></i> Edukasi Islam (Leaflet/buku/jurnal/majalah)</li>
+                                <li class="program-item"><i class="fas fa-check-circle program-icon"></i> Media Dakwah (konten-konten islam dan kesyariahan)</li>
+                                <li class="program-item"><i class="fas fa-check-circle program-icon"></i> Surat Kecil Pasien (hadis/quotes islami) di setiap waktu makan pasien rawat inap</li>
+                                <li class="program-item"><i class="fas fa-check-circle program-icon"></i> Syuhada Mini Library Corner</li>
+                                <li class="program-item"><i class="fas fa-check-circle program-icon"></i> Khitan Mubarak: Sedekah Khitan Gratis</li>
+                                <li class="program-item"><i class="fas fa-check-circle program-icon"></i> Program DKM Majelis Dzikir Al-Ghanny</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        </div>
+    </main>
+
+<!---------------------------------------------------------------------------------------------------------------------------->
+<!-- Footer -->
+<footer class="footer">
+    <link rel="stylesheet" href="css/footer_style.css">
+    <div class="container">
+        <!-- Top Row: Logo, Info dan Kontak -->
+        <div class="footer-top">
+            <div class="footer-logo">
+                <img src="image/logo_header.png" alt="RS Ridhoka Salma Logo">
+            </div>
+            <div class="footer-address">
+                <p>Jl. Raya Imam Bonjol No.7, Kalijaya,<br>
+                   Kec. Cikarang Bar., Kabupaten<br>
+                   Bekasi, Jawa Barat 17530</p>
+            </div>
+            <div class="footer-contact">
+                <div class="contact-wrapper">
+                    <table class="contact-table">
+                        <tr>
+                            <td class="contact-label">IGD 24 Jam</td>
+                            <td class="contact-separator">:</td>
+                            <td class="contact-value">
+                                <a href="https://wa.me/628118252322" style="color: inherit; text-decoration: none;">0811 8252 322</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="contact-label">Telepon</td>
+                            <td class="contact-separator">:</td>
+                            <td class="contact-value">
+                                <a href="tel:+622189116527" style="color: inherit; text-decoration: none;">021 8911 6527</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="contact-label">WhatsApp</td>
+                            <td class="contact-separator">:</td>
+                            <td class="contact-value">
+                                <a href="https://wa.me/6281317182223" style="color: inherit; text-decoration: none;">0813 1718 2223</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="contact-label">E-mail</td>
+                            <td class="contact-separator">:</td>
+                            <td class="contact-value no-space">
+                                <a href="mailto:info@rsridhokasalma.com" style="color: inherit; text-decoration: none;">info@rsridhokasalma.com</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Divider -->
+        <div class="footer-divider"></div>
+        
+        <!-- Footer Menu -->
+        <div class="footer-menu">
+            <div class="footer-menu-column">
+                <h4>Tentang Kami</h4>
+                <ul>
+                    <li><a href="halaman_sejarah.html">Sejarah</a></li>
+                    <li><a href="halaman_visi_misi.html">Visi Misi</a></li>
+                    <li><a href="halaman_struktur_organisasi.html">Struktur Organisasi</a></li>
+                    <li><a href="halaman_akreditasi.html">Akreditasi dan Penghargaan</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-menu-column">
+                <h4>Layanan</h4>
+                <ul>
+                    <li><a href="halaman_layanan.html?tab=fasilitas">Fasilitas</a></li>
+                    <li><a href="halaman_layanan.html?tab=layanan-unggulan">Layanan Unggulan</a></li>
+                    <li><a href="halaman_layanan.html?tab=rawat-inap">Rawat Inap</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-menu-column">
+                <h4>Informasi</h4>
+                <ul>
+                    <li><a href="halaman_promosi.html">Promosi</a></li>
+                    <li><a href="halaman_artikel_kesehatan.html">Artikel Kesehatan</a></li>
+                    <li><a href="halaman_artikel_islami.html">Artikel Islami</a></li>
+                    <li><a href="halaman_event.html">Event</a></li>
+                    <li><a href="halaman_karir.html">Karir</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-menu-column">
+                <h4>Kesyariahan</h4>
+                <ul>
+                    <li><a href="halaman_kms.html">Kebijakan Mutu Syariah</a></li>
+                    <li><a href="halaman_program_kesyariahan.html">Program Kesyariahan</a></li>
+                    <li><a href="halaman_konsultasi_syariah.html">Konsultasi Syariah</a></li>
+                    <li><a href="halaman_profil_dps.html">Profil DPS dan Komite Syariah</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Divider -->
+        <div class="footer-divider"></div>
+        
+        <!-- Social Media -->
+        <div class="footer-social">
+            <div class="social-label">Ikuti Kami</div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/rumahsakitridhokasalma/?locale=id_ID" class="social-icon">
+                    <img width="20" height="20" src="https://img.icons8.com/ios-filled/150/ffffff/facebook-new.png" alt="facebook-new"/>
+                </a>
+                <a href="https://www.instagram.com/ridhokasalma/" class="social-icon">
+                    <img width="192" height="192" src="https://img.icons8.com/material-outlined/192/ffffff/instagram-new--v1.png" alt="instagram-new--v1"/>    
+                </a>
+                <a href="https://www.youtube.com/@rs.ridhokasalma2727" class="social-icon">
+                    <img width="150" height="150" src="https://img.icons8.com/ios-filled/150/ffffff/youtube-play.png" alt="youtube-play"/>
+                </a>
+                <a href="https://www.tiktok.com/@ridhokasalma" class="social-icon">
+                    <img width="150" height="150" src="https://img.icons8.com/ios-filled/150/ffffff/tiktok--v1.png" alt="tiktok--v1"/>
+                </a>
+                <a href="https://x.com/ridhokasalma" class="social-icon">
+                    <img width="150" height="150" src="https://img.icons8.com/ios-filled/150/ffffff/twitterx--v2.png" alt="twitterx--v2"/>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="footer-copyright">
+            <p>&copy; 2025 RS Ridhoka Salma. All Right Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- HTML untuk Floating WhatsApp Button -->
+<div class="floating-whatsapp">
+    
+    <div class="whatsapp-button" id="whatsappButton">
+        <img src="image/icon_whatsapp.png" alt="WhatsApp Icon" class="whatsapp-icon">
+    </div>
+    <div class="whatsapp-popup" id="whatsappPopup">
+      <div class="whatsapp-popup-header">Mulai Percakapan</div>
+      <p class="whatsapp-popup-text">Klik nomor Customer Care kami untuk memulai percakapan di <strong>WhatsApp</strong>:</p>
+      <a href="https://wa.me/6281317182223" class="whatsapp-popup-number" target="_blank">0813 1718 2223</a>
+    </div>
+  </div>
+
+ <!-- JavaScript untuk WhatsApp Button -->
+    <script src="javascript/floating_button.js"></script>
+<!---------------------------------------------------------------------------------------------------------------------------->
+
+    <script>
+  
+  function adjustContentForHeader() {
+    const header = document.querySelector('.sticky-header');
+    const bannerSection = document.querySelector('.banner-container');
+    
+    if (!header || !bannerSection) return;
+
+    setTimeout(() => {
+        const headerRect = header.getBoundingClientRect();
+        const headerHeight = headerRect.height;
+        
+        bannerSection.style.marginTop = headerHeight + 'px';
+
+        document.body.style.paddingTop = '0';
+    }, 10);
+}
+
+document.addEventListener('DOMContentLoaded', adjustContentForHeader);
+window.addEventListener('load', adjustContentForHeader);
+window.addEventListener('resize', () => {
+    clearTimeout(window.resizeTimeout);
+    window.resizeTimeout = setTimeout(adjustContentForHeader, 100);
+});
+
+    </script>
+    <!-- Bootstrap JS Bundle with Popper -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

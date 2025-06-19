@@ -1,0 +1,1098 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Artikel Kesehatan - RS Ridhoka Salma</title>
+    <link rel="icon" href="image/logo.png" type="image/png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/floating_button_style.css">
+    
+    <style>
+    /* CSS Artikel Detail */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+}
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.artikel-detail-container {
+    padding: 0 0 60px;
+    margin-bottom: 100px;
+    margin-top: 150px;
+}
+
+.artikel-content-wrapper {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+}
+
+.artikel-header {
+    padding: 25px 30px 15px;
+    background-color: #fff;
+    position: relative;
+}
+
+.artikel-category {
+    display: none;
+}
+
+.artikel-title {
+    font-size: 24px;
+            font-weight: 600;
+            color: #333;
+    margin-bottom: 12px;
+    line-height: 1.3;
+    margin-top: 5px;
+}
+
+.artikel-header .breadcrumb-nav {
+    margin-bottom: 10px;
+    padding: 0;
+    text-align: left;
+}
+
+.breadcrumb-item {
+    color: #555;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 14px;
+}
+
+.breadcrumb-item:hover {
+    color: #00928F;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.breadcrumb-separator {
+    color: #555;
+    text-decoration: none;
+    margin: 0 5px;
+    font-size: 14px;
+}
+
+.breadcrumb-current {
+    color: #555;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.artikel-metadata {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #7C8B9D;
+}
+
+.artikel-date {
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.artikel-date i, .artikel-author i {
+    margin-right: 6px;
+}
+
+.artikel-author {
+    display: flex;
+    align-items: center;
+}
+
+.artikel-featured-image {
+    padding: 0 30px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.artikel-featured-image img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    display: block;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Article Body */
+.artikel-body {
+    padding: 30px;
+}
+
+.artikel-body p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    text-align: justify;
+    color: #333;
+}
+
+.artikel-body h2 {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 30px 0 15px;
+    color: #333;
+}
+
+.artikel-body h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 25px 0 15px;
+    color: #333;
+}
+
+.artikel-body ul, .artikel-body ol {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.artikel-body li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.artikel-body blockquote {
+    border-left: 4px solid #00928F;
+    padding: 15px 20px;
+    margin: 20px 0;
+    background-color: #f8f9fa;
+    font-style: italic;
+}
+
+.artikel-footer {
+    padding: 20px 30px 30px;
+    border-top: 1px solid #eee;
+}
+
+.artikel-tags {
+    margin-bottom: 20px;
+}
+
+.artikel-tags-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag-item {
+    background-color: #f0f0f0;
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 13px;
+    color: #555;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.tag-item:hover {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.artikel-share {
+    margin-top: 20px;
+}
+
+.share-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.share-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.share-button {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.share-fb {
+    background-color: #3b5998;
+}
+
+.share-twitter {
+    background-color: #000;
+}
+
+.share-wa {
+    background-color: #25d366;
+}
+
+.share-button:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
+.related-articles {
+    display: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .artikel-content-wrapper {
+        width: 95%;
+    }
+    
+    .artikel-title {
+        font-size: 24px;
+    }
+    
+    .artikel-detail-container {
+        margin-top: 140px; 
+    }
+}
+
+@media (max-width: 768px) {
+    .artikel-header {
+        padding: 20px 25px;
+    }
+    
+    .artikel-body {
+        padding: 25px;
+    }
+    
+    .artikel-title {
+        font-size: 22px;
+    }
+    
+    .artikel-detail-container {
+        margin-top: 130px; 
+    }
+}
+
+@media (max-width: 576px) {
+    .artikel-content-wrapper {
+        width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    
+    .artikel-header {
+        padding: 15px 20px;
+    }
+    
+    .artikel-body {
+        padding: 20px;
+    }
+    
+    .artikel-title {
+        font-size: 20px;
+    }
+    
+    .artikel-metadata {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .artikel-date {
+        margin-bottom: 5px;
+    }
+    
+    .artikel-detail-container {
+        margin-top: 120px;
+    }
+}
+    </style>
+</head>
+<body>
+<!-- Header -->
+<header class="sticky-header">
+    <link rel="stylesheet" href="css/header_style.css">
+    <script src="javascript/header.js"></script>
+
+    <div class="header-top">
+      <div class="container-fluid px-0">
+        <div class="row align-items-center">
+          
+          <!-- Logo -->
+          <div class="col-md-4 logo-container">
+            <a href="index.html">
+              <img src="image/logo_header.png" alt="RS Ridhoka Salma Logo" class="logo-img">
+            </a>
+          </div>
+  
+          <!-- Search and Contact Info -->
+          <div class="col-md-8">
+            <div class="search-contact-container">
+  
+      <!-- Search Bar -->
+<div class="search-bar-header">
+    <form class="search-form-header" action="halaman_pencarian.html" method="GET">
+      <div class="search-icon-header">
+        <img src="image/icon_search.png" alt="Search Icon">
+      </div>
+      <input type="text" placeholder="Cari yang Anda Butuhkan di Sini" class="search-input-header" name="q">
+      <button type="submit" class="search-button-header">Cari</button>
+    </form>
+  </div>
+  
+              <!-- Contact Center -->
+              <div class="contact-center-header">
+                
+                <div class="contact-title-header">Hubungi Kami</div>
+                
+                <div class="contact-items-header">
+                  <div class="contact-item-header">
+                    <a href="tel:+622189116527"  class="contact-link-header">
+                    <img src="image/icon_call.png" alt="Phone Icon" class="icon-contact-header"-header>
+                    <span>021 8911 6527</span>
+                    </a>
+                  </div>
+                  <div class="contact-item-header">
+                    <a href="https://wa.me/628118252322"  class="contact-link-header">
+                    <img src="image/icon_emergency.png" alt="Ambulance Icon" class="icon-contact-header">
+                    <span>0811 8252 322</span>
+                    </a>
+                  </div>
+                </div>
+  
+              </div>
+  
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+ 
+
+    <!-- Navigation Bar -->
+<nav style="background-color: #00928F; padding: 0;">
+    <div class="container">
+        <!-- Hamburger Menu untuk tampilan mobile -->
+        <div class="mobile-menu-toggle">
+            <span>Menu</span>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <div class="nav-container">
+            <ul class="main-menu">
+                <li class="menu-item">
+                    <a href="index.html" class="menu-link">Beranda</a>
+                </li>
+                
+                <!-- Menu Tentang Kami -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Tentang Kami 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="halaman_sejarah.html">Sejarah</a></li>
+                        <li><a href="halaman_visi_misi.html">Visi Misi</a></li>
+                        <li><a href="halaman_struktur_organisasi.html">Struktur Organisasi</a></li>
+                        <li><a href="halaman_akreditasi.html">Akreditasi dan Penghargaan</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Menu Layanan -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Layanan 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="halaman_layanan.html?tab=fasilitas">Fasilitas</a></li>
+                        <li><a href="halaman_layanan.html?tab=layanan-unggulan">Layanan Unggulan</a></li>
+                        <li><a href="halaman_layanan.html?tab=rawat-inap">Rawat Inap</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Menu Spesialis -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Spesialis Kami 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_klinik_spesialis.php?id=1">Kebidanan dan Kandungan</a></li>
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_klinik_spesialis.php?id=2">Anak</a></li>
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_klinik_spesialis.php?id=3">Penyakit Dalam</a></li>
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_klinik_spesialis.php?id=4">Bedah Umum</a></li>
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_spesialis.php">Lihat Semua</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Menu Informasi -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Informasi 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="halaman_promosi.html">Promosi</a></li>
+                        <li><a href="halaman_artikel_kesehatan.html">Artikel Kesehatan</a></li>
+                        <li><a href="halaman_artikel_islami.html">Artikel Islami</a></li>
+                        <li><a href="halaman_event.html">Event</a></li>
+                        <li><a href="halaman_karir.html">Karir</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Menu Kesyariahan -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Kesyariahan 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="halaman_kms.html">Kebijakan Mutu Syariah</a></li>
+                        <li><a href="halaman_program_kesyariahan.html">Program Kesyariahan</a></li>
+                        <li><a href="halaman_konsultasi_syariah.html">Konsultasi Syariah</a></li>
+                        <li><a href="halaman_profil_dps.html">Profil DPS dan Komite Syariah</a></li>
+                    </ul>
+                </li>
+                
+                <li class="menu-item">
+                    <a href="http://localhost/WebsiteRidhokaSalma/halaman_cari_dokter.php" class="menu-link">Cari Dokter</a>
+                </li>
+                <li class="menu-item">
+                    <a href="http://localhost/WebsiteRidhokaSalma/halaman_janji_temu.php" class="menu-link">Janji Temu</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+</header>
+
+    <!-- Main Content Section -->
+    <section class="artikel-detail-container">
+        <!-- Breadcrumb Navigation -->
+        <div class="breadcrumb-nav">
+            <a href="index.html" class="breadcrumb-item">Beranda</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="halaman_artikel_kesehatan.html" class="breadcrumb-item">Informasi</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="halaman_artikel_kesehatan.html" class="breadcrumb-item">Artikel Kesehatan</a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-current">Tips Keamanan Pangan untuk Keluarga di Rumah</span>
+        </div>
+
+        <div class="artikel-content-wrapper" id="artikel-container">
+        </div>
+        
+        <!-- Related Articles -->
+        <div class="related-articles">
+            <h2 class="related-title">Artikel Terkait</h2>
+            <div class="related-grid" id="related-articles-container">
+            </div>
+        </div>
+    </section>
+
+
+<!---------------------------------------------------------------------------------------------------------------------------->
+<!-- Footer -->
+<footer class="footer">
+    <link rel="stylesheet" href="css/footer_style.css">
+    <div class="container">
+        <!-- Top Row: Logo, Info dan Kontak -->
+        <div class="footer-top">
+            <div class="footer-logo">
+                <img src="image/logo_header.png" alt="RS Ridhoka Salma Logo">
+            </div>
+            <div class="footer-address">
+                <p>Jl. Raya Imam Bonjol No.7, Kalijaya,<br>
+                   Kec. Cikarang Bar., Kabupaten<br>
+                   Bekasi, Jawa Barat 17530</p>
+            </div>
+            <div class="footer-contact">
+                <div class="contact-wrapper">
+                    <table class="contact-table">
+                        <tr>
+                            <td class="contact-label">IGD 24 Jam</td>
+                            <td class="contact-separator">:</td>
+                            <td class="contact-value">
+                                <a href="https://wa.me/628118252322" style="color: inherit; text-decoration: none;">0811 8252 322</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="contact-label">Telepon</td>
+                            <td class="contact-separator">:</td>
+                            <td class="contact-value">
+                                <a href="tel:+622189116527" style="color: inherit; text-decoration: none;">021 8911 6527</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="contact-label">WhatsApp</td>
+                            <td class="contact-separator">:</td>
+                            <td class="contact-value">
+                                <a href="https://wa.me/6281317182223" style="color: inherit; text-decoration: none;">0813 1718 2223</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="contact-label">E-mail</td>
+                            <td class="contact-separator">:</td>
+                            <td class="contact-value no-space">
+                                <a href="mailto:info@rsridhokasalma.com" style="color: inherit; text-decoration: none;">info@rsridhokasalma.com</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Divider -->
+        <div class="footer-divider"></div>
+        
+        <!-- Footer Menu -->
+        <div class="footer-menu">
+            <div class="footer-menu-column">
+                <h4>Tentang Kami</h4>
+                <ul>
+                    <li><a href="halaman_sejarah.html">Sejarah</a></li>
+                    <li><a href="halaman_visi_misi.html">Visi Misi</a></li>
+                    <li><a href="halaman_struktur_organisasi.html">Struktur Organisasi</a></li>
+                    <li><a href="halaman_akreditasi.html">Akreditasi dan Penghargaan</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-menu-column">
+                <h4>Layanan</h4>
+                <ul>
+                    <li><a href="halaman_layanan.html?tab=fasilitas">Fasilitas</a></li>
+                    <li><a href="halaman_layanan.html?tab=layanan-unggulan">Layanan Unggulan</a></li>
+                    <li><a href="halaman_layanan.html?tab=rawat-inap">Rawat Inap</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-menu-column">
+                <h4>Informasi</h4>
+                <ul>
+                    <li><a href="halaman_promosi.html">Promosi</a></li>
+                    <li><a href="halaman_artikel_kesehatan.html">Artikel Kesehatan</a></li>
+                    <li><a href="halaman_artikel_islami.html">Artikel Islami</a></li>
+                    <li><a href="halaman_event.html">Event</a></li>
+                    <li><a href="halaman_karir.html">Karir</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-menu-column">
+                <h4>Kesyariahan</h4>
+                <ul>
+                    <li><a href="halaman_kms.html">Kebijakan Mutu Syariah</a></li>
+                    <li><a href="halaman_program_kesyariahan.html">Program Kesyariahan</a></li>
+                    <li><a href="halaman_konsultasi_syariah.html">Konsultasi Syariah</a></li>
+                    <li><a href="halaman_profil_dps.html">Profil DPS dan Komite Syariah</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Divider -->
+        <div class="footer-divider"></div>
+        
+        <!-- Social Media -->
+        <div class="footer-social">
+            <div class="social-label">Ikuti Kami</div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/rumahsakitridhokasalma/?locale=id_ID" class="social-icon">
+                    <img width="20" height="20" src="https://img.icons8.com/ios-filled/150/ffffff/facebook-new.png" alt="facebook-new"/>
+                </a>
+                <a href="https://www.instagram.com/ridhokasalma/" class="social-icon">
+                    <img width="192" height="192" src="https://img.icons8.com/material-outlined/192/ffffff/instagram-new--v1.png" alt="instagram-new--v1"/>    
+                </a>
+                <a href="https://www.youtube.com/@rs.ridhokasalma2727" class="social-icon">
+                    <img width="150" height="150" src="https://img.icons8.com/ios-filled/150/ffffff/youtube-play.png" alt="youtube-play"/>
+                </a>
+                <a href="https://www.tiktok.com/@ridhokasalma" class="social-icon">
+                    <img width="150" height="150" src="https://img.icons8.com/ios-filled/150/ffffff/tiktok--v1.png" alt="tiktok--v1"/>
+                </a>
+                <a href="https://x.com/ridhokasalma" class="social-icon">
+                    <img width="150" height="150" src="https://img.icons8.com/ios-filled/150/ffffff/twitterx--v2.png" alt="twitterx--v2"/>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="footer-copyright">
+            <p>&copy; 2025 RS Ridhoka Salma. All Right Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+
+<!-- HTML untuk Floating WhatsApp Button -->
+<div class="floating-whatsapp">
+    
+    <div class="whatsapp-button" id="whatsappButton">
+        <img src="image/icon_whatsapp.png" alt="WhatsApp Icon" class="whatsapp-icon">
+    </div>
+    <div class="whatsapp-popup" id="whatsappPopup">
+      <div class="whatsapp-popup-header">Mulai Percakapan</div>
+      <p class="whatsapp-popup-text">Klik nomor Customer Care kami untuk memulai percakapan di <strong>WhatsApp</strong>:</p>
+      <a href="https://wa.me/6281317182223" class="whatsapp-popup-number" target="_blank">0813 1718 2223</a>
+    </div>
+  </div>
+
+<!---------------------------------------------------------------------------------------------------------------------------->
+
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Adjust content based on header height
+        function adjustContentForHeader() {
+    const header = document.querySelector('.sticky-header');
+    const detailContent = document.querySelector('.artikel-detail-container');
+
+    if (!header || !detailContent) return;
+
+    setTimeout(() => {
+        const headerHeight = header.getBoundingClientRect().height;
+        detailContent.style.marginTop = `${headerHeight + 30}px`; 
+    }, 100);
+}
+
+
+// Article data repository
+const artikelData = {
+    "1": {
+        title: "Hal-hal yang Perlu Diketahui tentang Amandel",
+        category: "Artikel Kesehatan",
+        date: "12 April 2024",
+        author: "RS Ridhoka Salma",
+        image: "image/artikel_kesehatan_1.png",
+        featured_image: "image/header_artikel_kesehatan_1.png",
+        content: `
+            <p>Amandel atau tonsil merupakan dua kelenjar kecil berbentuk oval yang terletak di belakang tenggorokan. Kelenjar ini berfungsi sebagai bagian dari sistem kekebalan tubuh yang membantu melawan infeksi dengan menyaring kuman yang masuk melalui mulut dan hidung.</p>
+
+            <h2>Apa Itu Radang Amandel?</h2>
+            <p>Radang amandel atau tonsilitis adalah kondisi ketika amandel mengalami peradangan. Penyebab utama dari radang amandel adalah infeksi virus atau bakteri. Gejala umumnya meliputi sakit tenggorokan, kesulitan menelan, demam, dan pembengkakan pada amandel yang kadang disertai bercak putih atau kuning.</p>
+
+            <h2>Gejala Umum Radang Amandel</h2>
+            <ul>
+                <li>Sakit tenggorokan yang berlangsung lebih dari 2 hari</li>
+                <li>Sulit menelan atau rasa nyeri saat menelan</li>
+                <li>Demam dan menggigil</li>
+                <li>Bau mulut</li>
+                <li>Suara serak atau kehilangan suara</li>
+                <li>Pembengkakan kelenjar getah bening di leher</li>
+            </ul>
+
+            <h2>Kapan Harus ke Dokter?</h2>
+            <p>Segera konsultasikan ke dokter jika mengalami gejala-gejala berikut:</p>
+            <ul>
+                <li>Demam tinggi di atas 38,5°C yang tidak kunjung turun</li>
+                <li>Kesulitan bernapas atau menelan</li>
+                <li>Nyeri tenggorokan parah lebih dari 3 hari</li>
+                <li>Muncul ruam kulit atau nyeri telinga</li>
+            </ul>
+
+            <h2>Pengobatan dan Pencegahan</h2>
+            <p>Pengobatan radang amandel tergantung pada penyebabnya. Jika disebabkan oleh virus, pengobatan biasanya bersifat suportif, seperti banyak istirahat, minum air hangat, dan konsumsi pereda nyeri. Namun, jika disebabkan oleh bakteri, terutama Streptococcus, maka dokter akan meresepkan antibiotik.</p>
+
+            <p>Untuk mencegah radang amandel:</p>
+            <ul>
+                <li>Selalu cuci tangan dengan sabun</li>
+                <li>Hindari berbagi peralatan makan dan minum</li>
+                <li>Jaga daya tahan tubuh dengan pola makan sehat</li>
+                <li>Hindari kontak langsung dengan orang yang sedang sakit</li>
+            </ul>
+
+            <h2>Konsultasi ke Spesialis THT</h2>
+            <p>Jika Anda atau anak Anda mengalami radang amandel yang berulang atau parah, sangat disarankan untuk berkonsultasi dengan dokter spesialis Telinga Hidung Tenggorokan (THT). Di RS Ridhoka Salma, Anda bisa berkonsultasi dengan <strong>dr. Ferry Herjanto, Sp.THT-KL</strong> dengan jadwal praktik:</p>
+            <ul>
+                <li><strong>Senin & Jumat:</strong> 16.45 – 19.00 WIB</li>
+                <li><strong>Rabu:</strong> 16.30 – 19.00 WIB</li>
+            </ul>
+        `,
+        tags: ["Artikel Kesehatan"]
+    },
+    "2": {
+        title: "Tips Menerapkan Pola Hidup Sehat",
+        category: "Artikel Kesehatan",
+        date: "15 April 2024",
+        author: "RS Ridhoka Salma",
+        image: "image/artikel_kesehatann_2.png",
+        featured_image: "image/artikel_kesehatann_2.png",
+        content: `
+    <p>Menerapkan pola hidup sehat bukanlah sesuatu yang instan, tetapi sebuah proses membangun kebiasaan baik secara konsisten. Dengan pola hidup yang seimbang, kita tidak hanya menjaga kesehatan fisik, tetapi juga mendukung kesehatan mental dan emosional dalam jangka panjang.</p>
+
+    <h2>Pentingnya Asupan Gizi Seimbang</h2>
+    <p>Makanan yang kita konsumsi berpengaruh besar terhadap fungsi organ, sistem imun, dan tingkat energi harian. Gizi yang cukup membantu tubuh bekerja optimal dan terhindar dari penyakit.</p>
+    <ul>
+        <li>Konsumsi makanan dari berbagai kelompok seperti karbohidrat kompleks, protein, lemak sehat, sayuran, dan buah-buahan</li>
+        <li>Kurangi konsumsi gula, garam, dan makanan olahan berlebih</li>
+        <li>Perhatikan porsi makan dan jangan lewatkan sarapan</li>
+    </ul>
+
+    <h2>Aktivitas Fisik yang Teratur</h2>
+    <p>Olahraga tidak hanya bermanfaat untuk kebugaran, tapi juga dapat meningkatkan suasana hati dan kualitas tidur.</p>
+    <ul>
+        <li>Lakukan olahraga ringan hingga sedang minimal 150 menit per minggu</li>
+        <li>Pilih aktivitas yang disukai agar lebih konsisten, seperti jalan kaki, renang, atau bersepeda</li>
+        <li>Sisipkan aktivitas fisik di sela rutinitas, seperti naik tangga atau peregangan saat bekerja</li>
+    </ul>
+
+    <h2>Istirahat Cukup dan Kelola Stres</h2>
+    <p>Tidur yang cukup dan stres yang terkendali membantu sistem tubuh bekerja lebih baik. Kurang tidur atau stres berlebih dapat menurunkan imunitas dan memicu berbagai gangguan kesehatan.</p>
+    <ul>
+        <li>Tidur malam 7–8 jam secara teratur</li>
+        <li>Hindari penggunaan gawai menjelang tidur untuk kualitas istirahat yang baik</li>
+        <li>Luangkan waktu untuk aktivitas relaksasi seperti membaca atau meditasi</li>
+    </ul>
+
+    <h2>Rutin Periksa Kesehatan</h2>
+    <p>Meski merasa sehat, pemeriksaan rutin tetap penting untuk mendeteksi potensi gangguan kesehatan sejak dini. Langkah ini membantu mencegah kondisi yang lebih serius di kemudian hari.</p>
+    <ul>
+        <li>Lakukan medical check-up setidaknya setahun sekali</li>
+        <li>Perhatikan riwayat keluarga dan gejala yang muncul</li>
+        <li>Konsultasikan ke dokter bila ada perubahan kondisi tubuh yang tidak biasa</li>
+    </ul>
+
+    <p>Menerapkan pola hidup sehat bukan berarti hidup tanpa kesenangan, melainkan menciptakan keseimbangan yang memberi manfaat jangka panjang bagi tubuh dan pikiran. Mulailah dari kebiasaan kecil, karena perubahan positif dimulai dari langkah sederhana yang dilakukan secara konsisten.</p>
+`,
+tags: ["Artikel Kesehatan"]
+    },
+    "3": {
+        title: "Kenali Gejala Tumor Payudara dan Pencegahannya",
+        category: "Artikel Kesehatan",
+        date: "7 Mei 2024",
+        author: "RS Ridhoka Salma",
+        image: "image/artikel_kesehatan_3.png",
+        featured_image: "image/artikel_kesehatan_3.png",
+        content: `
+    <p>Tumor payudara merupakan kondisi pertumbuhan sel abnormal pada jaringan payudara yang dapat bersifat jinak maupun ganas. Deteksi dini terhadap gejala-gejalanya sangat penting untuk meningkatkan efektivitas pengobatan dan mencegah komplikasi yang lebih serius.</p>
+
+    <h2>Gejala Awal yang Perlu Diwaspadai</h2>
+    <p>Banyak kasus tumor payudara tidak menunjukkan gejala yang jelas pada tahap awal. Oleh karena itu, penting bagi setiap perempuan untuk memahami tanda-tanda yang mungkin muncul.</p>
+    <ul>
+        <li>Benjolan atau penebalan di payudara atau ketiak yang tidak hilang</li>
+        <li>Perubahan ukuran, bentuk, atau tekstur kulit payudara</li>
+        <li>Puting tertarik ke dalam, nyeri, atau mengeluarkan cairan abnormal</li>
+        <li>Kulit payudara berkerut seperti kulit jeruk</li>
+    </ul>
+
+    <h2>Langkah Deteksi dan Pemeriksaan</h2>
+    <p>Sadari (periksa payudara sendiri) dan Sadanis (pemeriksaan klinis) adalah metode utama untuk deteksi dini.</p>
+    <ul>
+        <li>Lakukan SADARI setiap bulan, terutama setelah haid</li>
+        <li>Jadwalkan SADANIS setahun sekali atau sesuai saran dokter</li>
+        <li>Segera periksa ke fasilitas medis jika ditemukan perubahan</li>
+    </ul>
+
+    <h2>Pencegahan Melalui Gaya Hidup Sehat</h2>
+    <p>Beberapa faktor risiko tidak bisa dihindari, tetapi pola hidup sehat dapat membantu menurunkan risiko terjadinya tumor.</p>
+    <ul>
+        <li>Hindari merokok dan konsumsi alkohol</li>
+        <li>Jaga berat badan ideal dan tetap aktif bergerak</li>
+        <li>Konsumsi makanan bergizi tinggi antioksidan dan serat</li>
+    </ul>
+    <h2>Konsultasi ke Dokter Spesialis Bedah</h2>
+<p>Jika Anda mengalami gejala mencurigakan pada payudara seperti benjolan atau perubahan bentuk, segera periksakan diri ke dokter spesialis bedah untuk pemeriksaan lebih lanjut. Di RS Ridhoka Salma, Anda dapat berkonsultasi dengan:</p>
+<ul>
+    <li><a href="/dokter/dr-christalina-wijaya-spb" class="text-dark text-decoration-none">dr. Christalina Wijaya, Sp.B</a></li>
+    <li><a href="/dokter/dr-nurul-hidayati-spb" class="text-dark text-decoration-none">dr. Nurul Hidayati, Sp.B</a></li>
+</ul>
+
+
+     `,
+tags: ["Artikel Kesehatan"]
+    },
+    "4": {
+        title: "Tips Keamanan Pangan untuk Keluarga di Rumah",
+        category: "Artikel Kesehatan",
+        date: "20 April 2024",
+        author: "RS Ridhoka Salma",
+        image: "image/artikel_kesehatan_4.png",
+        featured_image: "image/artikel_kesehatan_4.png",
+        content: `
+    <p>Keamanan pangan di rumah menjadi hal yang penting untuk menjaga kesehatan keluarga dari risiko penyakit akibat makanan yang terkontaminasi. Praktik yang tepat dalam memilih, mengolah, dan menyimpan makanan adalah langkah awal untuk melindungi diri dari infeksi saluran pencernaan.</p>
+
+    <h2>Menjaga Kebersihan Saat Menyiapkan Makanan</h2>
+    <p>Kebersihan tangan dan peralatan dapur mencegah masuknya kuman ke dalam makanan.</p>
+    <ul>
+        <li>Cuci tangan sebelum dan sesudah menyiapkan makanan</li>
+        <li>Bersihkan talenan, pisau, dan meja dapur setelah digunakan</li>
+        <li>Cuci bahan mentah seperti sayur dan buah dengan air mengalir</li>
+    </ul>
+
+    <h2>Memisahkan Bahan Mentah dan Matang</h2>
+    <p>Kontaminasi silang dapat terjadi bila bahan mentah dan matang bercampur.</p>
+    <ul>
+        <li>Gunakan talenan terpisah untuk daging mentah dan sayuran</li>
+        <li>Simpan makanan mentah dalam wadah tertutup di kulkas bagian bawah</li>
+        <li>Hindari mencampur peralatan masak untuk bahan yang belum dimasak</li>
+    </ul>
+
+    <h2>Proses Memasak dan Penyimpanan yang Aman</h2>
+    <p>Pengolahan yang benar akan membunuh kuman dalam makanan.</p>
+    <ul>
+        <li>Pastikan makanan dimasak dengan suhu cukup (misalnya, ayam hingga 75°C)</li>
+        <li>Simpan sisa makanan di kulkas maksimal dua jam setelah disajikan</li>
+        <li>Panaskan kembali makanan hingga benar-benar panas sebelum dikonsumsi</li>
+    </ul>
+
+    <p>Dengan membiasakan praktik keamanan pangan sejak dini, Anda tidak hanya melindungi keluarga dari penyakit, tetapi juga menciptakan lingkungan rumah yang lebih sehat. Jika Anda atau anggota keluarga mengalami gejala keracunan makanan seperti diare berat atau muntah berkepanjangan, segera konsultasikan ke dokter umum atau dokter spesialis penyakit dalam di RS Ridhoka Salma.</p>
+`,
+tags: ["Artikel Kesehatan"]
+    },
+    "5": {
+        title: "Cara Mencegah Batuk Pilek pada Anak",
+        category: "Artikel Kesehatan",
+        date: "20 April 2024",
+        author: "RS Ridhoka Salma",
+        image: "image/artikel_kesehatan_5.png",
+        featured_image: "image/artikel_kesehatan_5.png",
+        content: `
+    <p>Batuk dan pilek termasuk penyakit saluran pernapasan atas yang paling sering dialami anak-anak. Penyebabnya umumnya adalah infeksi virus, dan meskipun tergolong ringan, kondisi ini dapat membuat anak tidak nyaman, kurang tidur, atau menurunkan nafsu makan.</p>
+
+    <h2>Kebersihan sebagai Benteng Pertama</h2>
+    <p>Menjaga kebersihan tangan dan lingkungan sangat penting dalam mencegah penyebaran virus.</p>
+    <ul>
+        <li>Ajarkan anak mencuci tangan sebelum makan dan setelah bermain</li>
+        <li>Bersihkan mainan dan permukaan yang sering disentuh secara berkala</li>
+        <li>Gunakan masker jika ada anggota keluarga yang sedang flu</li>
+    </ul>
+
+    <h2>Meningkatkan Imunitas Anak</h2>
+    <p>Daya tahan tubuh yang kuat membuat anak tidak mudah tertular penyakit.</p>
+    <ul>
+        <li>Penuhi kebutuhan nutrisi dengan makanan bergizi dan seimbang</li>
+        <li>Pastikan anak cukup tidur sesuai usianya</li>
+        <li>Ajak anak tetap aktif bermain di luar ruang yang sehat dan aman</li>
+    </ul>
+
+    <h2>Lingkungan yang Mendukung</h2>
+    <p>Lingkungan tempat anak beraktivitas berperan dalam menekan risiko infeksi.</p>
+    <ul>
+        <li>Pastikan ventilasi rumah baik dan sinar matahari masuk</li>
+        <li>Hindari paparan asap rokok dan polusi udara dalam ruangan</li>
+        <li>Sekolahkan anak di tempat yang memiliki standar kebersihan memadai</li>
+    </ul>
+
+    <h2>Konsultasi ke Dokter Spesialis Anak</h2>
+<p>Jika batuk pilek pada anak tidak kunjung membaik atau disertai demam tinggi dan sesak napas, segera konsultasikan ke dokter spesialis anak. RS Ridhoka Salma memiliki layanan dokter anak yang dapat membantu, antara lain:</p>
+<ul>
+    <li><a href="/dokter/dr-ulfi-nurhasanah-spa" class="text-dark text-decoration-none">dr. Ulfi Nurhasanah, Sp.A</a></li>
+    <li><a href="/dokter/dr-rini-wulandari-spa" class="text-dark text-decoration-none">dr. Rini Wulandari, Sp.A</a></li>
+</ul>
+
+
+
+    `,
+tags: ["Artikel Kesehatan"]
+    },
+    "6": {
+        title: "Pertolongan Pertama Jika Ada yang Mengalami Syok",
+        category: "Artikel Kesehatan",
+        date: "20 April 2024",
+        author: "RS Ridhoka Salma",
+        image: "image/artikel_kesehatan_6.png",
+        featured_image: "image/artikel_kesehatan_6.png",
+        content: `
+    <p>Syok merupakan kondisi kegawatdaruratan medis di mana sirkulasi darah tidak mampu mencukupi kebutuhan oksigen tubuh. Ini bisa terjadi akibat perdarahan berat, alergi parah (anafilaksis), dehidrasi, infeksi berat, atau trauma. Penanganan pertama yang tepat bisa menyelamatkan nyawa sebelum tenaga medis tiba.</p>
+
+    <h2>Kenali Tanda-tanda Syok</h2>
+    <p>Mengenali gejalanya lebih awal akan membantu mengambil tindakan yang cepat dan tepat.</p>
+    <ul>
+        <li>Wajah pucat, kulit dingin dan lembap</li>
+        <li>Napas cepat dan tidak teratur</li>
+        <li>Denyut nadi lemah, pusing, dan lemas</li>
+        <li>Kebingungan, gelisah, bahkan kehilangan kesadaran</li>
+    </ul>
+
+    <h2>Langkah Pertolongan Pertama</h2>
+    <p>Jika menemui seseorang dengan tanda syok, segera lakukan tindakan berikut sambil menunggu bantuan medis.</p>
+    <ul>
+        <li>Baringkan korban dengan posisi kaki lebih tinggi 30 cm</li>
+        <li>Longgarkan pakaian ketat dan jaga suhu tubuh tetap hangat</li>
+        <li>Jangan berikan makan atau minum jika korban tidak sadar sepenuhnya</li>
+        <li>Segera hubungi layanan darurat atau bawa ke rumah sakit terdekat</li>
+    </ul>
+
+    <h2>Penanganan Lanjutan di Fasilitas Kesehatan</h2>
+    <p>Setelah pertolongan pertama, korban memerlukan penanganan oleh tenaga medis untuk mencari penyebab syok dan menstabilkan kondisi tubuh.</p>
+    <ul>
+        <li>Pemeriksaan tekanan darah, kadar oksigen, dan fungsi organ vital</li>
+        <li>Pemberian infus, obat-obatan, atau tindakan lanjutan sesuai penyebabnya</li>
+        <li>Perawatan intensif jika syok disebabkan oleh infeksi berat atau perdarahan masif</li>
+    </ul>
+
+    <p>Pengetahuan dasar tentang pertolongan pertama sangat berguna dalam kondisi darurat. Jika Anda memiliki riwayat alergi berat atau anggota keluarga dengan kondisi medis yang berisiko mengalami syok, berkonsultasilah ke dokter umum atau spesialis penyakit dalam di RS Ridhoka Salma untuk penanganan dan edukasi lebih lanjut.</p>
+`,
+tags: ["Artikel Kesehatan"]
+    }
+};
+
+function getArticleIdFromUrl() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('id') || "1";
+}
+
+function generateBreadcrumb(article) {
+    return `
+        <div class="breadcrumb-nav">
+            <a href="index.html" class="breadcrumb-item">Beranda</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="#" class="breadcrumb-item">Informasi</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="halaman_artikel_kesehatan.html" class="breadcrumb-item">Artikel Kesehatan</a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-current">${article.title}</span>
+        </div>
+    `;
+}
+
+function displayArticleDetail(id) {
+    const article = artikelData[id];
+    
+    if (!article) {
+        document.getElementById('artikel-container').innerHTML = `
+            <div class="artikel-header">
+                <div class="breadcrumb-nav">
+                    <a href="index.html" class="breadcrumb-item">Beranda</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <a href="#" class="breadcrumb-item">Informasi</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <a href="halaman_artikel_kesehatan.html" class="breadcrumb-item">Artikel Kesehatan</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-current">Artikel Tidak Ditemukan</span>
+                </div>
+                <h1 class="artikel-title">Artikel tidak ditemukan</h1>
+            </div>
+            <div class="artikel-body">
+                <p>Maaf, artikel yang Anda cari tidak tersedia. Silakan kembali ke <a href="halaman_artikel_kesehatan.html">halaman daftar artikel</a>.</p>
+            </div>
+        `;
+        return;
+    }
+    
+    document.title = `${article.title} - RS Ridhoka Salma`;
+    
+    const articleHTML = `
+        <div class="artikel-header">
+            ${generateBreadcrumb(article)}
+            <h1 class="artikel-title">${article.title}</h1>
+            <div class="artikel-metadata">
+                <div class="artikel-date">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span>${article.date}</span>
+                </div>
+                <div class="artikel-author">
+                    <i class="fa-solid fa-user"></i>
+                    <span>${article.author}</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="artikel-featured-image">
+            <img src="${article.featured_image || article.image}" alt="${article.title}" onerror="this.src='/api/placeholder/800/400'; this.onerror=null;">
+        </div>
+        
+        <div class="artikel-body">
+            ${article.content}
+        </div>
+        
+        <div class="artikel-footer">
+            <div class="artikel-tags">
+                <div class="artikel-tags-title">Tags:</div>
+                <div class="tag-list">
+                    ${article.tags.map(tag => `<a href="halaman_artikel_kesehatan.html?tag=${encodeURIComponent(tag)}" class="tag-item">${tag}</a>`).join('')}
+                </div>
+            </div>
+            
+            <div class="artikel-share">
+                <div class="share-title">Bagikan:</div>
+                <div class="share-buttons">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}" target="_blank" class="share-button share-fb" aria-label="Bagikan di Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://api.whatsapp.com/send?text=${encodeURIComponent(article.title + ' - ' + window.location.href)}" target="_blank" class="share-button share-wa" aria-label="Bagikan di WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(article.title)}" target="_blank" class="share-button share-twitter" aria-label="Bagikan di Twitter">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    `;
+
+    document.getElementById('artikel-container').innerHTML = articleHTML;
+    
+    const externalBreadcrumb = document.querySelector('section.artikel-detail-container > div.breadcrumb-nav');
+    if (externalBreadcrumb) {
+        externalBreadcrumb.remove();
+    }
+
+    const relatedSection = document.querySelector('.related-articles');
+    if (relatedSection) {
+        relatedSection.style.display = 'none';
+    }
+}
+
+function initWhatsAppButton() {
+    const whatsappButton = document.getElementById('whatsappButton');
+    const whatsappPopup = document.getElementById('whatsappPopup');
+    
+    if (!whatsappButton || !whatsappPopup) return;
+    
+    whatsappButton.addEventListener('click', function(e) {
+        e.stopPropagation();
+        whatsappPopup.classList.toggle('show');
+    });
+    
+    document.addEventListener('click', function(e) {
+        if (!whatsappButton.contains(e.target) && !whatsappPopup.contains(e.target)) {
+            whatsappPopup.classList.remove('show');
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    adjustContentForHeader();
+    
+    const articleId = getArticleIdFromUrl();
+    displayArticleDetail(articleId);
+
+    initWhatsAppButton();
+});
+
+let resizeTimeout;
+window.addEventListener('resize', function() {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(adjustContentForHeader, 100);
+});
+
+window.addEventListener('load', adjustContentForHeader);
+    </script>
+</body>
+</html>

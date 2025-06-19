@@ -1,0 +1,1068 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Artikel Islami - RS Ridhoka Salma</title>
+    <link rel="icon" href="image/logo.png" type="image/png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/floating_button_style.css">
+    
+    <style>
+    /* CSS Artikel Detail */
+body {
+    font-family: 'Montserrat', sans-serif;
+    background-color: #ffffff;
+    color: #333;
+}
+
+* {
+    font-family: 'Montserrat', sans-serif;
+}
+
+.artikel-detail-container {
+    padding: 0 0 60px;
+    margin-bottom: 100px;
+    margin-top: 150px;
+}
+
+.artikel-content-wrapper {
+    width: 100%;
+    max-width: 1100px;
+    margin: 0 auto;
+    background-color: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 0 15px rgba(0, 0, 0, 0.08);
+}
+
+.artikel-header {
+    padding: 25px 30px 15px;
+    background-color: #fff;
+    position: relative;
+}
+
+.artikel-category {
+    display: none;
+}
+
+.artikel-title {
+    font-size: 24px;
+            font-weight: 600;
+            color: #333;
+    margin-bottom: 12px;
+    line-height: 1.3;
+    margin-top: 5px;
+}
+
+.artikel-header .breadcrumb-nav {
+    margin-bottom: 10px;
+    padding: 0;
+    text-align: left;
+}
+
+.breadcrumb-item {
+    color: #555;
+    text-decoration: none;
+    transition: color 0.3s;
+    font-size: 14px;
+}
+
+.breadcrumb-item:hover {
+    color: #00928F;
+    text-decoration: none;
+    font-weight: 500;
+}
+
+.breadcrumb-separator {
+    color: #555;
+    text-decoration: none;
+    margin: 0 5px;
+    font-size: 14px;
+}
+
+.breadcrumb-current {
+    color: #555;
+    text-decoration: none;
+    font-weight: 500;
+    font-size: 14px;
+}
+
+.artikel-metadata {
+    display: flex;
+    align-items: center;
+    margin-bottom: 20px;
+    font-size: 14px;
+    color: #7C8B9D;
+}
+
+.artikel-date {
+    margin-right: 15px;
+    display: flex;
+    align-items: center;
+}
+
+.artikel-date i, .artikel-author i {
+    margin-right: 6px;
+}
+
+.artikel-author {
+    display: flex;
+    align-items: center;
+}
+
+.artikel-featured-image {
+    padding: 0 30px;
+    margin-bottom: 15px;
+    position: relative;
+}
+
+.artikel-featured-image img {
+    width: 100%;
+    height: 250px;
+    object-fit: cover;
+    border-radius: 15px;
+    display: block;
+    box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* Article Body */
+.artikel-body {
+    padding: 30px;
+}
+
+.artikel-body p {
+    font-size: 16px;
+    line-height: 1.7;
+    margin-bottom: 20px;
+    text-align: justify;
+    color: #333;
+}
+
+.artikel-body h2 {
+    font-size: 20px;
+    font-weight: 500;
+    margin: 30px 0 15px;
+    color: #333;
+}
+
+.artikel-body h3 {
+    font-size: 18px;
+    font-weight: 600;
+    margin: 25px 0 15px;
+    color: #333;
+}
+
+.artikel-body ul, .artikel-body ol {
+    margin-bottom: 20px;
+    padding-left: 20px;
+}
+
+.artikel-body li {
+    margin-bottom: 10px;
+    line-height: 1.6;
+}
+
+.artikel-body blockquote {
+    border-left: 4px solid #00928F;
+    padding: 15px 20px;
+    margin: 20px 0;
+    background-color: #f8f9fa;
+    font-style: italic;
+}
+
+.artikel-footer {
+    padding: 20px 30px 30px;
+    border-top: 1px solid #eee;
+}
+
+.artikel-tags {
+    margin-bottom: 20px;
+}
+
+.artikel-tags-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.tag-list {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.tag-item {
+    background-color: #f0f0f0;
+    padding: 6px 12px;
+    border-radius: 50px;
+    font-size: 13px;
+    color: #555;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.tag-item:hover {
+    background-color: #e0e0e0;
+    color: #333;
+}
+
+.artikel-share {
+    margin-top: 20px;
+}
+
+.share-title {
+    font-size: 16px;
+    font-weight: 600;
+    margin-bottom: 10px;
+}
+
+.share-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.share-button {
+    width: 36px;
+    height: 36px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    text-decoration: none;
+    transition: all 0.3s;
+}
+
+.share-fb {
+    background-color: #3b5998;
+}
+
+.share-twitter {
+    background-color: #000;
+}
+
+.share-wa {
+    background-color: #25d366;
+}
+
+.share-button:hover {
+    opacity: 0.9;
+    transform: scale(1.05);
+}
+
+.related-articles {
+    display: none;
+}
+
+/* Responsive Adjustments */
+@media (max-width: 992px) {
+    .artikel-content-wrapper {
+        width: 95%;
+    }
+    
+    .artikel-title {
+        font-size: 24px;
+    }
+    
+    .artikel-detail-container {
+        margin-top: 140px; 
+    }
+}
+
+@media (max-width: 768px) {
+    .artikel-header {
+        padding: 20px 25px;
+    }
+    
+    .artikel-body {
+        padding: 25px;
+    }
+    
+    .artikel-title {
+        font-size: 22px;
+    }
+    
+    .artikel-detail-container {
+        margin-top: 130px; 
+    }
+}
+
+@media (max-width: 576px) {
+    .artikel-content-wrapper {
+        width: 100%;
+        border-radius: 0;
+        box-shadow: none;
+    }
+    
+    .artikel-header {
+        padding: 15px 20px;
+    }
+    
+    .artikel-body {
+        padding: 20px;
+    }
+    
+    .artikel-title {
+        font-size: 20px;
+    }
+    
+    .artikel-metadata {
+        flex-direction: column;
+        align-items: flex-start;
+    }
+    
+    .artikel-date {
+        margin-bottom: 5px;
+    }
+    
+    .artikel-detail-container {
+        margin-top: 120px;
+    }
+}
+    </style>
+</head>
+<body>
+<!-- Header -->
+<header class="sticky-header">
+    <link rel="stylesheet" href="css/header_style.css">
+    <script src="javascript/header.js"></script>
+
+    <div class="header-top">
+      <div class="container-fluid px-0">
+        <div class="row align-items-center">
+          
+          <!-- Logo -->
+          <div class="col-md-4 logo-container">
+            <a href="index.html">
+              <img src="image/logo_header.png" alt="RS Ridhoka Salma Logo" class="logo-img">
+            </a>
+          </div>
+  
+          <!-- Search and Contact Info -->
+          <div class="col-md-8">
+            <div class="search-contact-container">
+  
+      <!-- Search Bar -->
+<div class="search-bar-header">
+    <form class="search-form-header" action="halaman_pencarian.html" method="GET">
+      <div class="search-icon-header">
+        <img src="image/icon_search.png" alt="Search Icon">
+      </div>
+      <input type="text" placeholder="Cari yang Anda Butuhkan di Sini" class="search-input-header" name="q">
+      <button type="submit" class="search-button-header">Cari</button>
+    </form>
+  </div>
+  
+              <!-- Contact Center -->
+              <div class="contact-center-header">
+                
+                <div class="contact-title-header">Hubungi Kami</div>
+                
+                <div class="contact-items-header">
+                  <div class="contact-item-header">
+                    <a href="tel:+622189116527"  class="contact-link-header">
+                    <img src="image/icon_call.png" alt="Phone Icon" class="icon-contact-header"-header>
+                    <span>021 8911 6527</span>
+                    </a>
+                  </div>
+                  <div class="contact-item-header">
+                    <a href="https://wa.me/628118252322"  class="contact-link-header">
+                    <img src="image/icon_emergency.png" alt="Ambulance Icon" class="icon-contact-header">
+                    <span>0811 8252 322</span>
+                    </a>
+                  </div>
+                </div>
+  
+              </div>
+  
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+ 
+
+    <!-- Navigation Bar -->
+<nav style="background-color: #00928F; padding: 0;">
+    <div class="container">
+        <!-- Hamburger Menu untuk tampilan mobile -->
+        <div class="mobile-menu-toggle">
+            <span>Menu</span>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <div class="nav-container">
+            <ul class="main-menu">
+                <li class="menu-item">
+                    <a href="index.html" class="menu-link">Beranda</a>
+                </li>
+                
+                <!-- Menu Tentang Kami -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Tentang Kami 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="halaman_sejarah.html">Sejarah</a></li>
+                        <li><a href="halaman_visi_misi.html">Visi Misi</a></li>
+                        <li><a href="halaman_struktur_organisasi.html">Struktur Organisasi</a></li>
+                        <li><a href="halaman_akreditasi.html">Akreditasi dan Penghargaan</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Menu Layanan -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Layanan 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="halaman_layanan.html?tab=fasilitas">Fasilitas</a></li>
+                        <li><a href="halaman_layanan.html?tab=layanan-unggulan">Layanan Unggulan</a></li>
+                        <li><a href="halaman_layanan.html?tab=rawat-inap">Rawat Inap</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Menu Spesialis -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Spesialis Kami 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_klinik_spesialis.php?id=1">Kebidanan dan Kandungan</a></li>
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_klinik_spesialis.php?id=2">Anak</a></li>
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_klinik_spesialis.php?id=3">Penyakit Dalam</a></li>
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_klinik_spesialis.php?id=4">Bedah Umum</a></li>
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_spesialis.php">Lihat Semua</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Menu Informasi -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Informasi 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="halaman_promosi.html">Promosi</a></li>
+                        <li><a href="halaman_artikel_kesehatan.html">Artikel Kesehatan</a></li>
+                        <li><a href="halaman_artikel_islami.html">Artikel Islami</a></li>
+                        <li><a href="halaman_event.html">Event</a></li>
+                        <li><a href="halaman_karir.html">Karir</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Menu Kesyariahan -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Kesyariahan 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="halaman_kms.html">Kebijakan Mutu Syariah</a></li>
+                        <li><a href="halaman_program_kesyariahan.html">Program Kesyariahan</a></li>
+                        <li><a href="halaman_konsultasi_syariah.html">Konsultasi Syariah</a></li>
+                        <li><a href="halaman_profil_dps.html">Profil DPS dan Komite Syariah</a></li>
+                    </ul>
+                </li>
+                
+                <li class="menu-item">
+                    <a href="http://localhost/WebsiteRidhokaSalma/halaman_cari_dokter.php" class="menu-link">Cari Dokter</a>
+                </li>
+                <li class="menu-item">
+                    <a href="http://localhost/WebsiteRidhokaSalma/halaman_janji_temu.php" class="menu-link">Janji Temu</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+</header>
+
+    <!-- Main Content Section -->
+    <section class="artikel-detail-container">
+        <!-- Breadcrumb Navigation -->
+        <div class="breadcrumb-nav">
+            <a href="index.html" class="breadcrumb-item">Beranda</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="#" class="breadcrumb-item">Informasi</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="halaman_artikel_islami.html" class="breadcrumb-item">Artikel Islami</a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-current">Tips Keamanan Pangan untuk Keluarga di Rumah</span>
+        </div>
+
+        <div class="artikel-content-wrapper" id="artikel-container">
+        </div>
+        
+        <!-- Related Articles -->
+        <div class="related-articles">
+            <h2 class="related-title">Artikel Terkait</h2>
+            <div class="related-grid" id="related-articles-container">
+            </div>
+        </div>
+    </section>
+
+
+<!---------------------------------------------------------------------------------------------------------------------------->
+<!-- Footer -->
+<footer class="footer">
+    <link rel="stylesheet" href="css/footer_style.css">
+    <div class="container">
+        <!-- Top Row: Logo, Info dan Kontak -->
+        <div class="footer-top">
+            <div class="footer-logo">
+                <img src="image/logo_header.png" alt="RS Ridhoka Salma Logo">
+            </div>
+            <div class="footer-address">
+                <p>Jl. Raya Imam Bonjol No.7, Kalijaya,<br>
+                   Kec. Cikarang Bar., Kabupaten<br>
+                   Bekasi, Jawa Barat 17530</p>
+            </div>
+            <div class="footer-contact">
+                <div class="contact-wrapper">
+                    <table class="contact-table">
+                        <tr>
+                            <td class="contact-label">IGD 24 Jam</td>
+                            <td class="contact-separator">:</td>
+                            <td class="contact-value">
+                                <a href="https://wa.me/628118252322" style="color: inherit; text-decoration: none;">0811 8252 322</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="contact-label">Telepon</td>
+                            <td class="contact-separator">:</td>
+                            <td class="contact-value">
+                                <a href="tel:+622189116527" style="color: inherit; text-decoration: none;">021 8911 6527</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="contact-label">WhatsApp</td>
+                            <td class="contact-separator">:</td>
+                            <td class="contact-value">
+                                <a href="https://wa.me/6281317182223" style="color: inherit; text-decoration: none;">0813 1718 2223</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="contact-label">E-mail</td>
+                            <td class="contact-separator">:</td>
+                            <td class="contact-value no-space">
+                                <a href="mailto:info@rsridhokasalma.com" style="color: inherit; text-decoration: none;">info@rsridhokasalma.com</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Divider -->
+        <div class="footer-divider"></div>
+        
+        <!-- Footer Menu -->
+        <div class="footer-menu">
+            <div class="footer-menu-column">
+                <h4>Tentang Kami</h4>
+                <ul>
+                    <li><a href="halaman_sejarah.html">Sejarah</a></li>
+                    <li><a href="halaman_visi_misi.html">Visi Misi</a></li>
+                    <li><a href="halaman_struktur_organisasi.html">Struktur Organisasi</a></li>
+                    <li><a href="halaman_akreditasi.html">Akreditasi dan Penghargaan</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-menu-column">
+                <h4>Layanan</h4>
+                <ul>
+                    <li><a href="halaman_layanan.html?tab=fasilitas">Fasilitas</a></li>
+                    <li><a href="halaman_layanan.html?tab=layanan-unggulan">Layanan Unggulan</a></li>
+                    <li><a href="halaman_layanan.html?tab=rawat-inap">Rawat Inap</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-menu-column">
+                <h4>Informasi</h4>
+                <ul>
+                    <li><a href="halaman_promosi.html">Promosi</a></li>
+                    <li><a href="halaman_artikel_kesehatan.html">Artikel Kesehatan</a></li>
+                    <li><a href="halaman_artikel_islami.html">Artikel Islami</a></li>
+                    <li><a href="halaman_event.html">Event</a></li>
+                    <li><a href="halaman_karir.html">Karir</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-menu-column">
+                <h4>Kesyariahan</h4>
+                <ul>
+                    <li><a href="halaman_kms.html">Kebijakan Mutu Syariah</a></li>
+                    <li><a href="halaman_program_kesyariahan.html">Program Kesyariahan</a></li>
+                    <li><a href="halaman_konsultasi_syariah.html">Konsultasi Syariah</a></li>
+                    <li><a href="halaman_profil_dps.html">Profil DPS dan Komite Syariah</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Divider -->
+        <div class="footer-divider"></div>
+        
+        <!-- Social Media -->
+        <div class="footer-social">
+            <div class="social-label">Ikuti Kami</div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/rumahsakitridhokasalma/?locale=id_ID" class="social-icon">
+                    <img width="20" height="20" src="https://img.icons8.com/ios-filled/150/ffffff/facebook-new.png" alt="facebook-new"/>
+                </a>
+                <a href="https://www.instagram.com/ridhokasalma/" class="social-icon">
+                    <img width="192" height="192" src="https://img.icons8.com/material-outlined/192/ffffff/instagram-new--v1.png" alt="instagram-new--v1"/>    
+                </a>
+                <a href="https://www.youtube.com/@rs.ridhokasalma2727" class="social-icon">
+                    <img width="150" height="150" src="https://img.icons8.com/ios-filled/150/ffffff/youtube-play.png" alt="youtube-play"/>
+                </a>
+                <a href="https://www.tiktok.com/@ridhokasalma" class="social-icon">
+                    <img width="150" height="150" src="https://img.icons8.com/ios-filled/150/ffffff/tiktok--v1.png" alt="tiktok--v1"/>
+                </a>
+                <a href="https://x.com/ridhokasalma" class="social-icon">
+                    <img width="150" height="150" src="https://img.icons8.com/ios-filled/150/ffffff/twitterx--v2.png" alt="twitterx--v2"/>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="footer-copyright">
+            <p>&copy; 2025 RS Ridhoka Salma. All Right Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+
+<!-- HTML untuk Floating WhatsApp Button -->
+<div class="floating-whatsapp">
+    
+    <div class="whatsapp-button" id="whatsappButton">
+        <img src="image/icon_whatsapp.png" alt="WhatsApp Icon" class="whatsapp-icon">
+    </div>
+    <div class="whatsapp-popup" id="whatsappPopup">
+      <div class="whatsapp-popup-header">Mulai Percakapan</div>
+      <p class="whatsapp-popup-text">Klik nomor Customer Care kami untuk memulai percakapan di <strong>WhatsApp</strong>:</p>
+      <a href="https://wa.me/6281317182223" class="whatsapp-popup-number" target="_blank">0813 1718 2223</a>
+    </div>
+  </div>
+
+<!---------------------------------------------------------------------------------------------------------------------------->
+
+
+    <!-- Bootstrap JS Bundle -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Adjust content based on header height
+        function adjustContentForHeader() {
+    const header = document.querySelector('.sticky-header');
+    const detailContent = document.querySelector('.artikel-detail-container');
+
+    if (!header || !detailContent) return;
+
+    setTimeout(() => {
+        const headerHeight = header.getBoundingClientRect().height;
+        detailContent.style.marginTop = `${headerHeight + 30}px`; 
+    }, 100);
+}
+
+
+// Article data repository
+const artikelData = {
+    "1": {
+    title: "Sunnah-sunnah di Hari Jum'at",
+    category: "Artikel Islami",
+    date: "12 April 2024",
+    author: "RS Ridhoka Salma",
+    image: "image/artikelislami_1.png",
+    featured_image: "image/artikelislami_1.png",
+    content: `
+        <p>Hari Jumat adalah hari istimewa dalam Islam yang penuh keberkahan dan pahala. Dikenal sebagai penghulu segala hari (sayyidul ayyām), Jumat menjadi momen emas bagi umat Islam untuk memperbanyak amal ibadah dan meraih rahmat Allah. Dalam rangka menyambut dan memuliakan hari ini, terdapat sejumlah sunnah yang dianjurkan untuk diamalkan.</p>
+
+        <h2>1. Membaca Surah Al-Kahfi</h2>
+        <p>Membaca Surah Al-Kahfi di hari Jumat merupakan amalan yang memiliki banyak keutamaan. Dalam hadits disebutkan bahwa siapa yang membaca Surah Al-Kahfi pada hari Jumat, akan mendapat cahaya di antara dua Jumat. Surah ini mengandung pelajaran penting dan perlindungan dari fitnah Dajjal, sehingga menjadi pengingat penting bagi umat Islam setiap pekannya.</p>
+
+        <h2>2. Memperbanyak Shalawat</h2>
+        <p>Rasulullah ﷺ bersabda bahwa hari Jumat adalah hari yang paling utama untuk memperbanyak shalawat kepadanya. Shalawat yang diucapkan pada hari Jumat akan disampaikan langsung kepada Rasulullah. Ini adalah bentuk cinta kepada beliau sekaligus wasilah untuk mendapatkan syafaat di hari kiamat.</p>
+
+        <h2>3. Memperbanyak Do’a dan Dzikir</h2>
+        <p>Hari Jumat memiliki satu waktu mustajab di mana doa seorang hamba tidak akan tertolak. Oleh karena itu, memperbanyak doa dan dzikir sangat dianjurkan. Apalagi menjelang waktu Maghrib, waktu yang dianggap sangat mustajab. Amalan ini menjadi sarana mendekatkan diri kepada Allah serta sarana menenangkan jiwa.</p>
+
+        <h2>4. Memperbanyak Sedekah</h2>
+        <p>Sedekah di hari Jumat memiliki nilai pahala yang berlipat ganda. Rasulullah mencontohkan untuk memperbanyak amal saleh di hari ini, termasuk bersedekah kepada yang membutuhkan. Baik dalam bentuk uang, makanan, atau bantuan lainnya, sedekah merupakan bentuk nyata dari kepedulian sosial yang sangat dianjurkan.</p>
+
+        <h2>5. Memotong Kuku dan Mencukur Kumis</h2>
+        <p>Menjaga kebersihan diri seperti memotong kuku dan mencukur kumis adalah bagian dari fitrah dan adab Islam. Rasulullah ﷺ menganjurkan umatnya untuk tampil bersih dan rapi, terlebih di hari Jumat yang istimewa. Ini adalah bentuk penghormatan terhadap hari yang agung ini dan sekaligus menjaga kebersihan yang merupakan sebagian dari iman.</p>
+
+        <h2>6. Memakai Wangi-wangian</h2>
+        <p>Memakai pakaian terbaik dan wangi-wangian juga termasuk sunnah di hari Jumat, terutama bagi laki-laki yang akan melaksanakan shalat Jumat. Rasulullah senantiasa mengenakan pakaian bersih dan harum saat ke masjid. Ini menunjukkan pentingnya tampil bersih, wangi, dan rapi saat berkumpul untuk beribadah kepada Allah.</p>
+
+        <h2>Penutup</h2>
+        <p>Menghidupkan sunnah-sunnah di hari Jumat bukan hanya mendatangkan pahala, tapi juga menunjukkan semangat dalam mengamalkan ajaran Islam secara menyeluruh. Semoga kita menjadi bagian dari orang-orang yang memuliakan hari Jumat dengan penuh kesungguhan, sebagaimana firman Allah:</p>
+
+        <blockquote>
+            يٰٓاَيُّهَا الَّذِيْنَ اٰمَنُوْٓا اِذَا نُوْدِيَ لِلصَّلٰوةِ مِنْ يَّوْمِ الْجُمُعَةِ فَاسْعَوْا اِلٰى ذِكْرِ اللّٰهِ وَذَرُوا الْبَيْعَۗ ذٰلِكُمْ خَيْرٌ لَّكُمْ اِنْ كُنْتُمْ تَعْلَمُوْنَ ۝٩<br>
+            <em>“Wahai orang-orang yang beriman, apabila (seruan) untuk melaksanakan salat pada hari Jumat telah dikumandangkan, segeralah mengingat Allah dan tinggalkanlah jual beli. Yang demikian itu lebih baik bagimu jika kamu mengetahui.”</em><br>
+            <strong>(Q.S. Al-Jumu’ah : 9)</strong>
+        </blockquote>
+    `,
+    tags: ["Artikel Islami"]
+},
+    "2": {
+        title: "Hakikat Hidup yang Sementara",
+        category: "Artikel Islami",
+        date: "15 April 2024",
+        author: "RS Ridhoka Salma",
+        image: "image/artikelislami_2.png",
+    featured_image: "image/artikelislami_2.png",
+    content: `
+    <p>Setiap manusia akan mengalami fase kehidupan dunia yang terbatas, kemudian kembali kepada Allah. Memahami bahwa hidup hanyalah sementara membantu kita mengatur prioritas dengan lebih bijak, tidak terlalu terikat pada hal duniawi, dan lebih fokus pada bekal akhirat.</p>
+
+    <h2>Kehidupan Dunia Hanya Sementara</h2>
+    <p>Banyak ayat Al-Qur’an dan hadits yang menegaskan bahwa kehidupan di dunia ini hanya bersifat sementara dan penuh ujian. Allah menyuruh manusia untuk tidak tertipu oleh kenikmatan dunia.</p>
+    <ul>
+        <li>Harta dan jabatan tidak akan kekal selamanya</li>
+        <li>Kesenangan dunia hanya sementara dan bisa melalaikan</li>
+        <li>Waktu yang berlalu tidak bisa kembali</li>
+    </ul>
+
+    <h2>Bersikap Seperti Musafir</h2>
+    <p>Rasulullah ﷺ memberikan gambaran agar seorang mukmin bersikap seperti orang asing atau musafir di dunia.</p>
+    <blockquote>
+        "كن في الدنيا كأنك غريب أو عابر سبيل"<br>
+        <em>“Jadilah engkau di dunia ini seakan-akan orang asing atau seorang pengembara.”</em><br>
+        <strong>(HR. Bukhari, dari Abdullah bin Umar)</strong>
+    </blockquote>
+
+    <h2>Fokus pada Akhirat</h2>
+    <p>Mengutamakan akhirat bukan berarti meninggalkan dunia sepenuhnya, melainkan menjadikan dunia sebagai sarana menuju kehidupan abadi.</p>
+    <ul>
+        <li>Gunakan waktu, harta, dan kesempatan untuk kebaikan</li>
+        <li>Jangan terlalu bergantung pada sesuatu yang fana</li>
+        <li>Bangun amalan yang kekal pahalanya seperti sedekah jariyah</li>
+    </ul>
+
+    <h2>Penutup</h2>
+    <p>Hidup yang singkat ini sebaiknya dijalani dengan penuh kesadaran bahwa kita adalah tamu di dunia ini. Maka sebaik-baik tamu adalah yang mempersiapkan kepulangan dengan amal terbaik. Sebagaimana firman Allah:</p>
+    <blockquote>
+        يَا قَوْمِ إِنَّمَا هَٰذِهِ ٱلْحَيَوٰةُ ٱلدُّنْيَا مَتَـٰعٌۭ وَإِنَّ ٱلْـَٔاخِرَةَ هِىَ دَارُ ٱلْقَرَارِ<br>
+        <em>"Wahai kaumku! Sesungguhnya kehidupan dunia ini hanyalah kesenangan (sementara), dan sesungguhnya akhirat itulah negeri yang kekal."</em><br>
+        <strong>(Q.S. Ghafir: 39)</strong>
+    </blockquote>
+`,
+        tags: ["Artikel Islami"]
+    },
+    "3": {
+        title: "Doa agar Amalan Diterima",
+        category: "Artikel Islami",
+        date: "7 Mei 2024",
+        author: "RS Ridhoka Salma",
+        image: "image/artikelislami_3.png",
+    featured_image: "image/artikelislami_3.png",
+    content: `
+    <p>Sebagai hamba yang senantiasa beribadah dan beramal saleh, tentu kita berharap semua amalan kita diterima oleh Allah ﷻ. Namun, tidak semua amal otomatis diterima. Maka penting bagi kita untuk memohon kepada-Nya agar segala amal yang kita lakukan bernilai di sisi-Nya.</p>
+
+    <h2>Makna Diterimanya Amalan</h2>
+    <p>Amalan tidak sekadar dilakukan, tetapi juga harus memenuhi syarat diterima: niat yang ikhlas dan sesuai tuntunan Nabi ﷺ.</p>
+    <ul>
+        <li>Ikhlas karena Allah semata</li>
+        <li>Benar sesuai sunnah Nabi ﷺ</li>
+        <li>Hati yang tunduk dan rendah diri</li>
+    </ul>
+
+    <h2>Doa yang Dicontohkan Nabi Ibrahim</h2>
+    <p>Doa agar amalan diterima telah dicontohkan oleh Nabi Ibrahim ‘alaihis salam ketika membangun Ka’bah bersama Ismail.</p>
+    <blockquote>
+        رَبَّنَا تَقَبَّلْ مِنَّا ۖ إِنَّكَ أَنتَ السَّمِيعُ الْعَلِيمُ<br>
+        <em>“Ya Tuhan kami, terimalah (amalan) dari kami. Sesungguhnya Engkaulah Yang Maha Mendengar lagi Maha Mengetahui.”</em><br>
+        <strong>(Q.S. Al-Baqarah: 127)</strong>
+    </blockquote>
+
+    <h2>Waktu dan Sikap Saat Berdoa</h2>
+    <p>Berdoa agar amal diterima sebaiknya dilakukan setelah melakukan amal saleh, seperti setelah salat, sedekah, atau ibadah lainnya.</p>
+    <ul>
+        <li>Ucapkan doa dengan hati khusyuk</li>
+        <li>Hadapkan diri kepada Allah dengan rendah hati</li>
+        <li>Lakukan secara rutin, terutama di momen seperti Ramadan atau malam ganjil</li>
+    </ul>
+
+    <h2>Penutup</h2>
+    <p>Tidak cukup hanya beramal, namun kita juga harus senantiasa memohon agar amalan tersebut diterima oleh Allah. Jadikan doa "Rabbana taqabbal minna" sebagai amalan harian. Dengan harapan, setiap langkah kebaikan kita bernilai ibadah di sisi-Nya dan menjadi bekal akhirat kelak.</p>
+`,
+        tags: ["Artikel Islami"]
+       },
+    "4": {
+        title: "Berobat Menurut Pandangan Islam",
+        category: "Artikel Islami",
+        date: "20 April 2024",
+        author: "RS Ridhoka Salma",
+        image: "image/artikelislami_4.png",
+    featured_image: "image/artikelislami_4.png",
+    content: `
+    <p>Islam tidak hanya mengatur ibadah ritual, tetapi juga mencakup aspek kehidupan seperti kesehatan dan pengobatan. Islam mendorong umatnya untuk menjaga kesehatan dan mencari pengobatan saat sakit, sebagai bentuk ikhtiar dan tanggung jawab terhadap tubuh yang merupakan amanah dari Allah.</p>
+
+    <h2>Berobat Adalah Bentuk Ikhtiar</h2>
+    <p>Dalam Islam, berobat bukan berarti kurang iman atau tidak tawakal. Justru berobat merupakan bentuk usaha yang diperintahkan.</p>
+    <ul>
+        <li>Rasulullah ﷺ bersabda: “Berobatlah kalian, karena Allah tidak menurunkan penyakit kecuali menurunkan pula obatnya.”</li>
+        <li>Berobat adalah usaha untuk menyeimbangkan ikhtiar lahir dan batin</li>
+        <li>Pengobatan tidak bertentangan dengan keimanan</li>
+    </ul>
+
+    <h2>Pilihan Pengobatan dalam Islam</h2>
+    <p>Islam membuka ruang untuk pengobatan medis maupun pengobatan tradisional yang tidak bertentangan dengan syariat.</p>
+    <ul>
+        <li>Obat-obatan dari dokter yang terpercaya</li>
+        <li>Pengobatan sunnah seperti hijamah (bekam) atau habbatussauda</li>
+        <li>Ruqyah syar’iyyah untuk gangguan non-fisik</li>
+    </ul>
+
+    <h2>Berobat Tidak Menggugurkan Doa</h2>
+    <p>Meski sudah berobat, doa dan tawakal tetap menjadi bagian penting dari proses penyembuhan.</p>
+    <ul>
+        <li>Jangan tinggalkan doa meskipun sudah berikhtiar maksimal</li>
+        <li>Yakin bahwa Allah yang menyembuhkan, bukan obat itu sendiri</li>
+        <li>Jadikan sakit sebagai momen mendekatkan diri kepada-Nya</li>
+    </ul>
+
+    <h2>Penutup</h2>
+    <p>Berobat dalam Islam bukan sekadar menyembuhkan penyakit, tapi juga menjalankan amanah menjaga tubuh. Jangan ragu untuk memeriksakan diri ke dokter atau tenaga medis terpercaya, karena hal tersebut merupakan bagian dari ketaatan. Semoga Allah memberkahi ikhtiar kita dan memberikan kesembuhan yang sempurna.</p>
+`,
+        tags: ["Artikel Islami"]
+         },
+         "5": {
+        title: "Khalwat? Yes or No?",
+        category: "Artikel Islami",
+        date: "20 April 2024",
+        author: "RS Ridhoka Salma",
+        image: "image/artikelislami_5.png",
+    featured_image: "image/artikelislami_5.png",
+    content: `
+    <p>Khalwat adalah situasi di mana seorang laki-laki dan perempuan yang bukan mahram berada di tempat tertutup tanpa ada pihak ketiga. Dalam Islam, hal ini dilarang karena dapat membuka pintu fitnah dan godaan syaitan. Meskipun niatnya baik, situasi seperti ini tetap harus dihindari.</p>
+
+    <h2>Larangan Khalwat dalam Hadis</h2>
+    <p>Rasulullah ﷺ telah memperingatkan umatnya akan bahaya berkhalwat. Meski tidak terjadi zina, syaitan hadir di antara keduanya.</p>
+    <blockquote>
+        "Janganlah sekali-kali seorang laki-laki berduaan dengan seorang wanita, karena yang ketiganya adalah syaitan."<br>
+        <em>(HR. Ahmad)</em>
+    </blockquote>
+
+    <h2>Dampak Negatif dari Khalwat</h2>
+    <p>Khalwat dapat menjadi pintu awal menuju dosa yang lebih besar.</p>
+    <ul>
+        <li>Menumbuhkan syahwat yang tidak halal</li>
+        <li>Menimbulkan fitnah dan prasangka buruk di masyarakat</li>
+        <li>Merusak kepercayaan dalam pergaulan dan keluarga</li>
+    </ul>
+
+    <h2>Alternatif yang Sesuai Syariat</h2>
+    <p>Islam tidak menutup pintu interaksi antara lawan jenis, namun memberikan batasan agar tetap dalam koridor adab dan syariat.</p>
+    <ul>
+        <li>Melibatkan mahram atau pihak ketiga dalam interaksi penting</li>
+        <li>Berinteraksi di tempat terbuka atau umum</li>
+        <li>Gunakan media komunikasi yang bisa dipertanggungjawabkan</li>
+    </ul>
+
+    <h2>Penutup</h2>
+    <p>Khalwat bukan hanya soal kesempatan, tapi juga soal menjaga kehormatan. Islam mengajarkan pencegahan terhadap fitnah sejak dini. Dengan menghindari khalwat, kita menjaga diri, orang lain, dan masyarakat dari dosa yang lebih besar.</p>
+`,
+        tags: ["Artikel Islami"]
+         },
+         "6": {
+        title: "Mengapa Dengki?",
+        category: "Artikel Islami",
+        date: "20 April 2024",
+        author: "RS Ridhoka Salma",
+        image: "image/artikelislami_6.png",
+    featured_image: "image/artikelislami_6.png",
+    content: `
+    <p>Dengki atau hasad adalah perasaan tidak senang terhadap nikmat yang dimiliki orang lain dan berharap nikmat itu hilang darinya. Sikap ini bertentangan dengan ajaran Islam yang mendorong untuk saling mencintai dan mendoakan kebaikan bagi sesama Muslim.</p>
+
+    <h2>Larangan Dengki dalam Al-Qur'an</h2>
+    <p>Dengki telah disebutkan dalam Al-Qur’an sebagai sifat yang muncul dari hati yang tidak bersih, dan sering kali menimbulkan konflik dan kerusakan.</p>
+    <blockquote>
+        أَمْ يَحْسُدُونَ ٱلنَّاسَ عَلَىٰ مَآ ءَاتَىٰهُمُ ٱللَّهُ مِن فَضْلِهِۦ<br>
+        <em>"Ataukah mereka dengki kepada manusia (Muhammad) karena karunia yang Allah telah berikan kepadanya?"</em><br>
+        <strong>(Q.S. An-Nisa: 54)</strong>
+    </blockquote>
+
+    <h2>Bahaya Dengki dalam Kehidupan Sosial</h2>
+    <p>Dengki tidak hanya merusak hubungan antar manusia, tetapi juga melemahkan keimanan.</p>
+    <ul>
+        <li>Menimbulkan permusuhan, ghibah, dan fitnah</li>
+        <li>Mengikis pahala amal kebaikan</li>
+        <li>Membuat hati gelisah dan tidak bahagia</li>
+    </ul>
+
+    <h2>Menumbuhkan Sikap Lapang Dada</h2>
+    <p>Islam mengajarkan untuk saling mencintai dan tidak saling menyakiti antar sesama Muslim.</p>
+    <blockquote>
+        "Janganlah kalian saling membenci, saling mendengki, dan saling membelakangi. Jadilah kalian hamba Allah yang bersaudara."<br>
+        <em>(HR. Bukhari dan Muslim, dari Anas bin Malik)</em>
+    </blockquote>
+
+    <h2>Penutup</h2>
+    <p>Menjaga hati dari dengki adalah bagian dari pembersihan jiwa. Dengan bersyukur atas nikmat sendiri dan mendoakan kebaikan untuk orang lain, hati menjadi tenang dan kehidupan sosial menjadi lebih harmonis. Mari jaga hati kita agar tetap bersih dan jauh dari penyakit hasad.</p>
+`,
+        tags: ["Artikel Islami"]
+         }
+};
+
+function getArticleIdFromUrl() {
+    const urlParams = new URLSearchParams(window.location.search);
+    return urlParams.get('id') || "1";
+}
+
+function generateBreadcrumb(article) {
+    return `
+        <div class="breadcrumb-nav">
+            <a href="index.html" class="breadcrumb-item">Beranda</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="#" class="breadcrumb-item">Informasi</a>
+            <span class="breadcrumb-separator">/</span>
+            <a href="halaman_artikel_islami.html" class="breadcrumb-item">Artikel Islami</a>
+            <span class="breadcrumb-separator">/</span>
+            <span class="breadcrumb-current">${article.title}</span>
+        </div>
+    `;
+}
+
+function displayArticleDetail(id) {
+    const article = artikelData[id];
+    
+    if (!article) {
+        document.getElementById('artikel-container').innerHTML = `
+            <div class="artikel-header">
+                <div class="breadcrumb-nav">
+                    <a href="index.html" class="breadcrumb-item">Beranda</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <a href="#" class="breadcrumb-item">Informasi</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <a href="halaman_artikel_islami.html" class="breadcrumb-item">Artikel Islami</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-current">Artikel Tidak Ditemukan</span>
+                </div>
+                <h1 class="artikel-title">Artikel tidak ditemukan</h1>
+            </div>
+            <div class="artikel-body">
+                <p>Maaf, artikel yang Anda cari tidak tersedia. Silakan kembali ke <a href="halaman_artikel_islami.html">halaman daftar artikel</a>.</p>
+            </div>
+        `;
+        return;
+    }
+    
+    document.title = `${article.title} - RS Ridhoka Salma`;
+    
+    const articleHTML = `
+        <div class="artikel-header">
+            ${generateBreadcrumb(article)}
+            <h1 class="artikel-title">${article.title}</h1>
+            <div class="artikel-metadata">
+                <div class="artikel-date">
+                    <i class="fa-solid fa-calendar-days"></i>
+                    <span>${article.date}</span>
+                </div>
+                <div class="artikel-author">
+                    <i class="fa-solid fa-user"></i>
+                    <span>${article.author}</span>
+                </div>
+            </div>
+        </div>
+        
+        <div class="artikel-featured-image">
+            <img src="${article.featured_image || article.image}" alt="${article.title}" onerror="this.src='/api/placeholder/800/400'; this.onerror=null;">
+        </div>
+        
+        <div class="artikel-body">
+            ${article.content}
+        </div>
+        
+        <div class="artikel-footer">
+            <div class="artikel-tags">
+                <div class="artikel-tags-title">Tags:</div>
+                <div class="tag-list">
+                    ${article.tags.map(tag => `<a href="halaman_artikel_islami.html?tag=${encodeURIComponent(tag)}" class="tag-item">${tag}</a>`).join('')}
+                </div>
+            </div>
+            
+            <div class="artikel-share">
+                <div class="share-title">Bagikan:</div>
+                <div class="share-buttons">
+                    <a href="https://www.facebook.com/sharer/sharer.php?u=${encodeURIComponent(window.location.href)}" target="_blank" class="share-button share-fb" aria-label="Bagikan di Facebook">
+                        <i class="fab fa-facebook-f"></i>
+                    </a>
+                    <a href="https://api.whatsapp.com/send?text=${encodeURIComponent(article.title + ' - ' + window.location.href)}" target="_blank" class="share-button share-wa" aria-label="Bagikan di WhatsApp">
+                        <i class="fab fa-whatsapp"></i>
+                    </a>
+                    <a href="https://twitter.com/intent/tweet?url=${encodeURIComponent(window.location.href)}&text=${encodeURIComponent(article.title)}" target="_blank" class="share-button share-twitter" aria-label="Bagikan di Twitter">
+                        <i class="fab fa-x-twitter"></i>
+                    </a>
+                </div>
+            </div>
+        </div>
+    `;
+
+    document.getElementById('artikel-container').innerHTML = articleHTML;
+    
+    const externalBreadcrumb = document.querySelector('section.artikel-detail-container > div.breadcrumb-nav');
+    if (externalBreadcrumb) {
+        externalBreadcrumb.remove();
+    }
+
+    const relatedSection = document.querySelector('.related-articles');
+    if (relatedSection) {
+        relatedSection.style.display = 'none';
+    }
+}
+
+function initWhatsAppButton() {
+    const whatsappButton = document.getElementById('whatsappButton');
+    const whatsappPopup = document.getElementById('whatsappPopup');
+    
+    if (!whatsappButton || !whatsappPopup) return;
+    
+    whatsappButton.addEventListener('click', function(e) {
+        e.stopPropagation();
+        whatsappPopup.classList.toggle('show');
+    });
+    
+    document.addEventListener('click', function(e) {
+        if (!whatsappButton.contains(e.target) && !whatsappPopup.contains(e.target)) {
+            whatsappPopup.classList.remove('show');
+        }
+    });
+}
+
+document.addEventListener('DOMContentLoaded', function() {
+    adjustContentForHeader();
+    
+    const articleId = getArticleIdFromUrl();
+    displayArticleDetail(articleId);
+
+    initWhatsAppButton();
+});
+
+let resizeTimeout;
+window.addEventListener('resize', function() {
+    clearTimeout(resizeTimeout);
+    resizeTimeout = setTimeout(adjustContentForHeader, 100);
+});
+
+window.addEventListener('load', adjustContentForHeader);
+    </script>
+</body>
+</html>

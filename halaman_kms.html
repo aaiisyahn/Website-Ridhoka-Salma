@@ -1,0 +1,865 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Kebijakan Mutu Syariah - RS Ridhoka Salma</title>
+    <link rel="icon" href="image/logo.png" type="image/png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Google Fonts - Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+     <!-- Floating Button CSS -->
+     <link rel="stylesheet" href="css/floating_button_style.css">
+    <style>
+        /* Base Styles */
+        * {
+            font-family: 'Montserrat', sans-serif !important;
+            box-sizing: border-box;
+        }
+        
+        body {
+            color: #333;
+            background-color: #ffffff;
+        }
+        
+        /* Banner Section */
+        .banner-section {
+            width: 100%;
+            max-height: 180px;
+            overflow: hidden;
+            position: relative;
+        }
+        
+        .banner-image {
+            width: 100%;
+            height: auto;
+            object-fit: cover;
+            display: block;
+        }
+        
+        /* Content Section */
+        .content-section {
+            padding: 25px 0 60px;
+        }
+        
+        .content-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        
+        /* Breadcrumb Styles */
+        .breadcrumb-nav {
+            margin-bottom: 5px;
+            font-size: 14px;
+        }
+        
+        .breadcrumb-item {
+            color: #555;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .breadcrumb-item:hover {
+            color: #00928F;
+        }
+        
+        .breadcrumb-current {
+            color: #555;
+            font-weight: 500;
+        }
+        
+        .breadcrumb-separator {
+            color: #999;
+            margin: 0 5px;
+        }
+        
+        /* Section Title */
+        .section-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 25px;
+            text-align: left;
+        }
+        .section-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #00928F;
+    margin-top: 8px;
+}
+
+        
+        /* PERBAIKAN: Menggabungkan semua card dalam satu container */
+        .all-cards-container {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 25px; /* SESUAIKAN GAP DI SINI - Gap diperbesar dari 15px */
+            margin-bottom: 30px;
+        }
+        
+        /* Style untuk card dengan tinggi seragam */
+        .syariah-card {
+            background-color: white;
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+            cursor: pointer;
+            height: 280px; /* Tinggi tetap untuk semua card */
+            position: relative;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .syariah-card:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.15);
+        }
+        
+        /* Hover overlay effect */
+        .card-overlay {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: rgba(0, 146, 143, 0.8);
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            opacity: 0;
+            transition: opacity 0.3s ease;
+            z-index: 2;
+        }
+        
+        .overlay-text {
+            color: white;
+            font-weight: 600;
+            font-size: 16px;
+            text-align: center;
+            padding: 0 15px;
+        }
+        
+        .syariah-card:hover .card-overlay {
+            opacity: 1;
+        }
+        
+        .card-img-container {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 10px;
+            height: 140px; /* Tinggi tetap untuk container gambar */
+            flex-shrink: 0; /* Mencegah container menyusut */
+        }
+        
+        .card-img {
+            width: 100px;
+            height:100px;
+            object-fit: contain;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .card-title {
+            font-size: 16px;
+            font-weight: 600;
+            color: #333;
+            text-align: center;
+            padding: 0 15px 0px;
+            height: 40px; /* Tinggi tetap untuk judul */
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            flex-shrink: 0; /* Mencegah judul menyusut */
+            line-height: 1;
+        }
+        
+        .card-text {
+            font-size: 14px;
+            line-height: 1.5;
+            color: #555;
+            padding: 15px;
+            margin: 0;
+            text-align: center; /* Sekarang di tengah agar lebih rapi */
+            border-top: 1px solid #f0f0f0;
+            flex-grow: 1;
+            overflow: hidden;
+            display: -webkit-box;
+            -webkit-line-clamp: 3; /* Batasi menjadi 3 baris saja */
+            -webkit-box-orient: vertical;
+            text-overflow: ellipsis; /* Tambahkan elipsis (...) jika terpotong */
+        }
+        
+        /* Container khusus untuk 2 card terakhir */
+        .last-two-cards-wrapper {
+            display: flex;
+            justify-content: center; /* Posisikan di tengah secara horizontal */
+            gap: 25px; /* Gap yang sama dengan container utama */
+            margin-bottom: 30px;
+        }
+        
+        /* Style untuk 2 card terakhir */
+        .last-two-cards-wrapper .syariah-card {
+            flex: 0 0 calc((100% - 25px) / 3); /* Lebar yang sama dengan card lainnya */
+            max-width: calc((100% - 25px) / 3);
+        }
+        
+        /* Modal Styles */
+        .modal-kms .modal-header {
+            background-color: #00928F;
+            color: white;
+            border-bottom: none;
+        }
+        
+        .modal-kms .modal-title {
+            font-weight: 600;
+        }
+        
+        .modal-kms .close {
+            color: white;
+        }
+        
+        .modal-kms .modal-body {
+            padding: 20px;
+        }
+        
+        .modal-img {
+            width: 80px;
+            height: 80px;
+            margin-bottom: 15px;
+            display: block;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        .modal-text {
+            margin-bottom: 20px;
+            text-align: justify;
+        }
+        
+        .modal-list {
+            padding-left: 20px;
+        }
+        
+        .modal-list li {
+            margin-bottom: 8px;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 992px) {
+            .all-cards-container {
+                grid-template-columns: repeat(2, 1fr); /* 2 kolom pada tablet */
+                gap: 20px; /* Gap lebih kecil pada tablet */
+            }
+            
+            .last-two-cards-wrapper {
+                gap: 20px; /* Gap yang sama dengan container utama pada tablet */
+                flex-wrap: wrap;
+            }
+            
+            .last-two-cards-wrapper .syariah-card {
+                flex: 0 0 calc((100% - 20px) / 2); /* Lebar yang sama dengan card lainnya pada tablet */
+                max-width: calc((100% - 20px) / 2);
+            }
+            
+            .section-title {
+                font-size: 1.6rem;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .content-section {
+                padding: 20px 0 40px;
+            }
+            
+            .card-title {
+                font-size: 15px;
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .all-cards-container {
+                grid-template-columns: 1fr; /* 1 kolom pada mobile */
+                gap: 15px; /* Gap lebih kecil lagi pada mobile */
+            }
+            
+            .last-two-cards-wrapper {
+                flex-direction: column; /* Tampilkan card secara vertikal pada mobile */
+                gap: 15px; /* Gap yang sama dengan container utama pada mobile */
+            }
+            
+            .last-two-cards-wrapper .syariah-card {
+                flex: 0 0 100%; /* Lebar penuh pada mobile */
+                max-width: 100%;
+            }
+            
+            .section-title {
+                font-size: 1.4rem;
+            }
+            
+            .content-section {
+                padding: 15px 0 30px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="sticky-header">
+    <link rel="stylesheet" href="css/header_style.css">
+    <script src="javascript/header.js"></script>
+
+    <div class="header-top">
+      <div class="container-fluid px-0">
+        <div class="row align-items-center">
+          
+          <!-- Logo -->
+          <div class="col-md-4 logo-container">
+            <a href="index.html">
+              <img src="image/logo_header.png" alt="RS Ridhoka Salma Logo" class="logo-img">
+            </a>
+          </div>
+  
+          <!-- Search and Contact Info -->
+          <div class="col-md-8">
+            <div class="search-contact-container">
+  
+      <!-- Search Bar -->
+<div class="search-bar-header">
+    <form class="search-form-header" action="halaman_pencarian.html" method="GET">
+      <div class="search-icon-header">
+        <img src="image/icon_search.png" alt="Search Icon">
+      </div>
+      <input type="text" placeholder="Cari yang Anda Butuhkan di Sini" class="search-input-header" name="q">
+      <button type="submit" class="search-button-header">Cari</button>
+    </form>
+  </div>
+  
+              <!-- Contact Center -->
+              <div class="contact-center-header">
+                
+                <div class="contact-title-header">Hubungi Kami</div>
+                
+                <div class="contact-items-header">
+                  <div class="contact-item-header">
+                    <a href="tel:+622189116527"  class="contact-link-header">
+                    <img src="image/icon_call.png" alt="Phone Icon" class="icon-contact-header"-header>
+                    <span>021 8911 6527</span>
+                    </a>
+                  </div>
+                  <div class="contact-item-header">
+                    <a href="https://wa.me/628118252322"  class="contact-link-header">
+                    <img src="image/icon_emergency.png" alt="Ambulance Icon" class="icon-contact-header">
+                    <span>0811 8252 322</span>
+                    </a>
+                  </div>
+                </div>
+  
+              </div>
+  
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+ 
+
+    <!-- Navigation Bar -->
+<nav style="background-color: #00928F; padding: 0;">
+    <div class="container">
+        <!-- Hamburger Menu untuk tampilan mobile -->
+        <div class="mobile-menu-toggle">
+            <span>Menu</span>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <div class="nav-container">
+            <ul class="main-menu">
+                <li class="menu-item">
+                    <a href="index.html" class="menu-link">Beranda</a>
+                </li>
+                
+                <!-- Menu Tentang Kami -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Tentang Kami 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="halaman_sejarah.html">Sejarah</a></li>
+                        <li><a href="halaman_visi_misi.html">Visi Misi</a></li>
+                        <li><a href="halaman_struktur_organisasi.html">Struktur Organisasi</a></li>
+                        <li><a href="halaman_akreditasi.html">Akreditasi dan Penghargaan</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Menu Layanan -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Layanan 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="halaman_layanan.html?tab=fasilitas">Fasilitas</a></li>
+                        <li><a href="halaman_layanan.html?tab=layanan-unggulan">Layanan Unggulan</a></li>
+                        <li><a href="halaman_layanan.html?tab=rawat-inap">Rawat Inap</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Menu Spesialis -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Spesialis Kami 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_klinik_spesialis.php?id=1">Kebidanan dan Kandungan</a></li>
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_klinik_spesialis.php?id=2">Anak</a></li>
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_klinik_spesialis.php?id=3">Penyakit Dalam</a></li>
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_klinik_spesialis.php?id=4">Bedah Umum</a></li>
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_spesialis.php">Lihat Semua</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Menu Informasi -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Informasi 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="halaman_promosi.html">Promosi</a></li>
+                        <li><a href="halaman_artikel_kesehatan.html">Artikel Kesehatan</a></li>
+                        <li><a href="halaman_artikel_islami.html">Artikel Islami</a></li>
+                        <li><a href="halaman_event.html">Event</a></li>
+                        <li><a href="halaman_karir.html">Karir</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Menu Kesyariahan -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Kesyariahan 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="halaman_kms.html">Kebijakan Mutu Syariah</a></li>
+                        <li><a href="halaman_program_kesyariahan.html">Program Kesyariahan</a></li>
+                        <li><a href="halaman_konsultasi_syariah.html">Konsultasi Syariah</a></li>
+                        <li><a href="halaman_profil_dps.html">Profil DPS dan Komite Syariah</a></li>
+                    </ul>
+                </li>
+                
+                <li class="menu-item">
+                    <a href="http://localhost/WebsiteRidhokaSalma/halaman_cari_dokter.php" class="menu-link">Cari Dokter</a>
+                </li>
+                <li class="menu-item">
+                    <a href="http://localhost/WebsiteRidhokaSalma/halaman_janji_temu.php" class="menu-link">Janji Temu</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+</header>
+    
+    <!-- Banner Section -->
+    <section class="banner-section">
+        <img src="image/banner_kms.png" alt="Banner Kebijakan Mutu Syariah" class="banner-image">
+    </section>
+    
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="container-fluid p-0">
+            <div class="content-container">
+                <!-- Breadcrumb dan Judul -->
+                <div class="breadcrumb-nav">
+                    <a href="index.html" class="breadcrumb-item">Beranda</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <a href="halaman_kesyariahan.html" class="breadcrumb-item">Kesyariahan</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-current">Kebijakan Mutu Syariah</span>
+                </div>
+                
+                <h1 class="section-title">Kebijakan Mutu Syariah RS Ridhoka Salma</h1>
+                
+                <!-- 6 card pertama tetap dalam all-cards-container -->
+                <div class="all-cards-container">
+                    <!-- Card 1 -->
+                    <div class="syariah-card" data-bs-toggle="modal" data-bs-target="#modalPelayanan">
+                        <div class="card-overlay">
+                            <div class="overlay-text">Lihat Selengkapnya</div>
+                        </div>
+                        <div class="card-img-container">
+                            <img src="image/KMS_1.png" alt="Pelayanan Sesuai Syariat Islam" class="card-img">
+                        </div>
+                        <h2 class="card-title">Pelayanan Sesuai Syariat Islam</h2>
+                        <p class="card-text">
+                            RS Ridhoka Salma dioperasionalkan berdasarkan prinsip maslahah dan maqashid syariah.
+                        </p>
+                    </div>
+                    
+                    <!-- Card 2 -->
+                    <div class="syariah-card" data-bs-toggle="modal" data-bs-target="#modalStandar">
+                        <div class="card-overlay">
+                            <div class="overlay-text">Lihat Selengkapnya</div>
+                        </div>
+                        <div class="card-img-container">
+                            <img src="image/KMS_2.png" alt="Standar Mutu Syariah" class="card-img">
+                        </div>
+                        <h2 class="card-title">Standar Mutu Syariah</h2>
+                        <p class="card-text">
+                            Standar Mutu terbagi menjadi Indikator Mutu Wajib Syariah, SPM RS Syariah, dan Mutu Unit Syariah.
+                        </p>
+                    </div>
+                    
+                    <!-- Card 3 -->
+                    <div class="syariah-card" data-bs-toggle="modal" data-bs-target="#modalHalal">
+                        <div class="card-overlay">
+                            <div class="overlay-text">Lihat Selengkapnya</div>
+                        </div>
+                        <div class="card-img-container">
+                            <img src="image/KMS_3.png" alt="Kebijakan Sistem Jaminan Halal" class="card-img">
+                        </div>
+                        <h2 class="card-title">Kebijakan Sistem Jaminan Halal</h2>
+                        <p class="card-text">
+                            Sistem Jaminan Halal diterapkan pada obat, alat kesehatan, dan bahan chemical untuk menjamin kehalalan.
+                        </p>
+                    </div>
+                    
+                    <!-- Card 4 -->
+                    <div class="syariah-card" data-bs-toggle="modal" data-bs-target="#modalIbadah">
+                        <div class="card-overlay">
+                            <div class="overlay-text">Lihat Selengkapnya</div>
+                        </div>
+                        <div class="card-img-container">
+                            <img src="image/KMS_4.png" alt="Penjagaan Ibadah dan Spiritual" class="card-img">
+                        </div>
+                        <h2 class="card-title">Penjagaan Ibadah dan Spiritual</h2>
+                        <p class="card-text">
+                            Penjagaan ibadah melalui adzan, pengingatan waktu sholat, kit ibadah, dan bimbingan rohani pasien.
+                        </p>
+                    </div>
+                    
+                    <!-- Card 5 -->
+                    <div class="syariah-card" data-bs-toggle="modal" data-bs-target="#modalPrivasi">
+                        <div class="card-overlay">
+                            <div class="overlay-text">Lihat Selengkapnya</div>
+                        </div>
+                        <div class="card-img-container">
+                            <img src="image/KMS_5.png" alt="Penjagaan Privasi dan Aurat Pasien" class="card-img">
+                        </div>
+                        <h2 class="card-title">Penjagaan Privasi dan Aurat Pasien</h2>
+                        <p class="card-text">
+                            Penjagaan privasi dilakukan dengan penyediaan hijab pasien dan pemeriksaan oleh tenaga medis sesuai gender.
+                        </p>
+                    </div>
+                    
+                    <!-- Card 6 -->
+                    <div class="syariah-card" data-bs-toggle="modal" data-bs-target="#modalEdukasi">
+                        <div class="card-overlay">
+                            <div class="overlay-text">Lihat Selengkapnya</div>
+                        </div>
+                        <div class="card-img-container">
+                            <img src="image/KMS_6.png" alt="Adanya Edukasi Islami" class="card-img">
+                        </div>
+                        <h2 class="card-title">Adanya Edukasi Islami</h2>
+                        <p class="card-text">
+                            Edukasi Islami untuk pasien, SDI dan masyarakat melalui kajian rutin dan program dakwah.
+                        </p>
+                    </div>
+                </div>
+                
+                <!-- Container khusus untuk 2 card terakhir -->
+                <div class="last-two-cards-wrapper">
+                    <!-- Card 7 -->
+                    <div class="syariah-card" data-bs-toggle="modal" data-bs-target="#modalKeuangan">
+                        <div class="card-overlay">
+                            <div class="overlay-text">Lihat Selengkapnya</div>
+                        </div>
+                        <div class="card-img-container">
+                            <img src="image/KMS_7.png" alt="Manajemen Keuangan Bebas Riba" class="card-img">
+                        </div>
+                        <h2 class="card-title">Manajemen Keuangan Bebas Riba</h2>
+                        <p class="card-text">
+                            Transaksi dan kerjasama dilaksanakan berdasarkan akad-akad syariah dan diawasi oleh DPS.
+                        </p>
+                    </div>
+                    
+                    <!-- Card 8 -->
+                    <div class="syariah-card" data-bs-toggle="modal" data-bs-target="#modalSocial">
+                        <div class="card-overlay">
+                            <div class="overlay-text">Lihat Selengkapnya</div>
+                        </div>
+                        <div class="card-img-container">
+                            <img src="image/KMS_8.png" alt="Program Social Oriented" class="card-img">
+                        </div>
+                        <h2 class="card-title">Program Social Oriented</h2>
+                        <p class="card-text">
+                            Berkomitmen menjalankan program sosial dakwah dan kemasyarakatan sebagai bentuk istiqomah.
+                        </p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+    <!-- Modals -->
+    <!-- Modal Pelayanan Sesuai Syariat Islam -->
+    <div class="modal fade modal-kms" id="modalPelayanan" tabindex="-1" aria-labelledby="modalPelayananLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalPelayananLabel">Pelayanan Sesuai Syariat Islam</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="modal-text">RS Ridhoka Salma sebagai RS Syariah dioperasionalkan berdasarkan prinsip-prinsip syariah dengan memperhatikan aspek maslahah-mursalah (kepentingan umum) dan kelima maqashid syariah:</p>
+                    <ul class="modal-list">
+                        <li><strong>Hifdh ad-din (Perlindungan Agama)</strong> - Memastikan kebutuhan spiritual pasien terpenuhi dan tidak ada praktik medis yang melanggar norma agama</li>
+                        <li><strong>Hifdh an-nafs (Perlindungan Nyawa)</strong> - Mengutamakan keselamatan pasien dalam setiap tindakan medis</li>
+                        <li><strong>Hifdh al-aql (Perlindungan Keturunan)</strong> - Memperhatikan aspek reproduksi dan kehidupan berkeluarga dalam pelayanan</li>
+                        <li><strong>Hifdh al-aql (Perlindungan Akal)</strong> - Memberikan edukasi yang tepat untuk pemahaman pasien</li>
+                        <li><strong>Hifdh al-mal (Perlindungan Harta)</strong> - Menerapkan sistem keuangan yang bebas riba dan transparan</li>
+                        <li><strong>Hifdh al-bi'ah (Perlindungan Lingkungan)</strong> - Menerapkan pengelolaan lingkungan yang ramah dan berkelanjutan</li>
+                    </ul>
+                    <p class="modal-text">Aspek-aspek ini menjadi dasar dalam setiap pelayanan, keputusan, dan kebijakan RS Ridhoka Salma demi terwujudnya pelayanan kesehatan yang tidak hanya profesional namun juga sesuai dengan nilai-nilai Islam.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Modal Standar Mutu Syariah -->
+    <div class="modal fade modal-kms" id="modalStandar" tabindex="-1" aria-labelledby="modalStandarLabel" aria-hidden="true">
+        <div class="modal-dialog modal-lg">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="modalStandarLabel">Standar Mutu Syariah</h5>
+                    <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+                </div>
+                <div class="modal-body">
+                    <p class="modal-text">RS Ridhoka Salma sebagai RS Syariah wajib menjalankan mutu-mutu syariah dalam memberikan pelayanan. Standar Mutu minimal terbagi menjadi 3:</p>
+                    <ul class="modal-list">
+                        <li><strong>Indikator Mutu Wajib Syariah</strong> - Indikator dasar yang wajib dipenuhi sebagai RS Syariah</li>
+                        <li><strong>Standar Pelayanan Minimal RS Syariah</strong> - Standar pelayanan dasar yang harus tersedia</li>
+                        <li><strong>Mutu Unit Syariah</strong> - Indikator mutu untuk unit-unit tertentu sesuai prinsip syariah</li>
+                    </ul>
+                    <p class="modal-text">Standar mutu syariah ini diimplementasikan melalui sistem manajemen mutu yang komprehensif dan terintegrasi, dengan pemantauan dan evaluasi secara berkala untuk memastikan kesesuaian dengan prinsip-prinsip syariah.</p>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+<!---------------------------------------------------------------------------------------------------------------------------->
+<!-- Footer -->
+<footer class="footer">
+    <link rel="stylesheet" href="css/footer_style.css">
+    <div class="container">
+        <!-- Top Row: Logo, Info dan Kontak -->
+        <div class="footer-top">
+            <div class="footer-logo">
+                <img src="image/logo_header.png" alt="RS Ridhoka Salma Logo">
+            </div>
+            <div class="footer-address">
+                <p>Jl. Raya Imam Bonjol No.7, Kalijaya,<br>
+                   Kec. Cikarang Bar., Kabupaten<br>
+                   Bekasi, Jawa Barat 17530</p>
+            </div>
+            <div class="footer-contact">
+                <div class="contact-wrapper">
+                    <table class="contact-table">
+                        <tr>
+                            <td class="contact-label">IGD 24 Jam</td>
+                            <td class="contact-separator">:</td>
+                            <td class="contact-value">
+                                <a href="https://wa.me/628118252322" style="color: inherit; text-decoration: none;">0811 8252 322</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="contact-label">Telepon</td>
+                            <td class="contact-separator">:</td>
+                            <td class="contact-value">
+                                <a href="tel:+622189116527" style="color: inherit; text-decoration: none;">021 8911 6527</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="contact-label">WhatsApp</td>
+                            <td class="contact-separator">:</td>
+                            <td class="contact-value">
+                                <a href="https://wa.me/6281317182223" style="color: inherit; text-decoration: none;">0813 1718 2223</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="contact-label">E-mail</td>
+                            <td class="contact-separator">:</td>
+                            <td class="contact-value no-space">
+                                <a href="mailto:info@rsridhokasalma.com" style="color: inherit; text-decoration: none;">info@rsridhokasalma.com</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Divider -->
+        <div class="footer-divider"></div>
+        
+        <!-- Footer Menu -->
+        <div class="footer-menu">
+            <div class="footer-menu-column">
+                <h4>Tentang Kami</h4>
+                <ul>
+                    <li><a href="halaman_sejarah.html">Sejarah</a></li>
+                    <li><a href="halaman_visi_misi.html">Visi Misi</a></li>
+                    <li><a href="halaman_struktur_organisasi.html">Struktur Organisasi</a></li>
+                    <li><a href="halaman_akreditasi.html">Akreditasi dan Penghargaan</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-menu-column">
+                <h4>Layanan</h4>
+                <ul>
+                    <li><a href="halaman_layanan.html?tab=fasilitas">Fasilitas</a></li>
+                    <li><a href="halaman_layanan.html?tab=layanan-unggulan">Layanan Unggulan</a></li>
+                    <li><a href="halaman_layanan.html?tab=rawat-inap">Rawat Inap</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-menu-column">
+                <h4>Informasi</h4>
+                <ul>
+                    <li><a href="halaman_promosi.html">Promosi</a></li>
+                    <li><a href="halaman_artikel_kesehatan.html">Artikel Kesehatan</a></li>
+                    <li><a href="halaman_artikel_islami.html">Artikel Islami</a></li>
+                    <li><a href="halaman_event.html">Event</a></li>
+                    <li><a href="halaman_karir.html">Karir</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-menu-column">
+                <h4>Kesyariahan</h4>
+                <ul>
+                    <li><a href="halaman_kms.html">Kebijakan Mutu Syariah</a></li>
+                    <li><a href="halaman_program_kesyariahan.html">Program Kesyariahan</a></li>
+                    <li><a href="halaman_konsultasi_syariah.html">Konsultasi Syariah</a></li>
+                    <li><a href="halaman_profil_dps.html">Profil DPS dan Komite Syariah</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Divider -->
+        <div class="footer-divider"></div>
+        
+        <!-- Social Media -->
+        <div class="footer-social">
+            <div class="social-label">Ikuti Kami</div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/rumahsakitridhokasalma/?locale=id_ID" class="social-icon">
+                    <img width="20" height="20" src="https://img.icons8.com/ios-filled/150/ffffff/facebook-new.png" alt="facebook-new"/>
+                </a>
+                <a href="https://www.instagram.com/ridhokasalma/" class="social-icon">
+                    <img width="192" height="192" src="https://img.icons8.com/material-outlined/192/ffffff/instagram-new--v1.png" alt="instagram-new--v1"/>    
+                </a>
+                <a href="https://www.youtube.com/@rs.ridhokasalma2727" class="social-icon">
+                    <img width="150" height="150" src="https://img.icons8.com/ios-filled/150/ffffff/youtube-play.png" alt="youtube-play"/>
+                </a>
+                <a href="https://www.tiktok.com/@ridhokasalma" class="social-icon">
+                    <img width="150" height="150" src="https://img.icons8.com/ios-filled/150/ffffff/tiktok--v1.png" alt="tiktok--v1"/>
+                </a>
+                <a href="https://x.com/ridhokasalma" class="social-icon">
+                    <img width="150" height="150" src="https://img.icons8.com/ios-filled/150/ffffff/twitterx--v2.png" alt="twitterx--v2"/>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="footer-copyright">
+            <p>&copy; 2025 RS Ridhoka Salma. All Right Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- HTML untuk Floating WhatsApp Button -->
+<div class="floating-whatsapp">
+    
+    <div class="whatsapp-button" id="whatsappButton">
+        <img src="image/icon_whatsapp.png" alt="WhatsApp Icon" class="whatsapp-icon">
+    </div>
+    <div class="whatsapp-popup" id="whatsappPopup">
+      <div class="whatsapp-popup-header">Mulai Percakapan</div>
+      <p class="whatsapp-popup-text">Klik nomor Customer Care kami untuk memulai percakapan di <strong>WhatsApp</strong>:</p>
+      <a href="https://wa.me/6281317182223" class="whatsapp-popup-number" target="_blank">0813 1718 2223</a>
+    </div>
+  </div>
+
+ <!-- JavaScript untuk WhatsApp Button -->
+    <script src="javascript/floating_button.js"></script>
+<!---------------------------------------------------------------------------------------------------------------------------->
+
+    <script>
+        
+        document.addEventListener('DOMContentLoaded', function() {
+            // Get all certificate and award cards
+            const certificateCards = document.querySelectorAll('.certificate-card, .award-card');
+            const lightboxModal = new bootstrap.Modal(document.getElementById('imageLightbox'));
+            const lightboxImage = document.getElementById('lightboxImage');
+            const modalTitle = document.getElementById('imageLightboxLabel');
+            
+            // Add click event to each card
+            certificateCards.forEach(card => {
+                card.addEventListener('click', function() {
+                    const imgElement = this.querySelector('img');
+                    const titleElement = this.querySelector('.certificate-title, .award-title');
+                    
+                    // Set the modal image source and title
+                    lightboxImage.src = imgElement.src;
+                    lightboxImage.alt = imgElement.alt;
+                    
+                    // Set the modal title
+                    modalTitle.textContent = titleElement ? titleElement.textContent : 'Sertifikat/Penghargaan';
+                    
+                    // Show the modal
+                    lightboxModal.show();
+                });
+            });
+        });
+  function adjustContentForHeader() {
+    const header = document.querySelector('.sticky-header');
+    const bannerSection = document.querySelector('.banner-section');
+    
+    if (!header || !bannerSection) return;
+
+    setTimeout(() => {
+        const headerRect = header.getBoundingClientRect();
+        const headerHeight = headerRect.height;
+        
+        bannerSection.style.marginTop = headerHeight + 'px';
+
+        document.body.style.paddingTop = '0';
+    }, 10);
+}
+
+document.addEventListener('DOMContentLoaded', adjustContentForHeader);
+window.addEventListener('load', adjustContentForHeader);
+window.addEventListener('resize', () => {
+    clearTimeout(window.resizeTimeout);
+    window.resizeTimeout = setTimeout(adjustContentForHeader, 100);
+});
+
+    </script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+</html>

@@ -1,0 +1,794 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Konsultasi Syariah - RS Ridhoka Salma</title>
+    <link rel="icon" href="image/logo.png" type="image/png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Awesome -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <!-- Montserrat Font -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- SweetAlert2 CSS -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.min.css">
+         <!-- Floating Button CSS -->
+         <link rel="stylesheet" href="css/floating_button_style.css">
+    <style>
+        :root {
+            --tosca: #00928F;
+            /* UBAH DISINI: Atur warna border */
+            --border-color: var(--tosca);
+            /* UBAH DISINI: Atur ketebalan border */
+            --border-width: 3px;
+            /* UBAH DISINI: Atur radius sudut accordion */
+            --border-radius: 5px;
+
+        }
+        
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #fff;
+        }
+        
+        /* Custom container class jika ingin menggunakan container dengan lebar khusus */
+        .container-custom {
+            width: 100%;
+            max-width: 1200px !important;
+            margin-right: auto;
+            margin-left: auto;
+            padding-right: 15px;
+            padding-left: 15px;
+        }
+        
+        .header-placeholder, .footer-placeholder {
+            background-color: #f0f0f0;
+            height: 80px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-bottom: 20px;
+        }
+        
+        .header-banner-spacing {
+            margin-bottom: 20px;
+        }
+        
+        .banner {
+            background-color: var(--tosca);
+            color: white;
+            max-height: 180px;
+            overflow: hidden;
+            position: relative;
+            border-radius: 0;
+            margin-bottom: 40px;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+        }
+        
+        .banner img {
+            max-height: 180px;
+            width: 100%;
+            object-fit: cover;
+        }
+        
+        .faq-section {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.09);
+            padding: 30px;
+            margin-bottom: 40px;
+        }
+        
+        .faq-title {
+            background-color: var(--tosca);
+            color: white;
+            font-size: 24px !important;
+            padding: 10px 30px;
+            border-radius: 25px;
+            text-align: center;
+            margin: 0 auto 10px;
+            display: inline-block;
+            max-width: fit-content;
+        }
+        
+        .faq-image {
+            max-width: 180px;
+            margin: 0 auto;
+        }
+        
+        /* STYLING ACCORDION - Start */
+        .accordion-item {
+            border-radius: var(--border-radius);
+            box-shadow: 0 2px 8px rgba(0,0,0,0.1);
+            margin-bottom: 15px;
+            border: none;
+            overflow: hidden;
+            transition: all 0.3s ease;
+        }
+        
+        .accordion-item:hover {
+            box-shadow: 0 4px 12px rgba(0,0,0,0.12);
+        }
+        
+        .accordion-button {
+            padding: 15px 20px;
+            font-size: 16px;
+            font-weight: 500;
+            border-radius: var(--border-radius) !important;
+            background-color: #ffffff;
+        }
+        
+        .accordion-button:not(.collapsed) {
+            background-color: #ffffff;
+            color: black;
+            font-weight: 600;
+            box-shadow: none;
+            border-bottom-left-radius: 0 !important;
+            border-bottom-right-radius: 0 !important;
+            border-bottom: 1px solid #eaeaea;
+        }
+        
+        .accordion-button:focus {
+            box-shadow: none;
+            border-color: rgba(0,146,143,0.25);
+        }
+        
+        /* Hapus arrow default dari Bootstrap */
+        .accordion-button::after {
+            display: none;
+        }
+        
+        /* Tambahkan custom arrow */
+        .accordion-button .arrow-icon {
+            background-color: var(--tosca);
+            border-radius: 50%;
+            width: 24px;
+            height: 24px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin-left: auto;
+            flex-shrink: 0;
+            transition: all 0.3s ease;
+        }
+        
+        .accordion-button .arrow-icon i {
+            color: white;
+            font-size: 12px;
+            display: block;
+            line-height: 1;
+            transition: transform 0.3s ease;
+        }
+        
+        .accordion-button:not(.collapsed) .arrow-icon i {
+            transform: rotate(180deg);
+        }
+        
+        /* Perbaikan untuk border tunggal */
+        .accordion-item {
+            position: relative;
+        }
+        
+        /* Tambahkan border kiri hanya pada item yang aktif */
+        .accordion-item.active-item {
+            border-left: var(--border-width) solid var(--border-color);
+        }
+        
+        /* Reset styling default untuk collapse */
+        .accordion-collapse {
+            border-top: none;
+        }
+        
+        .accordion-body {
+            padding: 20px;
+            background-color: #ffffff;
+            font-size: 0.95rem;
+            line-height: 1.6;
+        }
+        /* STYLING ACCORDION - End */
+        
+        .form-section {
+            background-color: #f8f9fa;
+            padding: 30px 0;
+        }
+        
+        .form-title {
+            margin-bottom: 20px;
+            color: #333 !important;
+            font-weight: 600;
+            font-size: 24px !important;
+        }
+        .form-title::after {
+    content: "";
+    display: block;
+    width: 60px;
+    height: 3px;
+    background-color: #00928F;
+    margin-top: 8px;
+}
+
+        .form-card {
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0,0,0,0.09);
+            padding: 30px;
+        }
+        
+        .btn-tosca {
+            background-color: var(--tosca);
+            color: white;
+            padding: 8px 30px;
+            border: none;
+        }
+        
+        .btn-tosca:hover {
+            background-color: #007e7c;
+            color: white;
+        }
+        
+        .form-control:focus {
+            box-shadow: none;
+            border-color: var(--tosca);
+        }
+        
+        @media (max-width: 768px) {
+            .banner img {
+                max-height: 140px;
+            }
+            
+            .faq-title {
+                max-width: 90%;
+            }
+        }
+    </style>
+</head>
+<body>
+   
+<!-- Header -->
+<header class="sticky-header">
+    <link rel="stylesheet" href="css/header_style.css">
+    <script src="javascript/header.js"></script>
+
+    <div class="header-top">
+      <div class="container-fluid px-0">
+        <div class="row align-items-center">
+          
+          <!-- Logo -->
+          <div class="col-md-4 logo-container">
+            <a href="index.html">
+              <img src="image/logo_header.png" alt="RS Ridhoka Salma Logo" class="logo-img">
+            </a>
+          </div>
+  
+          <!-- Search and Contact Info -->
+          <div class="col-md-8">
+            <div class="search-contact-container">
+  
+      <!-- Search Bar -->
+<div class="search-bar-header">
+    <form class="search-form-header" action="halaman_pencarian.html" method="GET">
+      <div class="search-icon-header">
+        <img src="image/icon_search.png" alt="Search Icon">
+      </div>
+      <input type="text" placeholder="Cari yang Anda Butuhkan di Sini" class="search-input-header" name="q">
+      <button type="submit" class="search-button-header">Cari</button>
+    </form>
+  </div>
+  
+              <!-- Contact Center -->
+              <div class="contact-center-header">
+                
+                <div class="contact-title-header">Hubungi Kami</div>
+                
+                <div class="contact-items-header">
+                  <div class="contact-item-header">
+                    <a href="tel:+622189116527"  class="contact-link-header">
+                    <img src="image/icon_call.png" alt="Phone Icon" class="icon-contact-header"-header>
+                    <span>021 8911 6527</span>
+                    </a>
+                  </div>
+                  <div class="contact-item-header">
+                    <a href="https://wa.me/628118252322"  class="contact-link-header">
+                    <img src="image/icon_emergency.png" alt="Ambulance Icon" class="icon-contact-header">
+                    <span>0811 8252 322</span>
+                    </a>
+                  </div>
+                </div>
+  
+              </div>
+  
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+ 
+
+    <!-- Navigation Bar -->
+<nav style="background-color: #00928F; padding: 0;">
+    <div class="container">
+        <!-- Hamburger Menu untuk tampilan mobile -->
+        <div class="mobile-menu-toggle">
+            <span>Menu</span>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <div class="nav-container">
+            <ul class="main-menu">
+                <li class="menu-item">
+                    <a href="index.html" class="menu-link">Beranda</a>
+                </li>
+                
+                <!-- Menu Tentang Kami -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Tentang Kami 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="halaman_sejarah.html">Sejarah</a></li>
+                        <li><a href="halaman_visi_misi.html">Visi Misi</a></li>
+                        <li><a href="halaman_struktur_organisasi.html">Struktur Organisasi</a></li>
+                        <li><a href="halaman_akreditasi.html">Akreditasi dan Penghargaan</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Menu Layanan -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Layanan 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="halaman_layanan.html?tab=fasilitas">Fasilitas</a></li>
+                        <li><a href="halaman_layanan.html?tab=layanan-unggulan">Layanan Unggulan</a></li>
+                        <li><a href="halaman_layanan.html?tab=rawat-inap">Rawat Inap</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Menu Spesialis -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Spesialis Kami 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_klinik_spesialis.php?id=1">Kebidanan dan Kandungan</a></li>
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_klinik_spesialis.php?id=2">Anak</a></li>
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_klinik_spesialis.php?id=3">Penyakit Dalam</a></li>
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_klinik_spesialis.php?id=4">Bedah Umum</a></li>
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_spesialis.php">Lihat Semua</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Menu Informasi -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Informasi 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="halaman_promosi.html">Promosi</a></li>
+                        <li><a href="halaman_artikel_kesehatan.html">Artikel Kesehatan</a></li>
+                        <li><a href="halaman_artikel_islami.html">Artikel Islami</a></li>
+                        <li><a href="halaman_event.html">Event</a></li>
+                        <li><a href="halaman_karir.html">Karir</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Menu Kesyariahan -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Kesyariahan 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="halaman_kms.html">Kebijakan Mutu Syariah</a></li>
+                        <li><a href="halaman_program_kesyariahan.html">Program Kesyariahan</a></li>
+                        <li><a href="halaman_konsultasi_syariah.html">Konsultasi Syariah</a></li>
+                        <li><a href="halaman_profil_dps.html">Profil DPS dan Komite Syariah</a></li>
+                    </ul>
+                </li>
+                
+                <li class="menu-item">
+                    <a href="http://localhost/WebsiteRidhokaSalma/halaman_cari_dokter.php" class="menu-link">Cari Dokter</a>
+                </li>
+                <li class="menu-item">
+                    <a href="http://localhost/WebsiteRidhokaSalma/halaman_janji_temu.php" class="menu-link">Janji Temu</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+</header>
+
+    <!-- Header-Banner Spacing -->
+    <div class="header-banner-spacing"></div>
+
+    <!-- Banner Section with Placeholder Image -->
+    <div class="banner w-100">
+        <img src="image/banner_konsul.png" alt="Banner Konsultasi Syariah">
+    </div>
+
+    <div class="container-custom">
+        <!-- FAQ Title - Now outside and above FAQ Section -->
+        <div class="row mb-4">
+            <div class="col-12 text-center">
+                <div class="faq-title">
+                    <h4 class="m-0">Frequently Asked Questions (FAQ)</h4>
+                </div>
+            </div>
+        </div>
+        
+        <!-- FAQ Section -->
+        <div class="row mb-5 justify-content-center">
+            <div class="col-lg-11 col-xl-10">
+                <div class="faq-section">
+                    <div class="row">
+                        <div class="col-md-3 col-12 mb-4 mb-md-0 d-flex align-items-center">
+                            <img src="image/faq_bubble.png" alt="FAQ Icon" class="faq-image img-fluid">
+                        </div>
+                        <div class="col-md-9 col-12">
+                            <div class="accordion" id="accordionFAQ">
+                                <!-- FAQ Item 1 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseOne" aria-expanded="false" aria-controls="collapseOne">
+                                            Bagaimana rumah sakit memastikan privasi dan surat pasien terjaga sesuai syariah?
+                                            <span class="arrow-icon">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </span>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseOne" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                                        <div class="accordion-body">
+                                            RS Ridhoka Salma memiliki protokol privasi yang ketat sesuai dengan prinsip syariah. Semua data pasien disimpan dengan aman dan hanya dapat diakses oleh staf yang berwenang. Setiap penanganan informasi pasien dilakukan dengan prinsip amanah, memastikan kerahasiaan dan kehormatan pasien tetap terjaga sesuai tuntunan Islam.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- FAQ Item 2 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseTwo" aria-expanded="false" aria-controls="collapseTwo">
+                                            Apakah semua obat dan tindakan medis di rumah sakit ini sudah sesuai dengan prinsip syariah?
+                                            <span class="arrow-icon">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </span>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseTwo" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                                        <div class="accordion-body">
+                                            Ya, RS Ridhoka Salma selalu memastikan bahwa semua obat dan tindakan medis yang diberikan telah melalui telaah kehalalan dan kesesuaian dengan prinsip syariah. Rumah sakit bekerja sama dengan Dewan Pengawas Syariah untuk memastikan segala aspek pengobatan sesuai dengan kaidah Islam.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- FAQ Item 3 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseThree" aria-expanded="false" aria-controls="collapseThree">
+                                            Bagaimana prosedur jika pasien membutuhkan transfusi darah atau tindakan darurat yang berisiko melibatkan bahan non-halal?
+                                            <span class="arrow-icon">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </span>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseThree" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                                        <div class="accordion-body">
+                                            Dalam kondisi darurat, RS Ridhoka Salma mengikuti kaidah fiqh "ad-daruratu tubihu al-mahdzurat" (keadaan darurat membolehkan hal yang terlarang). Namun, kami selalu berusaha mengutamakan alternatif yang sesuai syariah terlebih dahulu. Setiap kasus darurat akan dikonsultasikan dengan Dewan Pengawas Syariah untuk memastikan keputusan sesuai dengan prinsip Islam.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- FAQ Item 4 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFour" aria-expanded="false" aria-controls="collapseFour">
+                                            Apakah tersedia fasilitas ibadah bagi pasien dan keluarga?
+                                            <span class="arrow-icon">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </span>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseFour" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                                        <div class="accordion-body">
+                                            Ya, RS Ridhoka Salma menyediakan mushola yang nyaman di setiap lantai gedung untuk memudahkan pasien dan keluarga menjalankan ibadah. Kami juga menyediakan Al-Quran, sajadah, dan mukena di setiap kamar pasien. Untuk pasien yang tidak dapat meninggalkan tempat tidur, perawat kami siap membantu menyiapkan kebutuhan ibadah di ruangan.
+                                        </div>
+                                    </div>
+                                </div>
+
+                                <!-- FAQ Item 5 -->
+                                <div class="accordion-item">
+                                    <h2 class="accordion-header">
+                                        <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#collapseFive" aria-expanded="false" aria-controls="collapseFive">
+                                            Apakah rumah sakit ini menerima pasien dari berbagai latar belakang agama?
+                                            <span class="arrow-icon">
+                                                <i class="fas fa-chevron-down"></i>
+                                            </span>
+                                        </button>
+                                    </h2>
+                                    <div id="collapseFive" class="accordion-collapse collapse" data-bs-parent="#accordionFAQ">
+                                        <div class="accordion-body">
+                                            Tentu saja, RS Ridhoka Salma menerima dan melayani semua pasien tanpa membedakan latar belakang agama. Kami menghormati keyakinan setiap pasien dan tetap memberikan pelayanan terbaik sesuai dengan kebutuhan mereka, sambil tetap menjaga prinsip pelayanan berbasis syariah dalam operasional rumah sakit.
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+
+        <!-- Form Section -->
+        <div class="row mb-5 justify-content-center">
+            <div class="col-lg-11 col-xl-10">
+                <h2 class="form-title">Form Konsultasi Syariah</h2>
+                <p>Jika pertanyaan Anda belum terjawab di FAQ, silakan isi form di bawah untuk konsultasi dengan Dewan Pengawas Syariah. Jawaban akan dikirim via email.</p>
+                
+                <div class="form-card">
+                    <form id="konsultasiForm">
+                        <div class="mb-3">
+                            <label for="nama" class="form-label fw-semibold">Nama lengkap</label>
+                            <input type="text" class="form-control" id="nama" placeholder="Masukkan nama lengkap Anda" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="email" class="form-label fw-semibold">E-mail</label>
+                            <input type="email" class="form-control" id="email" placeholder="contoh@email.com" required>
+                        </div>
+                        <div class="mb-3">
+                            <label for="whatsapp" class="form-label fw-semibold">Nomor WhatsApp</label>
+                            <input type="tel" class="form-control" id="whatsapp" placeholder="08xxxxxxxxxx" required>
+                        </div>
+                        <div class="mb-4">
+                            <label for="pertanyaan" class="form-label fw-semibold">Pertanyaan yang ingin diajukan (maksimal 1000 kata)</label>
+                            <textarea class="form-control" id="pertanyaan" rows="6" placeholder="Tuliskan pertanyaan Anda secara jelas dan lengkap..." required></textarea>
+                            <div class="form-text text-muted">Pertanyaan Anda akan dijawab oleh Dewan Pengawas Syariah dan dikirimkan melalui email.</div>
+                        </div>
+                        <div class="text-start">
+                            <button type="submit" class="btn btn-tosca px-4 py-2">
+                                <span>Kirim</span>
+                            </button>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+
+<!---------------------------------------------------------------------------------------------------------------------------->
+<!-- Footer -->
+<footer class="footer">
+    <link rel="stylesheet" href="css/footer_style.css">
+    <div class="container">
+        <!-- Top Row: Logo, Info dan Kontak -->
+        <div class="footer-top">
+            <div class="footer-logo">
+                <img src="image/logo_header.png" alt="RS Ridhoka Salma Logo">
+            </div>
+            <div class="footer-address">
+                <p>Jl. Raya Imam Bonjol No.7, Kalijaya,<br>
+                   Kec. Cikarang Bar., Kabupaten<br>
+                   Bekasi, Jawa Barat 17530</p>
+            </div>
+            <div class="footer-contact">
+                <div class="contact-wrapper">
+                    <table class="contact-table">
+                        <tr>
+                            <td class="contact-label">IGD 24 Jam</td>
+                            <td class="contact-separator">:</td>
+                            <td class="contact-value">
+                                <a href="https://wa.me/628118252322" style="color: inherit; text-decoration: none;">0811 8252 322</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="contact-label">Telepon</td>
+                            <td class="contact-separator">:</td>
+                            <td class="contact-value">
+                                <a href="tel:+622189116527" style="color: inherit; text-decoration: none;">021 8911 6527</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="contact-label">WhatsApp</td>
+                            <td class="contact-separator">:</td>
+                            <td class="contact-value">
+                                <a href="https://wa.me/6281317182223" style="color: inherit; text-decoration: none;">0813 1718 2223</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="contact-label">E-mail</td>
+                            <td class="contact-separator">:</td>
+                            <td class="contact-value no-space">
+                                <a href="mailto:info@rsridhokasalma.com" style="color: inherit; text-decoration: none;">info@rsridhokasalma.com</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Divider -->
+        <div class="footer-divider"></div>
+        
+        <!-- Footer Menu -->
+        <div class="footer-menu">
+            <div class="footer-menu-column">
+                <h4>Tentang Kami</h4>
+                <ul>
+                    <li><a href="halaman_sejarah.html">Sejarah</a></li>
+                    <li><a href="halaman_visi_misi.html">Visi Misi</a></li>
+                    <li><a href="halaman_struktur_organisasi.html">Struktur Organisasi</a></li>
+                    <li><a href="halaman_akreditasi.html">Akreditasi dan Penghargaan</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-menu-column">
+                <h4>Layanan</h4>
+                <ul>
+                    <li><a href="halaman_layanan.html?tab=fasilitas">Fasilitas</a></li>
+                    <li><a href="halaman_layanan.html?tab=layanan-unggulan">Layanan Unggulan</a></li>
+                    <li><a href="halaman_layanan.html?tab=rawat-inap">Rawat Inap</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-menu-column">
+                <h4>Informasi</h4>
+                <ul>
+                    <li><a href="halaman_promosi.html">Promosi</a></li>
+                    <li><a href="halaman_artikel_kesehatan.html">Artikel Kesehatan</a></li>
+                    <li><a href="halaman_artikel_islami.html">Artikel Islami</a></li>
+                    <li><a href="halaman_event.html">Event</a></li>
+                    <li><a href="halaman_karir.html">Karir</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-menu-column">
+                <h4>Kesyariahan</h4>
+                <ul>
+                    <li><a href="halaman_kms.html">Kebijakan Mutu Syariah</a></li>
+                    <li><a href="halaman_program_kesyariahan.html">Program Kesyariahan</a></li>
+                    <li><a href="halaman_konsultasi_syariah.html">Konsultasi Syariah</a></li>
+                    <li><a href="halaman_profil_dps.html">Profil DPS dan Komite Syariah</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Divider -->
+        <div class="footer-divider"></div>
+        
+        <!-- Social Media -->
+        <div class="footer-social">
+            <div class="social-label">Ikuti Kami</div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/rumahsakitridhokasalma/?locale=id_ID" class="social-icon">
+                    <img width="20" height="20" src="https://img.icons8.com/ios-filled/150/ffffff/facebook-new.png" alt="facebook-new"/>
+                </a>
+                <a href="https://www.instagram.com/ridhokasalma/" class="social-icon">
+                    <img width="192" height="192" src="https://img.icons8.com/material-outlined/192/ffffff/instagram-new--v1.png" alt="instagram-new--v1"/>    
+                </a>
+                <a href="https://www.youtube.com/@rs.ridhokasalma2727" class="social-icon">
+                    <img width="150" height="150" src="https://img.icons8.com/ios-filled/150/ffffff/youtube-play.png" alt="youtube-play"/>
+                </a>
+                <a href="https://www.tiktok.com/@ridhokasalma" class="social-icon">
+                    <img width="150" height="150" src="https://img.icons8.com/ios-filled/150/ffffff/tiktok--v1.png" alt="tiktok--v1"/>
+                </a>
+                <a href="https://x.com/ridhokasalma" class="social-icon">
+                    <img width="150" height="150" src="https://img.icons8.com/ios-filled/150/ffffff/twitterx--v2.png" alt="twitterx--v2"/>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="footer-copyright">
+            <p>&copy; 2025 RS Ridhoka Salma. All Right Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- HTML untuk Floating WhatsApp Button -->
+<div class="floating-whatsapp">
+    
+    <div class="whatsapp-button" id="whatsappButton">
+        <img src="image/icon_whatsapp.png" alt="WhatsApp Icon" class="whatsapp-icon">
+    </div>
+    <div class="whatsapp-popup" id="whatsappPopup">
+      <div class="whatsapp-popup-header">Mulai Percakapan</div>
+      <p class="whatsapp-popup-text">Klik nomor Customer Care kami untuk memulai percakapan di <strong>WhatsApp</strong>:</p>
+      <a href="https://wa.me/6281317182223" class="whatsapp-popup-number" target="_blank">0813 1718 2223</a>
+    </div>
+  </div>
+
+ <!-- JavaScript untuk WhatsApp Button -->
+    <script src="javascript/floating_button.js"></script>
+<!---------------------------------------------------------------------------------------------------------------------------->
+
+    <!-- Bootstrap JS -->
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- SweetAlert2 JS -->
+    <script src="https://cdn.jsdelivr.net/npm/sweetalert2@11.0.19/dist/sweetalert2.all.min.js"></script>
+    
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Fungsi adjust header
+            function adjustContentForHeader() {
+                const header = document.querySelector('.sticky-header');
+                const bannerSection = document.querySelector('.banner');
+                
+                if (!header || !bannerSection) return;
+        
+                setTimeout(() => {
+                    const headerRect = header.getBoundingClientRect();
+                    const headerHeight = headerRect.height;
+                    bannerSection.style.marginTop = headerHeight + 'px';
+                    document.body.style.paddingTop = '0';
+                }, 10);
+            }
+        
+            // Jalankan saat halaman dimuat
+            adjustContentForHeader();
+        
+            // Event untuk window load dan resize
+            window.addEventListener('load', adjustContentForHeader);
+            window.addEventListener('resize', () => {
+                clearTimeout(window.resizeTimeout);
+                window.resizeTimeout = setTimeout(adjustContentForHeader, 100);
+            });
+        
+            // Accordion scroll dan styling
+            document.querySelectorAll('.accordion-button').forEach(button => {
+                button.addEventListener('click', function () {
+                    setTimeout(() => {
+                        if (!this.classList.contains('collapsed')) {
+                            this.scrollIntoView({ behavior: 'smooth', block: 'center' });
+                        }
+                    }, 200);
+                });
+        
+                button.addEventListener('click', function () {
+                    document.querySelectorAll('.accordion-item').forEach(item => {
+                        item.classList.remove('active-item');
+                    });
+                    if (!this.classList.contains('collapsed')) {
+                        this.closest('.accordion-item').classList.add('active-item');
+                    }
+                });
+            });
+        
+            // Form handling
+            const form = document.getElementById('konsultasiForm');
+            if (form) {
+                form.addEventListener('submit', function (e) {
+                    e.preventDefault();
+        
+                    const nama = document.getElementById('nama').value;
+                    const email = document.getElementById('email').value;
+                    const whatsapp = document.getElementById('whatsapp').value;
+                    const pertanyaan = document.getElementById('pertanyaan').value;
+        
+                    Swal.fire({
+                        title: 'Terima Kasih!',
+                        text: 'Pertanyaan Anda telah dikirim. Kami akan menghubungi Anda melalui email atau WhatsApp.',
+                        icon: 'success',
+                        confirmButtonText: 'Tutup',
+                        confirmButtonColor: '#00928F',
+                        customClass: {
+                            container: 'my-swal'
+                        }
+                    });
+        
+                    this.reset();
+                });
+            }
+        });
+        </script>        
+</body>
+</html>

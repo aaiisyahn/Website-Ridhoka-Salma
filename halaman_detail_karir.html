@@ -1,0 +1,834 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Lowongan - RS Ridhoka Salma</title>
+    <link rel="icon" href="image/logo.png" type="image/png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+   
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <link rel="stylesheet" href="css/floating_button_style.css">
+    <style>
+     body, button, input, select, textarea, a, p, h1, h2, h3, h4, h5, h6 {
+  font-family: 'Montserrat', sans-serif;
+}
+
+        
+        :root {
+            --primary: #00928F;
+            --secondary: #00796b;
+            --accent: #e91e63;
+            --light: #ffffff;
+            --dark: #333333;
+            --gray: #f5f5f5;
+            
+            /* Container width - dapat disesuaikan */
+            --container-width: 1000px; /* Atur lebar container di sini */
+        }
+        
+        body {
+            color: #333;
+            background-color: #ffffff;
+        }
+        
+        /* Breadcrumb Styles */
+        .breadcrumb-nav {
+            max-width: var(--container-width);
+            margin: 0 auto;
+            padding: 15px 10px 0;
+            margin-top: 20px;
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .breadcrumb-item {
+            color: #666;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .breadcrumb-item:hover {
+            color: var(--primary);
+            font-weight: 500;
+        }
+        
+        .breadcrumb-current {
+            color: #666;
+            font-weight: 500;
+        }
+        
+        .breadcrumb-separator {
+            color: #999;
+            margin: 0 5px;
+        }
+        
+        /* Content Section */
+        .content-section {
+            padding: 0 0 60px;
+        }
+        
+        .content-container {
+            max-width: var(--container-width); /* Gunakan variabel untuk width */
+            margin: 0 auto;
+        }
+        
+        .page-title {
+            font-size: 24px;
+            font-weight: 600;
+            color: #333;
+            margin: 10px 0 16px 0;
+            padding: 0 10px;
+        }
+        
+        /* Card Styles */
+        .job-detail-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            margin-bottom: 40px;
+            width: 100%;
+        }
+        
+        /* Job Detail Layout */
+        .job-detail-container {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 25px;
+        }
+        
+        .job-image-col {
+            flex: 0 0 100%;
+            max-width: 100%;
+            padding: 0 0 20px 0;
+        }
+        
+        .job-info-col {
+            flex: 0 0 100%;
+            max-width: 100%;
+        }
+        
+        @media (min-width: 768px) {
+            .job-image-col {
+                flex: 0 0 40%;
+                max-width: 40%;
+                padding: 0 25px 0 0;
+            }
+            
+            .job-info-col {
+                flex: 0 0 60%;
+                max-width: 60%;
+            }
+        }
+        
+        .job-image {
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+            max-width: 400px; /* Membatasi lebar maksimum gambar */
+            margin: 0 auto; /* Untuk centering gambar di mobile */
+        }
+        
+        .job-image img {
+            width: 100%;
+            height: auto;
+            display: block;
+            max-height: 400px; /* Tinggi maksimum gambar - DIUBAH DARI 300px */
+            object-fit: cover; /* Menjaga proporsi gambar tetap baik */
+        }
+        
+        /* Section Styles with Icons */
+        .job-section {
+            margin-bottom: 25px;
+        }
+        
+        .section-title {
+            font-size: 18px;
+            font-weight: 500;
+            color: #333;
+            margin-bottom: 15px;
+            display: flex;
+            align-items: center;
+        }
+        
+        .section-title i {
+            margin-right: 10px;
+            color: var(--primary);
+            font-size: 20px;
+        }
+        
+        /* Qualification List */
+        .qualification-list {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0;
+            counter-reset: item;
+        }
+        
+        .qualification-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 8px;
+            line-height: 1.5;
+            counter-increment: item;
+        }
+        
+        .qualification-list li::before {
+            content: counter(item) ".";
+            position: absolute;
+            left: 0;
+            font-weight: 500;
+            color: var(--primary);
+        }
+        
+        /* Document List */
+        .document-list {
+            list-style: none;
+            padding-left: 0;
+            margin-bottom: 0;
+            counter-reset: item;
+        }
+        
+        .document-list li {
+            position: relative;
+            padding-left: 25px;
+            margin-bottom: 8px;
+            line-height: 1.5;
+            counter-increment: item;
+        }
+        
+        .document-list li::before {
+            content: counter(item) ".";
+            position: absolute;
+            left: 0;
+            font-weight: 500;
+            color: var(--primary);
+        }
+        
+        /* Application Info */
+        .application-info {
+            margin-top: 10px;
+        }
+        
+        .application-info p {
+            margin-bottom: 10px;
+            line-height: 1.6;
+        }
+        
+        .email-address {
+            font-weight: 600;
+            color: var(--primary);
+        }
+        
+        /* Email Button */
+        .btn-email {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background-color: var(--primary);
+            color: white !important;
+            border: none;
+            border-radius: 4px;
+            padding: 12px 12px;
+            font-weight: 500;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            margin-top: 10px;
+            margin-right: 15px;
+            min-width: 160px;
+            font-size: 15px;
+        }
+        
+        .btn-email:hover {
+            background-color: var(--secondary);
+            color: white !important;
+            text-decoration: none;
+        }
+        
+        .btn-email i {
+            margin-right: 12px;
+        }
+        
+        /* Icon container for email button */
+        .btn-icon {
+            margin-right: 15px;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 768px) {
+            :root {
+                --container-width: 100%; /* Gunakan lebar penuh pada mobile */
+            }
+            
+            .page-title {
+                font-size: 1.5rem;
+                padding: 0 15px;
+            }
+            
+            .section-title {
+                font-size: 16px;
+            }
+            
+            .content-section {
+                padding: 0 0 40px;
+            }
+            
+            .job-detail-container {
+                padding: 15px;
+            }
+            
+            .job-image {
+                max-width: 100%; /* Gambar mengambil lebar penuh pada container di mobile */
+            }
+            
+            .job-image img {
+                max-height: 350px; /* Tinggi gambar pada tablet - DIUBAH DARI 250px */
+            }
+        }
+        
+        @media (max-width: 576px) {
+            .page-title {
+                font-size: 1.3rem;
+            }
+            
+            .section-title {
+                font-size: 15px;
+            }
+            
+            .job-detail-container {
+                padding: 12px;
+            }
+            
+            .job-image {
+                max-width: 100%; /* Lebar gambar 100% di perangkat sangat kecil */
+            }
+            
+            .job-image img {
+                max-height: 300px; /* Tinggi gambar pada mobile - DIUBAH DARI 200px */
+            }
+            
+            .qualification-list li, .document-list li {
+                font-size: 14px; /* Ukuran font sedikit lebih kecil */
+            }
+            
+            .application-info p {
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Header -->
+<header class="sticky-header">
+    <link rel="stylesheet" href="css/header_style.css">
+    <script src="javascript/header.js"></script>
+
+    <div class="header-top">
+      <div class="container-fluid px-0">
+        <div class="row align-items-center">
+          
+          <!-- Logo -->
+          <div class="col-md-4 logo-container">
+            <a href="index.html">
+              <img src="image/logo_header.png" alt="RS Ridhoka Salma Logo" class="logo-img">
+            </a>
+          </div>
+  
+          <!-- Search and Contact Info -->
+          <div class="col-md-8">
+            <div class="search-contact-container">
+  
+      <!-- Search Bar -->
+<div class="search-bar-header">
+    <form class="search-form-header" action="halaman_pencarian.html" method="GET">
+      <div class="search-icon-header">
+        <img src="image/icon_search.png" alt="Search Icon">
+      </div>
+      <input type="text" placeholder="Cari yang Anda Butuhkan di Sini" class="search-input-header" name="q">
+      <button type="submit" class="search-button-header">Cari</button>
+    </form>
+  </div>
+  
+              <!-- Contact Center -->
+              <div class="contact-center-header">
+                
+                <div class="contact-title-header">Hubungi Kami</div>
+                
+                <div class="contact-items-header">
+                  <div class="contact-item-header">
+                    <a href="tel:+622189116527"  class="contact-link-header">
+                    <img src="image/icon_call.png" alt="Phone Icon" class="icon-contact-header"-header>
+                    <span>021 8911 6527</span>
+                    </a>
+                  </div>
+                  <div class="contact-item-header">
+                    <a href="https://wa.me/628118252322"  class="contact-link-header">
+                    <img src="image/icon_emergency.png" alt="Ambulance Icon" class="icon-contact-header">
+                    <span>0811 8252 322</span>
+                    </a>
+                  </div>
+                </div>
+  
+              </div>
+  
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+ 
+
+    <!-- Navigation Bar -->
+<nav style="background-color: #00928F; padding: 0;">
+    <div class="container">
+        <!-- Hamburger Menu untuk tampilan mobile -->
+        <div class="mobile-menu-toggle">
+            <span>Menu</span>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <div class="nav-container">
+            <ul class="main-menu">
+                <li class="menu-item">
+                    <a href="index.html" class="menu-link">Beranda</a>
+                </li>
+                
+                <!-- Menu Tentang Kami -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Tentang Kami 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="halaman_sejarah.html">Sejarah</a></li>
+                        <li><a href="halaman_visi_misi.html">Visi Misi</a></li>
+                        <li><a href="halaman_struktur_organisasi.html">Struktur Organisasi</a></li>
+                        <li><a href="halaman_akreditasi.html">Akreditasi dan Penghargaan</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Menu Layanan -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Layanan 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="halaman_layanan.html?tab=fasilitas">Fasilitas</a></li>
+                        <li><a href="halaman_layanan.html?tab=layanan-unggulan">Layanan Unggulan</a></li>
+                        <li><a href="halaman_layanan.html?tab=rawat-inap">Rawat Inap</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Menu Spesialis -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Spesialis Kami 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_klinik_spesialis.php?id=1">Kebidanan dan Kandungan</a></li>
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_klinik_spesialis.php?id=2">Anak</a></li>
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_klinik_spesialis.php?id=3">Penyakit Dalam</a></li>
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_klinik_spesialis.php?id=4">Bedah Umum</a></li>
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_spesialis.php">Lihat Semua</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Menu Informasi -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Informasi 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="halaman_promosi.html">Promosi</a></li>
+                        <li><a href="halaman_artikel_kesehatan.html">Artikel Kesehatan</a></li>
+                        <li><a href="halaman_artikel_islami.html">Artikel Islami</a></li>
+                        <li><a href="halaman_event.html">Event</a></li>
+                        <li><a href="halaman_karir.html">Karir</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Menu Kesyariahan -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Kesyariahan 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="halaman_kms.html">Kebijakan Mutu Syariah</a></li>
+                        <li><a href="halaman_program_kesyariahan.html">Program Kesyariahan</a></li>
+                        <li><a href="halaman_konsultasi_syariah.html">Konsultasi Syariah</a></li>
+                        <li><a href="halaman_profil_dps.html">Profil DPS dan Komite Syariah</a></li>
+                    </ul>
+                </li>
+                
+                <li class="menu-item">
+                    <a href="http://localhost/WebsiteRidhokaSalma/halaman_cari_dokter.php" class="menu-link">Cari Dokter</a>
+                </li>
+                <li class="menu-item">
+                    <a href="http://localhost/WebsiteRidhokaSalma/halaman_janji_temu.php" class="menu-link">Janji Temu</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+</header>
+
+    
+    <!-- Content Section -->
+    <section class="content-section">
+        <div class="container-fluid p-0">
+            <div class="content-container">
+                <!-- Breadcrumb -->
+                <div class="breadcrumb-nav">
+                    <span><a href="index.html" class="breadcrumb-item">Beranda</a></span>
+                    <span class="breadcrumb-separator">></span>
+                    <span><a href="halaman_informasi.html" class="breadcrumb-item">Informasi</a></span>
+                    <span class="breadcrumb-separator">></span>
+                    <span><a href="halaman_karir.html" class="breadcrumb-item">Karir</a></span>
+                    <span class="breadcrumb-separator">></span>
+                    <span class="breadcrumb-current" id="job-title-breadcrumb">Detail Lowongan</span>
+                </div>
+                
+                <!-- Page Title -->
+                <h1 class="page-title" id="job-title-heading">Detail Lowongan</h1>
+                
+                <!-- Job Detail Card -->
+                <div class="job-detail-card">
+                    <div class="job-detail-container" id="job-detail-container">
+                        <!-- Content will be loaded dynamically via JavaScript -->
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+    
+  <!---------------------------------------------------------------------------------------------------------------------------->
+<!-- Footer -->
+<footer class="footer">
+    <link rel="stylesheet" href="css/footer_style.css">
+    <div class="container">
+        <!-- Top Row: Logo, Info dan Kontak -->
+        <div class="footer-top">
+            <div class="footer-logo">
+                <img src="image/logo_header.png" alt="RS Ridhoka Salma Logo">
+            </div>
+            <div class="footer-address">
+                <p>Jl. Raya Imam Bonjol No.7, Kalijaya,<br>
+                   Kec. Cikarang Bar., Kabupaten<br>
+                   Bekasi, Jawa Barat 17530</p>
+            </div>
+            <div class="footer-contact">
+                <div class="contact-wrapper">
+                    <table class="contact-table">
+                        <tr>
+                            <td class="contact-label">IGD 24 Jam</td>
+                            <td class="contact-separator">:</td>
+                            <td class="contact-value">
+                                <a href="https://wa.me/628118252322" style="color: inherit; text-decoration: none;">0811 8252 322</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="contact-label">Telepon</td>
+                            <td class="contact-separator">:</td>
+                            <td class="contact-value">
+                                <a href="tel:+622189116527" style="color: inherit; text-decoration: none;">021 8911 6527</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="contact-label">WhatsApp</td>
+                            <td class="contact-separator">:</td>
+                            <td class="contact-value">
+                                <a href="https://wa.me/6281317182223" style="color: inherit; text-decoration: none;">0813 1718 2223</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="contact-label">E-mail</td>
+                            <td class="contact-separator">:</td>
+                            <td class="contact-value no-space">
+                                <a href="mailto:info@rsridhokasalma.com" style="color: inherit; text-decoration: none;">info@rsridhokasalma.com</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Divider -->
+        <div class="footer-divider"></div>
+        
+        <!-- Footer Menu -->
+        <div class="footer-menu">
+            <div class="footer-menu-column">
+                <h4>Tentang Kami</h4>
+                <ul>
+                    <li><a href="halaman_sejarah.html">Sejarah</a></li>
+                    <li><a href="halaman_visi_misi.html">Visi Misi</a></li>
+                    <li><a href="halaman_struktur_organisasi.html">Struktur Organisasi</a></li>
+                    <li><a href="halaman_akreditasi.html">Akreditasi dan Penghargaan</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-menu-column">
+                <h4>Layanan</h4>
+                <ul>
+                    <li><a href="halaman_layanan.html?tab=fasilitas">Fasilitas</a></li>
+                    <li><a href="halaman_layanan.html?tab=layanan-unggulan">Layanan Unggulan</a></li>
+                    <li><a href="halaman_layanan.html?tab=rawat-inap">Rawat Inap</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-menu-column">
+                <h4>Informasi</h4>
+                <ul>
+                    <li><a href="halaman_promosi.html">Promosi</a></li>
+                    <li><a href="halaman_artikel_kesehatan.html">Artikel Kesehatan</a></li>
+                    <li><a href="halaman_artikel_islami.html">Artikel Islami</a></li>
+                    <li><a href="halaman_event.html">Event</a></li>
+                    <li><a href="halaman_karir.html">Karir</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-menu-column">
+                <h4>Kesyariahan</h4>
+                <ul>
+                    <li><a href="halaman_kms.html">Kebijakan Mutu Syariah</a></li>
+                    <li><a href="halaman_program_kesyariahan.html">Program Kesyariahan</a></li>
+                    <li><a href="halaman_konsultasi_syariah.html">Konsultasi Syariah</a></li>
+                    <li><a href="halaman_profil_dps.html">Profil DPS dan Komite Syariah</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Divider -->
+        <div class="footer-divider"></div>
+        
+        <!-- Social Media -->
+        <div class="footer-social">
+            <div class="social-label">Ikuti Kami</div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/rumahsakitridhokasalma/?locale=id_ID" class="social-icon">
+                    <img width="20" height="20" src="https://img.icons8.com/ios-filled/150/ffffff/facebook-new.png" alt="facebook-new"/>
+                </a>
+                <a href="https://www.instagram.com/ridhokasalma/" class="social-icon">
+                    <img width="192" height="192" src="https://img.icons8.com/material-outlined/192/ffffff/instagram-new--v1.png" alt="instagram-new--v1"/>    
+                </a>
+                <a href="https://www.youtube.com/@rs.ridhokasalma2727" class="social-icon">
+                    <img width="150" height="150" src="https://img.icons8.com/ios-filled/150/ffffff/youtube-play.png" alt="youtube-play"/>
+                </a>
+                <a href="https://www.tiktok.com/@ridhokasalma" class="social-icon">
+                    <img width="150" height="150" src="https://img.icons8.com/ios-filled/150/ffffff/tiktok--v1.png" alt="tiktok--v1"/>
+                </a>
+                <a href="https://x.com/ridhokasalma" class="social-icon">
+                    <img width="150" height="150" src="https://img.icons8.com/ios-filled/150/ffffff/twitterx--v2.png" alt="twitterx--v2"/>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="footer-copyright">
+            <p>&copy; 2025 RS Ridhoka Salma. All Right Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- HTML untuk Floating WhatsApp Button -->
+<div class="floating-whatsapp">
+    
+    <div class="whatsapp-button" id="whatsappButton">
+        <img src="image/icon_whatsapp.png" alt="WhatsApp Icon" class="whatsapp-icon">
+    </div>
+    <div class="whatsapp-popup" id="whatsappPopup">
+      <div class="whatsapp-popup-header">Mulai Percakapan</div>
+      <p class="whatsapp-popup-text">Klik nomor Customer Care kami untuk memulai percakapan di <strong>WhatsApp</strong>:</p>
+      <a href="https://wa.me/6281317182223" class="whatsapp-popup-number" target="_blank">0813 1718 2223</a>
+    </div>
+  </div>
+
+ <!-- JavaScript untuk WhatsApp Button -->
+    <script src="javascript/floating_button.js"></script>
+    <!-- Bootstrap JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+    
+    <script>
+        // Function to adjust content based on header height
+        function adjustContentForHeader() {
+            const header = document.querySelector('.sticky-header');
+            const contentElement = document.querySelector('.content-section');
+            
+            if (!header || !contentElement) return;
+        
+            // Use requestAnimationFrame for smoother layout adjustments
+            requestAnimationFrame(() => {
+                const headerHeight = header.offsetHeight;
+                contentElement.style.marginTop = headerHeight + 'px';
+                
+                // If there's a breadcrumb, adjust it too
+                const breadcrumb = document.querySelector('.breadcrumb-section, .breadcrumb-nav');
+                if (breadcrumb) {
+                    breadcrumb.style.marginTop = '0'; // Reset any previous margin
+                    breadcrumb.style.paddingTop = '15px'; // Add some padding instead
+                }
+            });
+        }
+        
+        // Call adjustment function when DOM is ready
+        document.addEventListener('DOMContentLoaded', adjustContentForHeader);
+        
+        // Call again after all content has loaded
+        window.addEventListener('load', adjustContentForHeader);
+        
+        // Handle window resize with debounce for performance
+        let resizeTimeout;
+        window.addEventListener('resize', () => {
+            clearTimeout(resizeTimeout);
+            resizeTimeout = setTimeout(adjustContentForHeader, 100);
+        });
+        // Data untuk lowongan pekerjaan (contoh untuk ID 1 dan 2)
+        const jobData = {
+            // ID 1: Analis Kesehatan (data yang sudah ada)
+            "1": {
+                title: "Lowongan Karir Analis Kesehatan",
+                image: "image/karir_1.png",
+                qualifications: [
+                    "Memiliki ijazah D3 Analisis Kesehatan / Memiliki STR",
+                    "Mempunyai tanggung jawab",
+                    "Mampu bekerja sama dengan tim",
+                    "Gaji memuaskan"
+                ],
+                documents: [
+                    "CV",
+                    "Fotocopy ijazah",
+                    "Fotocopy STR"
+                ],
+                applicationText: [
+                    "Kirim berkas lamaran melalui pos ke alamat RS Ridhoka Salma, yaitu:",
+                    "Jl. Raya Imam Bonjol No.7, Kalijaya, Kec. Cikarang Bar., Kabupaten Bekasi, Jawa Barat 17530",
+                    "atau melalui email <span class=\"email-address\">hrd.ridhokasalma@gmail.com</span>"
+                ],
+                email: "hrd.ridhokasalma@gmail.com"
+            },
+            
+            // ID 2: Template Kosong (Untuk diisi nanti)
+            "2": {
+                title: "Lowongan Karir [Judul Posisi]",
+                image: "image/karir_placeholder.png", // Ganti dengan gambar sesuai posisi
+                qualifications: [
+                    "Kualifikasi 1 - Isi dengan persyaratan pendidikan/sertifikasi",
+                    "Kualifikasi 2 - Isi dengan keterampilan yang dibutuhkan",
+                    "Kualifikasi 3 - Isi dengan pengalaman yang dibutuhkan",
+                    "Kualifikasi 4 - Isi dengan persyaratan lainnya"
+                ],
+                documents: [
+                    "Dokumen 1 - misalnya CV",
+                    "Dokumen 2 - misalnya Ijazah",
+                    "Dokumen 3 - misalnya Sertifikat/STR jika diperlukan"
+                ],
+                applicationText: [
+                    "Kirim berkas lamaran melalui pos ke alamat RS Ridhoka Salma, yaitu:",
+                    "Jl. Raya Imam Bonjol No.7, Kalijaya, Kec. Cikarang Bar., Kabupaten Bekasi, Jawa Barat 17530",
+                    "atau melalui email <span class=\"email-address\">hrd.ridhokasalma@gmail.com</span>"
+                ],
+                email: "hrd.ridhokasalma@gmail.com"
+            }
+            
+            // Anda dapat menambahkan ID 3, 4, 5 sesuai kebutuhan di masa mendatang
+        };
+        
+        // Fungsi untuk mendapatkan ID dari URL
+        function getJobIdFromUrl() {
+            const urlParams = new URLSearchParams(window.location.search);
+            return urlParams.get('id') || "1"; // Default ke ID 1 jika tidak ada parameter
+        }
+        
+        // Fungsi untuk menampilkan detail lowongan berdasarkan ID
+        function showJobDetail(id) {
+            const job = jobData[id];
+            if (!job) {
+                // Jika ID tidak ditemukan, tampilkan pesan error atau redirect
+                document.getElementById('job-detail-container').innerHTML = `
+                    <div class="alert alert-warning" role="alert">
+                        Maaf, lowongan dengan ID tersebut tidak ditemukan.
+                    </div>
+                `;
+                return;
+            }
+            
+            // Update breadcrumb dan judul halaman
+            document.getElementById('job-title-breadcrumb').textContent = job.title;
+            document.getElementById('job-title-heading').textContent = job.title;
+            
+            // Template HTML untuk detail lowongan
+            const detailHTML = `
+                <!-- Image Column -->
+                <div class="job-image-col">
+                    <div class="job-image">
+                        <img src="${job.image}" alt="${job.title}">
+                    </div>
+                </div>
+                
+                <!-- Info Column -->
+                <div class="job-info-col">
+                    <!-- Qualification Section -->
+                    <div class="job-section">
+                        <h2 class="section-title">
+                            <i class="fa-solid fa-square-check"></i>
+                            Kualifikasi
+                        </h2>
+                        <ul class="qualification-list">
+                            ${job.qualifications.map(qual => `<li>${qual}</li>`).join('')}
+                        </ul>
+                    </div>
+                    
+                    <!-- Documents Section -->
+                    <div class="job-section">
+                        <h2 class="section-title">
+                            <i class="fa-solid fa-folder-open"></i>
+                            Berkas Persyaratan
+                        </h2>
+                        <ul class="document-list">
+                            ${job.documents.map(doc => `<li>${doc}</li>`).join('')}
+                        </ul>
+                    </div>
+                    
+                    <!-- Application Section -->
+                    <div class="job-section">
+                        <h2 class="section-title">
+                            <i class="fa-solid fa-briefcase"></i>
+                            Cara melamar
+                        </h2>
+                        <div class="application-info">
+                            ${job.applicationText.map(text => `<p>${text}</p>`).join('')}
+                            <a href="mailto:${job.email}" class="btn-email">
+                                <i class="fas fa-envelope btn-icon"></i>
+                                Email Kami
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            `;
+            
+            document.getElementById('job-detail-container').innerHTML = detailHTML;
+        }
+        
+        // Inisialisasi halaman detail
+        document.addEventListener('DOMContentLoaded', function() {
+            const jobId = getJobIdFromUrl();
+            showJobDetail(jobId);
+        });
+    </script>
+</body>
+</html>

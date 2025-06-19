@@ -1,0 +1,861 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Detail Promosi - RS Ridhoka Salma</title>
+    <link rel="icon" href="image/logo.png" type="image/png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/css/bootstrap.min.css" rel="stylesheet">
+    <!-- Font Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Font Awesome for icons -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <!-- WhatsApp Button Style -->
+    <link rel="stylesheet" href="css/floating_button_style.css">
+    <style>
+        /* Global Styles */
+        body {
+            font-family: 'Montserrat', sans-serif;
+            background-color: #ffffff;
+            color: #333;
+            padding-top: 0; /* Remove default padding */
+        }
+        
+        * {
+            font-family: 'Montserrat', sans-serif;
+        }
+        
+        /* ==== BANNER STYLES ==== */
+        .banner-section {
+            width: 100%;
+            height: auto;
+            overflow: hidden;
+            position: relative;
+            margin-bottom: 40px;
+        }
+        
+        .banner-image {
+            width: 100%;
+            height: auto;
+            display: block;
+            max-height: 400px;
+            object-fit: contain;
+        }
+        /* ==== END BANNER STYLES ==== */
+        
+        /* ==== CONTENT CONTAINER ==== */
+        .detail-content {
+            padding: 20px 0 60px;
+        }
+        
+        .detail-container {
+            width: 90%;
+            max-width: 1000px; /* Mengecilkan lebar maksimum container */
+            margin: 0 auto;
+            background-color: #fff;
+            border-radius: 10px;
+            box-shadow: 0 0 15px rgba(0, 0, 0, 0.05);
+            overflow: hidden;
+            padding: 0;
+        }
+        
+        /* ==== PROMO DETAIL STYLES ==== */
+        .promo-header {
+            padding: 20px 25px;
+            margin-bottom: 20px;
+            border-bottom: 1px solid #f0f0f0;
+        }
+        
+        /* Breadcrumb Styles */
+        .breadcrumb-nav {
+            margin-bottom: 10px;
+            font-size: 14px;
+        }
+        
+        .breadcrumb-item {
+            color: #555;
+            text-decoration: none;
+            transition: color 0.3s;
+        }
+        
+        .breadcrumb-item:hover {
+            color: #00928F;
+        }
+        
+        .breadcrumb-current {
+            color: #555;
+            font-weight: 500;
+        }
+        
+        .breadcrumb-separator {
+            color: #999;
+            margin: 0 5px;
+        }
+        
+        .promo-title {
+            font-size: 20px;
+            font-weight: 600;
+            color: #333;
+            margin-bottom: 0;
+            position: relative;
+            display: inline-block;
+        }
+        
+        .promo-content {
+            display: flex;
+            flex-wrap: wrap;
+            padding: 20px 25px 30px;
+        }
+        
+        /* Image Column */
+        .promo-image-col {
+            flex: 0 0 100%;
+            max-width: 100%;
+            margin-bottom: 25px;
+            /* Batasi lebar maksimum gambar agar proporsional */
+            max-width: 450px;
+            margin-left: auto;
+            margin-right: auto;
+        }
+        
+        @media (min-width: 768px) {
+            .promo-image-col {
+                flex: 0 0 40%;
+                max-width: 40%;
+                margin-bottom: 0;
+                margin-left: 0;
+                margin-right: 0;
+            }
+        }
+        
+        .promo-image-container {
+            width: 100%;
+            border-radius: 8px;
+            overflow: hidden;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            /* Tambahkan rasio aspek tetap */
+            position: relative;
+            padding-top: 100%; /* Rasio 1:1 (persegi) */
+            background-color: #f8f8f8; /* Background fallback */
+        }
+        
+        .promo-image {
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            display: block;
+            object-fit: cover; /* Pastikan gambar selalu tertampil penuh */
+        }
+        
+        /* Text Column */
+        .promo-text-col {
+            flex: 0 0 100%;
+            max-width: 100%;
+            padding: 0;
+        }
+        
+        @media (min-width: 768px) {
+            .promo-text-col {
+                flex: 0 0 60%;
+                max-width: 60%;
+                padding-left: 30px;
+            }
+        }
+        
+        .promo-description {
+            margin-bottom: 25px;
+            line-height: 1.6;
+        }
+        
+        .promo-description p {
+            margin-bottom: 15px;
+            font-size: 15px;
+            text-align: justify;
+            color: #444;
+        }
+        
+        /* Package List */
+        .package-list {
+            margin-bottom: 30px;
+        }
+        
+        .package-list-title {
+            font-size: 18px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #333;
+            padding-bottom: 5px;
+            border-bottom: 2px solid #f0f0f0;
+        }
+        
+        .package-item {
+            display: flex;
+            align-items: center;
+            margin-bottom: 12px;
+            background-color: #f9f9f9;
+            padding: 10px 15px;
+            border-radius: 6px;
+            transition: background-color 0.2s;
+        }
+        
+        .package-check {
+            color: #00928F;
+            margin-right: 12px;
+            flex-shrink: 0;
+            font-size: 16px;
+        }
+        
+        .package-text {
+            font-size: 15px;
+            display: flex;
+            justify-content: space-between;
+            text-align: justify;
+            width: 100%;
+            align-items: center;
+        }
+        
+        .package-price {
+            font-weight: 600;
+            color: #00928F;
+            white-space: nowrap;
+            margin-left: 10px;
+        }
+        
+        /* CTA Section */
+        .cta-section {
+            margin-top: 20px;
+            padding: 15px;
+            background-color: #f8f8f8;
+            border-radius: 8px;
+        }
+        
+        .cta-title {
+            font-size: 16px;
+            font-weight: 600;
+            margin-bottom: 15px;
+            color: #333;
+        }
+        
+        .cta-buttons {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+        }
+        
+        .btn-whatsapp, .btn-phone {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            padding: 10px 20px;
+            border-radius: 50px;
+            font-weight: 500;
+            font-size: 15px;
+            text-decoration: none;
+            color: white;
+            transition: all 0.3s;
+        }
+        
+        .btn-whatsapp {
+            background-color: #00928F;
+        }
+        
+        .btn-phone {
+            background-color: #00928F;
+        }
+        
+        .btn-whatsapp:hover {
+            background-color: #066969;
+            color: white;
+        }
+        
+        .btn-phone:hover {
+            background-color: #066969;
+            color: white;
+        }
+        
+        .btn-icon {
+            margin-right: 8px;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 576px) {
+            .promo-header {
+                padding: 15px 20px;
+            }
+            
+            .promo-title {
+                font-size: 20px;
+            }
+            
+            .promo-content {
+                padding: 15px 20px 25px;
+            }
+            
+            .package-list-title {
+                font-size: 16px;
+            }
+            
+            .btn-whatsapp, .btn-phone {
+                width: 100%;
+                margin-bottom: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+<!-- Header -->
+<header class="sticky-header">
+    <link rel="stylesheet" href="css/header_style.css">
+    <script src="javascript/header.js"></script>
+
+    <div class="header-top">
+      <div class="container-fluid px-0">
+        <div class="row align-items-center">
+          
+          <!-- Logo -->
+          <div class="col-md-4 logo-container">
+            <a href="index.html">
+              <img src="image/logo_header.png" alt="RS Ridhoka Salma Logo" class="logo-img">
+            </a>
+          </div>
+  
+          <!-- Search and Contact Info -->
+          <div class="col-md-8">
+            <div class="search-contact-container">
+  
+              <!-- Search Bar -->
+              <div class="search-bar-header">
+                <form class="search-form-header" action="halaman_pencarian.html" method="GET">
+                  <div class="search-icon-header">
+                    <img src="image/icon_search.png" alt="Search Icon">
+                  </div>
+                  <input type="text" placeholder="Cari yang Anda Butuhkan di Sini" class="search-input-header" name="q">
+                  <button type="submit" class="search-button-header">Cari</button>
+                </form>
+              </div>
+  
+              <!-- Contact Center -->
+              <div class="contact-center-header">
+                <div class="contact-title-header">Hubungi Kami</div>
+                <div class="contact-items-header">
+                  <div class="contact-item-header">
+                    <a href="tel:+622189116527" class="contact-link-header">
+                      <img src="image/icon_call.png" alt="Phone Icon" class="icon-contact-header">
+                      <span>021 8911 6527</span>
+                    </a>
+                  </div>
+                  <div class="contact-item-header">
+                    <a href="https://wa.me/628118252322" class="contact-link-header">
+                      <img src="image/icon_emergency.png" alt="Ambulance Icon" class="icon-contact-header">
+                      <span>0811 8252 322</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!-- Navigation Bar -->
+    <nav style="background-color: #00928F; padding: 0;">
+        <div class="container">
+            <!-- Hamburger Menu untuk tampilan mobile -->
+            <div class="mobile-menu-toggle">
+                <span>Menu</span>
+                <div class="hamburger">
+                    <span></span>
+                    <span></span>
+                    <span></span>
+                </div>
+            </div>
+            
+            <div class="nav-container">
+                <ul class="main-menu">
+                    <li class="menu-item">
+                        <a href="index.html" class="menu-link">Beranda</a>
+                    </li>
+                    
+                    <!-- Menu Tentang Kami -->
+                    <li class="menu-item dropdown">
+                        <a href="#" class="menu-link">
+                            Tentang Kami 
+                            <i class="dropdown-arrow"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="halaman_sejarah.html">Sejarah</a></li>
+                            <li><a href="halaman_visi_misi.html">Visi Misi</a></li>
+                            <li><a href="halaman_struktur_organisasi.html">Struktur Organisasi</a></li>
+                            <li><a href="halaman_akreditasi.html">Akreditasi dan Penghargaan</a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Menu Layanan -->
+                    <li class="menu-item dropdown">
+                        <a href="#" class="menu-link">
+                            Layanan 
+                            <i class="dropdown-arrow"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="halaman_layanan.html?tab=fasilitas">Fasilitas</a></li>
+                            <li><a href="halaman_layanan.html?tab=layanan-unggulan">Layanan Unggulan</a></li>
+                            <li><a href="halaman_layanan.html?tab=rawat-inap">Rawat Inap</a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Menu Spesialis -->
+                    <li class="menu-item dropdown">
+                        <a href="#" class="menu-link">
+                            Spesialis Kami 
+                            <i class="dropdown-arrow"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_klinik_spesialis.php?id=1">Kebidanan dan Kandungan</a></li>
+                            <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_klinik_spesialis.php?id=2">Anak</a></li>
+                            <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_klinik_spesialis.php?id=3">Penyakit Dalam</a></li>
+                            <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_klinik_spesialis.php?id=4">Bedah Umum</a></li>
+                            <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_spesialis.php">Lihat Semua</a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Menu Informasi -->
+                    <li class="menu-item dropdown">
+                        <a href="#" class="menu-link">
+                            Informasi 
+                            <i class="dropdown-arrow"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="halaman_promosi.html">Promosi</a></li>
+                            <li><a href="halaman_artikel_kesehatan.html">Artikel Kesehatan</a></li>
+                            <li><a href="halaman_artikel_islami.html">Artikel Islami</a></li>
+                            <li><a href="halaman_event.html">Event</a></li>
+                            <li><a href="halaman_karir.html">Karir</a></li>
+                        </ul>
+                    </li>
+                    
+                    <!-- Menu Kesyariahan -->
+                    <li class="menu-item dropdown">
+                        <a href="#" class="menu-link">
+                            Kesyariahan 
+                            <i class="dropdown-arrow"></i>
+                        </a>
+                        <ul class="submenu">
+                            <li><a href="halaman_kms.html">Kebijakan Mutu Syariah</a></li>
+                            <li><a href="halaman_program_kesyariahan.html">Program Kesyariahan</a></li>
+                            <li><a href="halaman_konsultasi_syariah.html">Konsultasi Syariah</a></li>
+                            <li><a href="halaman_profil_dps.html">Profil DPS dan Komite Syariah</a></li>
+                        </ul>
+                    </li>
+                    
+                    <li class="menu-item">
+                        <a href="http://localhost/WebsiteRidhokaSalma/halaman_cari_dokter.php" class="menu-link">Cari Dokter</a>
+                    </li>
+                    <li class="menu-item">
+                        <a href="http://localhost/WebsiteRidhokaSalma/halaman_janji_temu.php" class="menu-link">Janji Temu</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+</header>
+
+<!-- Main Content Section -->
+<section class="detail-content">
+    <div class="container">
+        <!-- Detail Container yang akan diisi secara dinamis berdasarkan ID -->
+        <div class="detail-container" id="promo-detail-container">
+            <!-- Content will be dynamically populated by JavaScript -->
+        </div>
+    </div>
+</section>
+
+<!---------------------------------------------------------------------------------------------------------------------------->
+<!-- Footer -->
+<footer class="footer">
+    <link rel="stylesheet" href="css/footer_style.css">
+    <div class="container">
+        <!-- Top Row: Logo, Info dan Kontak -->
+        <div class="footer-top">
+            <div class="footer-logo">
+                <img src="image/logo_header.png" alt="RS Ridhoka Salma Logo">
+            </div>
+            <div class="footer-address">
+                <p>Jl. Raya Imam Bonjol No.7, Kalijaya,<br>
+                   Kec. Cikarang Bar., Kabupaten<br>
+                   Bekasi, Jawa Barat 17530</p>
+            </div>
+            <div class="footer-contact">
+                <div class="contact-wrapper">
+                    <table class="contact-table">
+                        <tr>
+                            <td class="contact-label">IGD 24 Jam</td>
+                            <td class="contact-separator">:</td>
+                            <td class="contact-value">
+                                <a href="https://wa.me/628118252322" style="color: inherit; text-decoration: none;">0811 8252 322</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="contact-label">Telepon</td>
+                            <td class="contact-separator">:</td>
+                            <td class="contact-value">
+                                <a href="tel:+622189116527" style="color: inherit; text-decoration: none;">021 8911 6527</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="contact-label">WhatsApp</td>
+                            <td class="contact-separator">:</td>
+                            <td class="contact-value">
+                                <a href="https://wa.me/6281317182223" style="color: inherit; text-decoration: none;">0813 1718 2223</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="contact-label">E-mail</td>
+                            <td class="contact-separator">:</td>
+                            <td class="contact-value no-space">
+                                <a href="mailto:info@rsridhokasalma.com" style="color: inherit; text-decoration: none;">info@rsridhokasalma.com</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Divider -->
+        <div class="footer-divider"></div>
+        
+        <!-- Footer Menu -->
+        <div class="footer-menu">
+            <div class="footer-menu-column">
+                <h4>Tentang Kami</h4>
+                <ul>
+                    <li><a href="halaman_sejarah.html">Sejarah</a></li>
+                    <li><a href="halaman_visi_misi.html">Visi Misi</a></li>
+                    <li><a href="halaman_struktur_organisasi.html">Struktur Organisasi</a></li>
+                    <li><a href="halaman_akreditasi.html">Akreditasi dan Penghargaan</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-menu-column">
+                <h4>Layanan</h4>
+                <ul>
+                    <li><a href="halaman_layanan.html?tab=fasilitas">Fasilitas</a></li>
+                    <li><a href="halaman_layanan.html?tab=layanan-unggulan">Layanan Unggulan</a></li>
+                    <li><a href="halaman_layanan.html?tab=rawat-inap">Rawat Inap</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-menu-column">
+                <h4>Informasi</h4>
+                <ul>
+                    <li><a href="halaman_promosi.html">Promosi</a></li>
+                    <li><a href="halaman_artikel_kesehatan.html">Artikel Kesehatan</a></li>
+                    <li><a href="halaman_artikel_islami.html">Artikel Islami</a></li>
+                    <li><a href="halaman_event.html">Event</a></li>
+                    <li><a href="halaman_karir.html">Karir</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-menu-column">
+                <h4>Kesyariahan</h4>
+                <ul>
+                    <li><a href="halaman_kms.html">Kebijakan Mutu Syariah</a></li>
+                    <li><a href="halaman_program_kesyariahan.html">Program Kesyariahan</a></li>
+                    <li><a href="halaman_konsultasi_syariah.html">Konsultasi Syariah</a></li>
+                    <li><a href="halaman_profil_dps.html">Profil DPS dan Komite Syariah</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Divider -->
+        <div class="footer-divider"></div>
+        
+        <!-- Social Media -->
+        <div class="footer-social">
+            <div class="social-label">Ikuti Kami</div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/rumahsakitridhokasalma/?locale=id_ID" class="social-icon">
+                    <img width="20" height="20" src="https://img.icons8.com/ios-filled/150/ffffff/facebook-new.png" alt="facebook-new"/>
+                </a>
+                <a href="https://www.instagram.com/ridhokasalma/" class="social-icon">
+                    <img width="192" height="192" src="https://img.icons8.com/material-outlined/192/ffffff/instagram-new--v1.png" alt="instagram-new--v1"/>    
+                </a>
+                <a href="https://www.youtube.com/@rs.ridhokasalma2727" class="social-icon">
+                    <img width="150" height="150" src="https://img.icons8.com/ios-filled/150/ffffff/youtube-play.png" alt="youtube-play"/>
+                </a>
+                <a href="https://www.tiktok.com/@ridhokasalma" class="social-icon">
+                    <img width="150" height="150" src="https://img.icons8.com/ios-filled/150/ffffff/tiktok--v1.png" alt="tiktok--v1"/>
+                </a>
+                <a href="https://x.com/ridhokasalma" class="social-icon">
+                    <img width="150" height="150" src="https://img.icons8.com/ios-filled/150/ffffff/twitterx--v2.png" alt="twitterx--v2"/>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="footer-copyright">
+            <p>&copy; 2025 RS Ridhoka Salma. All Right Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- HTML untuk Floating WhatsApp Button -->
+<div class="floating-whatsapp">
+    
+    <div class="whatsapp-button" id="whatsappButton">
+        <img src="image/icon_whatsapp.png" alt="WhatsApp Icon" class="whatsapp-icon">
+    </div>
+    <div class="whatsapp-popup" id="whatsappPopup">
+      <div class="whatsapp-popup-header">Mulai Percakapan</div>
+      <p class="whatsapp-popup-text">Klik nomor Customer Care kami untuk memulai percakapan di <strong>WhatsApp</strong>:</p>
+      <a href="https://wa.me/6281317182223" class="whatsapp-popup-number" target="_blank">0813 1718 2223</a>
+    </div>
+  </div>
+
+ <!-- JavaScript untuk WhatsApp Button -->
+    <script src="javascript/floating_button.js"></script>
+<!---------------------------------------------------------------------------------------------------------------------------->
+<!-- Bootstrap JS Bundle -->
+<script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.3.0/js/bootstrap.bundle.min.js"></script>
+
+<script>
+    // Function to adjust content positioning based on header height
+    function adjustContentForHeader() {
+        const header = document.querySelector('.sticky-header');
+        const detailContent = document.querySelector('.detail-content');
+        
+        if (!header || !detailContent) return;
+
+        // Use requestAnimationFrame for smoother layout adjustments
+        requestAnimationFrame(() => {
+            const headerHeight = header.offsetHeight;
+            detailContent.style.marginTop = headerHeight + 'px';
+        });
+    }
+
+    // Call adjustment function at various times to ensure it works
+    window.addEventListener('DOMContentLoaded', adjustContentForHeader);
+    window.addEventListener('load', adjustContentForHeader);
+    
+    // Handle resize events with debounce
+    let resizeTimeout;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimeout);
+        resizeTimeout = setTimeout(adjustContentForHeader, 100);
+    });
+    
+    // Data untuk semua promosi (6 ID)
+    const promoData = {
+        // ID 1: Paket Vaksin Internasional
+        "1": {
+            title: "Paket Vaksin Internasional",
+            image: "image/paketpromo_1.jpg",
+            description: `
+                <p>Perjalanan ibadah yang nyaman dimulai dengan perlindungan kesehatan terbaik. Pastikan Anda sudah mendapatkan vaksinasi meningitis dan influenza sebelum berangkat umroh!</p>
+                <p>Dapatkan layanan vaksinasi terpercaya di RS Ridhoka Salma sekarang! Kami menyediakan beberapa pilihan paket vaksinasi untuk kebutuhan ibadah umroh dan haji Anda.</p>
+            `,
+            packages: [
+                {text: "Vaksin Meningitis", price: "Rp350.000"},
+                {text: "Vaksin Influenza", price: "Rp350.000"},
+                {text: "Vaksin Polio", price: "Rp325.000"},
+                {text: "Vaksin Meningitis + Influenza", price: "Rp650.000"},
+                {text: "Vaksin Meningitis + Polio", price: "Rp650.000"},
+                {text: "Vaksin Meningitis + Influenza + Polio", price: "Rp900.000"},
+                {text: "MCU Standar", price: "Rp150.000"},
+                {text: "MCU + Vaksin Meningitis + Influenza", price: "Rp800.000"}
+            ],
+            whatsapp: "6281317182223",
+            phone: "0218911652"
+        },
+        
+        // ID 2: Promo Special Skin Booster
+        "2": {
+            title: "Promo Special Skin Booster",
+            image: "image/paketpromo_2.jpg",
+            description: `
+    <p>Paket Promo Special Skin Booster dari Rose Aesthetic Clinic hadir dengan berbagai pilihan treatment untuk membantu kulit wajah tampak lebih cerah, lembap, dan segar. Mulai dari Derma Instant Glowing, PRP Glow, hingga DNA Salmon. Setiap perawatan akan disesuaikan dengan kondisi dan kebutuhan kulit Anda.</p>
+    <p>Seluruh tindakan dilakukan oleh dokter spesialis kulit menggunakan teknik dan produk yang aman secara medis. Layanan ini cocok untuk Anda yang ingin merawat kulit secara optimal dengan pendekatan yang profesional dan terpercaya.</p>
+`,
+            packages: [
+                {text: "Derma Instant Glowing", price: "Rp450.000"},
+                {text: "PRP Glow Skin Booster", price: "Rp799.000"},
+                {text: "Hydra Glow Skin Booster", price: "Rp599.000"},
+                {text: "DNA Salmon", price: "Rp630.000"},
+                {text: "Skin Booster Premium", price: "Rp1.200.000"},
+                {text: "Aqua Glow Infusion", price: "Rp2.500.000"},
+                {text: "Skin Booster NCTF 3cc", price: "Rp1.499.000"},
+                {text: "Meso Flek", price: "Rp560.000"},
+                {text: "Meso Under Eyes + RF", price: "Rp700.000"}
+            ],
+            whatsapp: "6281317182223",
+            phone: "0218911652"
+        },
+        
+        // ID 3: Paket Terapi Wicara Anak
+        "3": {
+            title: "Paket Terapi Wicara Anak",
+            image: "image/paketpromo_3.jpg",
+            description: `
+    <p>Terapi wicara bertujuan untuk membantu anak yang mengalami kesulitan dalam berbicara, memahami bahasa, atau berkomunikasi dengan jelas. Penanganan sejak dini dapat memberikan dampak yang positif bagi tumbuh kembang anak.</p>
+    <p>Di RS Ridhoka Salma, layanan terapi dilakukan oleh terapis profesional dengan pendekatan yang sesuai dengan usia dan kebutuhan anak, sehingga proses berjalan nyaman dan bertahap.</p>
+`
+,
+            packages: [
+                {text: "Terapi dengan dokter", price: "Rp275.000"},
+                {text: "Terapi tanpa dokter", price: "Rp150.000"}
+            ],
+            whatsapp: "6281317182223",
+            phone: "0218911652"
+        },
+        
+        // ID 4: Paket Konselor Laktasi
+        "4": {
+            title: "Paket Konselor Laktasi",
+            image: "image/paketpromo_4.jpg",
+            description: `
+    <p>Paket Konselor Laktasi di RS Ridhoka Salma dirancang untuk mendampingi ibu dalam menjalani proses menyusui dengan lebih tenang dan percaya diri. Layanan ini mencakup konseling menyusui, penanganan masalah seperti pelekatan atau nyeri, serta panduan memompa dan menyimpan ASI.</p>
+    <p>Selain itu, ibu juga akan mendapatkan perawatan dan pijat payudara dari tenaga konselor bersertifikat, yang membantu mengoptimalkan produksi ASI. Semua layanan tersedia dalam satu paket lengkap untuk mendukung ibu dan bayi di masa awal kehidupan.</p>
+`,
+            packages: [
+                {text: "Konselor laktasi", price: "Rp375.000"}
+                 ],
+            whatsapp: "6281317182223",
+            phone: "0218911652"
+        },
+        
+        // ID 5: Paket Okupasi Terapi  Anak
+        "5": {
+            title: "Paket Okupasi Terapi  Anak",
+            image: "image/paketpromo_5.jpg",
+            description: `
+    <p>Okupasi terapi membantu anak yang mengalami hambatan dalam perkembangan motorik, kemandirian, atau perhatian agar dapat menjalani aktivitas sehari-hari dengan lebih baik.</p>
+    <p>RS Ridhoka Salma menyediakan layanan terapi dengan pendampingan dari terapis profesional yang berpengalaman menangani berbagai kondisi tumbuh kembang anak.</p>
+`,
+            packages: [
+            {text: "Terapi dengan dokter", price: "Rp275.000"},
+                {text: "Terapi tanpa dokter", price: "Rp150.000"}
+               ],
+            whatsapp: "6281317182223",
+            phone: "0218911652"
+        },
+        
+        // ID 6: Promo Hair Treatment
+        "6": {
+            title: "Promo Hair Treatment",
+            image: "image/paketpromo_6.jpg",
+            description: `
+    <p>Promo Hair Treatment di RS Ridhoka Salma menawarkan dua pilihan perawatan untuk membantu mengatasi kerontokan dan merangsang pertumbuhan rambut. Tersedia pilihan PRP Hair Growth, yang menggunakan plasma darah Anda sendiri untuk menutrisi folikel rambut secara alami.</p>
+    <p>Untuk hasil yang lebih intensif, tersedia juga Hair Growth with Secretome, perawatan regeneratif dengan kandungan aktif untuk merangsang pertumbuhan rambut dari akar. Seluruh prosedur dilakukan oleh tenaga medis profesional dengan standar keamanan klinis.</p>
+`,
+            packages: [
+            {text: "PRP Hair Growth", price: "Rp699.000"},
+                {text: "Hair Growth with Secretome", price: "Rp1.750.000"}
+            ],
+            whatsapp: "6281317182223",
+            phone: "0218911652"
+        }
+    };
+    
+    // Fungsi untuk mendapatkan ID dari URL
+    function getPromoIdFromUrl() {
+        const urlParams = new URLSearchParams(window.location.search);
+        return urlParams.get('id') || "1"; // Default ke ID 1 jika tidak ada parameter
+    }
+    
+    // Fungsi untuk menampilkan detail promosi berdasarkan ID
+    function showPromoDetail(id) {
+        // Force id to be a string in case it comes as a number
+        id = String(id);
+        
+        // Get promo data or use default if not found
+        let promo = promoData[id];
+        if (!promo) {
+            console.warn(`Promo with ID ${id} not found. Using default.`);
+            promo = promoData["1"]; // Use first promo as fallback if ID not found
+        }
+        
+        const container = document.getElementById('promo-detail-container');
+        if (!container) {
+            console.error("Container element not found!");
+            return;
+        }
+        
+        // Log the promo being displayed for debugging
+        console.log(`Displaying promo with ID: ${id}, Title: ${promo.title}`);
+        
+        // Template HTML for promo detail with breadcrumb
+        const detailHTML = `
+            <div class="promo-header">
+                <!-- Breadcrumb -->
+                <div class="breadcrumb-nav">
+                    <a href="index.html" class="breadcrumb-item">Beranda</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <a href="#" class="breadcrumb-item">Informasi</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <a href="halaman_promosi.html" class="breadcrumb-item">Promosi</a>
+                    <span class="breadcrumb-separator">/</span>
+                    <span class="breadcrumb-current">${promo.title}</span>
+                </div>
+                
+                <h1 class="promo-title">${promo.title}</h1>
+            </div>
+            <div class="promo-content">
+                <div class="promo-image-col">
+                    <div class="promo-image-container">
+                        <img src="${promo.image}" class="promo-image" alt="${promo.title}" onerror="this.src='/api/placeholder/400/400'; this.onerror=null;">
+                    </div>
+                </div>
+                <div class="promo-text-col">
+                    <div class="promo-description">
+                        ${promo.description}
+                    </div>
+                    <div class="package-list">
+                        <h3 class="package-list-title">Pilihan Paket:</h3>
+                        ${promo.packages.map(pkg => `
+                            <div class="package-item">
+                                <span class="package-check"><i class="fas fa-check-circle"></i></span>
+                                <span class="package-text">
+                                    <span>${pkg.text}</span>
+                                    <span class="package-price">${pkg.price}</span>
+                                </span>
+                            </div>
+                        `).join('')}
+                    </div>
+                    <div class="cta-section">
+                        <h4 class="cta-title">Info lebih lanjut:</h4>
+                        <div class="cta-buttons">
+                            <a href="https://wa.me/${promo.whatsapp}" class="btn-whatsapp">
+                                <span class="btn-icon"><i class="fab fa-whatsapp"></i></span>
+                                WhatsApp
+                            </a>
+                            <a href="tel:${promo.phone}" class="btn-phone">
+                                <span class="btn-icon"><i class="fas fa-phone-alt"></i></span>
+                                Telepon
+                            </a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        `;
+        
+        // Set the HTML content
+        container.innerHTML = detailHTML;
+        
+        // Force a layout calculation to ensure styles are applied
+        container.offsetHeight;
+    }
+    
+    // Run when DOM content is loaded
+    document.addEventListener('DOMContentLoaded', function() {
+        const promoId = getPromoIdFromUrl();
+        showPromoDetail(promoId);
+        
+        // Call adjustment function after content is loaded
+        setTimeout(adjustContentForHeader, 100);
+    });
+</script>
+</body>
+</html>
