@@ -1,0 +1,1129 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>RS Ridhoka Salma</title>
+    <link rel="icon" href="image/logo.png" type="image/png">
+    <!-- Bootstrap CSS -->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="css/css/fontawesome.min.css">
+    <!-- Google Fonts - Montserrat -->
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <!-- Custom CSS -->
+    <link rel="stylesheet" href="css/floating_button_style.css">
+    <style>
+        * {
+            font-family: 'Montserrat', sans-serif !important;
+        }
+        
+        :root {
+            --primary: #009688;
+            --secondary: #00796b;
+            --accent:#a0393d;
+            --light: #ffffff;
+            --dark: #333333;
+            --gray: #f5f5f5;
+        }
+        
+        body {
+            color: #333;
+            background-color: #ffffff;
+            padding-top: 153px;
+        }
+ 
+        
+        /* Content Styles */
+        .content-container {
+            max-width: 1100px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+        /* Tambahkan jarak khusus untuk section terakhir sebelum footer */
+.content-container:last-of-type {
+    margin-bottom: 350px !important; /* Jarak yang lebih besar untuk card terakhir */
+}
+        
+        .section-card {
+            background-color: white;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            padding: 35px;
+            margin: 30px 0;
+        }
+        
+        .section-header {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            margin-bottom: 15px;
+        }
+        
+        .section-title {
+            color: var(--primary);
+            font-size: 1.5rem;
+            font-weight: 600;
+            margin-bottom: 0;
+        }
+        
+        .section-description {
+            color: #666;
+            margin-bottom: 20px;
+            font-size: 14px;
+            max-width: 75%;
+
+        }
+        
+        .btn-rounded {
+            background-color: var(--primary);
+            color: white;
+            border-radius: 6px;
+            border: none;
+            padding: 10px 15px;
+            text-decoration: none;
+            font-weight: 500;
+            display: inline-block;
+        }
+        
+        .btn-rounded:hover {
+            background-color: var(--secondary);
+            color: white;
+        }
+        
+        .view-more {
+            color: var(--primary);
+            text-decoration: none;
+            font-weight: 500;
+            display: flex;
+            align-items: center;
+            white-space: nowrap;
+        }
+        
+        .view-more i {
+            margin-left: 5px;
+        }
+        
+        .view-more:hover {
+            color: var(--secondary);
+        }
+/* Quick Access Styles */
+.quick-access p {
+    margin-bottom: 15px;
+}
+
+.contact-box {
+    display: flex;
+    align-items: center;
+    margin-bottom: 15px;
+}
+
+.contact-icon {
+    width: 36px;
+    height: 36px;
+    background-color: #f5f5f5;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 10px;
+}
+
+.contact-icon img {
+    width: 18px;
+    height: 18px;
+}
+
+.contact-info {
+    font-size: 14px;
+}
+
+.contact-info .label {
+    color: #666;
+    font-weight: 500;
+}
+
+.contact-info .value {
+    font-weight: 600;
+}
+
+/* Menyesuaikan tata letak container utama */
+.section-card.quick-access {
+    padding: 20px 30px 20px 30px; /* Menambah kembali padding bawah kecil */
+    position: relative; /* Untuk positioning absolut */
+    height: 420px; /* Tetapkan tinggi tetap pada card */
+}
+
+/* Mengatur row dengan flexbox */
+.section-card.quick-access .row {
+    display: flex;
+    flex-wrap: wrap;
+}
+
+/* Mengatur kedua kolom dengan flexbox */
+.section-card.quick-access .col-md-6 {
+    display: flex;
+    flex-direction: column;
+}
+
+/* Kolom kiri: mengatur ruang */
+.section-card.quick-access .col-md-6:first-child {
+    padding-right: 30px;
+    flex: 0 0 40%; /* Mengurangi lebar kolom kiri lagi */
+}
+
+/* Kolom kanan: untuk map - positioning absolut untuk tengah vertikal */
+.section-card.quick-access .col-md-6:last-child {
+    flex: 0 0 60%; /* Memperlebar kolom map */
+    padding-left: 0;
+    position: absolute;
+    right: 20px; /* Jarak dari kanan sesuai padding card */
+    top: 50%; /* Positioning di tengah vertikal */
+    transform: translateY(-50%); /* Memastikan benar-benar di tengah */
+    width: 55%; /* Lebar map */
+    height: auto;
+}
+
+/* Map container */
+.map-container {
+    width: 100%;
+    height: 280px; /* Tinggi map sesuaikan agar pas di card */
+    border-radius: 5px;
+    overflow: hidden;
+    position: relative;
+    margin: 0; /* Tidak ada margin */
+}
+
+/* Memastikan iframe mengisi seluruh container */
+.map-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    border: 0;
+}
+
+/* Mengurangi margin pada title dan paragraf */
+.section-card.quick-access h2.section-title {
+    margin-bottom: 10px;
+}
+
+.section-card.quick-access > p {
+    margin-bottom: 12px;
+}
+
+/* Mengurangi margin pada contact-box terakhir */
+.section-card.quick-access .contact-box:last-child {
+    margin-bottom: 0;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+    .section-card.quick-access {
+        height: auto;
+        padding: 20px;
+    }
+    
+    .section-card.quick-access .col-md-6:last-child {
+        position: static;
+        flex: 0 0 100%;
+        width: 100%;
+        margin-top: 15px;
+        padding: 0;
+        transform: none;
+    }
+    
+    .section-card.quick-access .col-md-6:first-child {
+        flex: 0 0 100%;
+        padding: 0;
+    }
+    
+    .map-container {
+        height: 250px;
+        margin-bottom: 0;
+    }
+}
+        /* Card Styles */
+        .row-cards {
+            display: flex;
+            gap: 20px;
+        }
+        /* Card Styles with Improved Spacing */
+.item-card {
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    height: 100%;
+    background-color: white;
+    transition: transform 0.3s, box-shadow 0.3s;
+    display: flex;
+    flex-direction: column;
+}
+
+.item-card:hover {
+    transform: translateY(-3px);
+    box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+}
+
+.item-image {
+    height: 190px; /* Increased from 180px to reduce gap */
+    overflow: hidden;
+    padding: 10px 15px 10px 15px;
+    background-color: white;
+}
+
+.item-image img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    transition: transform 0.3s;
+    border-radius: 6px;
+}
+
+.item-card:hover .item-image img {
+    transform: scale(1.05);
+}
+
+.item-title {
+    padding: 5px 15px 15px 15px; /* Reduced top padding from 15px to 10px */
+    text-align: center;
+    font-weight: 600;
+    font-size: 14px;
+    color: #333;
+    margin-top: auto; /* Push title to bottom if needed */
+}
+
+       
+        
+        /* Promo Card Styles - Improved */
+        .promo-card {
+            border-radius: 10px;
+            overflow: hidden;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            background-color: white;
+            height: 100%;
+            transition: transform 0.3s, box-shadow 0.3s;
+            display: flex;
+            flex-direction: column;
+        }
+        
+        .promo-card:hover {
+            transform: translateY(-3px);
+            box-shadow: 0 5px 12px rgba(0, 0, 0, 0.15);
+        }
+        
+      /* For promo cards - adjust similar spacing */
+.promo-image {
+    height: 320px; /* Increased from 200px */
+    overflow: hidden;
+    padding: 15px;
+    background-color: white;
+}
+
+        .promo-image img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+            transition: transform 0.3s;
+            border-radius: 6px;
+        }
+        
+        .promo-card:hover .promo-image img {
+            transform: scale(1.03);
+        }
+        
+        .promo-title {
+    padding: 10px 15px 0 15px; /* Reduced top padding */
+    text-align: left;
+    font-weight: 600;
+    font-size: 14px;
+    line-height: 1.4;
+    color: #333;
+}
+.promo-footer {
+    padding: 5px 15px 15px 15px; /* Reduced top padding to bring price closer */
+    display: flex;
+    align-items: center;
+}
+
+        
+        .promo-price {
+            background-color: #a0393d;
+            color: white;
+            padding: 5px 10px;
+            border-radius: 20px;
+            font-size: 12px;
+            font-weight: 500;
+            display: inline-block;
+            white-space: nowrap;
+        }
+
+        .footer{
+margin-top: 150px !important;
+        }
+        
+        /* Responsive Adjustments */
+        @media (max-width: 991px) {
+            .navbar-nav {
+                flex-direction: column;
+            }
+            
+            .search-container, .contact-center {
+                justify-content: center;
+            }
+            
+            .section-header {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .view-more {
+                margin-top: 10px;
+                align-self: flex-end;
+            }
+            
+            .section-description {
+                max-width: 100%;
+            }
+            
+            .row-cards {
+                flex-direction: column;
+            }
+        }
+        
+        @media (max-width: 768px) {
+            .item-image {
+                height: 160px;
+                padding: 12px;
+            }
+            
+            .promo-image {
+                height: 180px;
+                padding: 12px;
+            }
+            
+            .promo-title {
+                font-size: 13px;
+                padding: 12px;
+            }
+            
+            .promo-footer {
+                padding: 0 12px 12px 12px;
+            }
+        }
+        
+        @media (max-width: 767px) {
+            .item-image,
+            .promo-image {
+                padding: 10px;
+            }
+            
+            .item-title,
+            .promo-title {
+                font-size: 14px;
+            }
+            
+            .promo-footer {
+                padding: 0 10px 10px 10px;
+            }
+            
+            .promo-price {
+                font-size: 11px;
+                padding: 4px 8px;
+            }
+        }
+    
+  .hero-section {
+    overflow: hidden;
+    position: relative;
+  }
+  
+  .carousel-item img {
+    width: 100%;
+    height: auto;
+    object-fit: cover;
+  }
+  
+  /* Styling untuk indikator carousel */
+  .carousel-indicators {
+    margin-bottom: 1rem;
+  }
+  
+  .carousel-indicators [data-bs-target] {
+    width: 12px;
+    height: 12px;
+    border-radius: 50%;
+    background-color: rgba(255, 255, 255, 0.5);
+    border: none;
+    margin: 0 5px;
+  }
+  
+  .carousel-indicators .active {
+    background-color: #fff;
+  }
+  
+  /* Styling untuk tombol kontrol carousel */
+  .carousel-control-prev,
+  .carousel-control-next {
+    width: 5%;
+    opacity: 0.8;
+  }
+  
+  .carousel-control-prev-icon,
+  .carousel-control-next-icon {
+    width: 25px;
+    height: 25px;
+    background-color: rgba(0, 0, 0, 0.3);
+    border-radius: 50%;
+    background-size: 60%;
+  }
+  
+  
+  /* Responsive adjustments */
+  @media (max-width: 480px) {
+    .whatsapp-button {
+      width: 50px;
+      height: 50px;
+    }
+    
+    .whatsapp-icon {
+      width: 26px;
+      height: 26px;
+    }
+    
+    .whatsapp-popup {
+      width: 220px;
+      bottom: 60px;
+    }
+  }
+  
+  /* Additional styles for better visual hierarchy */
+  .section-card {
+    background-color: white;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 30px;
+    margin: 30px 0;
+  }
+  
+  /* Ensure consistent spacing between cards */
+  .mb-4 {
+    margin-bottom: 1.5rem !important;
+  }
+  
+  /* Ensure proper spacing in grid layout */
+  .row-cards {
+    display: flex;
+    gap: 20px;
+    flex-wrap: wrap;
+  }
+  
+  .row-cards > div {
+    flex: 1;
+    min-width: 0;
+  }
+  
+  /* Ensure consistent hover effects across all cards */
+  .item-card,
+  .promo-card {
+    transition: all 0.3s ease;
+  }
+  
+  .item-card:hover img,
+  .promo-card:hover img {
+    transition: transform 0.3s ease;
+  }
+  
+  /* Ensure all cards have the same bottom alignment */
+  .col-md-4 {
+    display: flex;
+    flex-direction: column;
+  }
+  
+  .col-md-4 > .item-card,
+  .col-md-4 > .promo-card {
+    height: 100%;
+  }
+    </style>
+</head>
+<body>
+
+<!-- Header -->
+<header class="sticky-header">
+    <link rel="stylesheet" href="css/header_style.css">
+    <script src="javascript/header.js"></script>
+
+    <div class="header-top">
+      <div class="container-fluid px-0">
+        <div class="row align-items-center">
+          
+          <!-- Logo -->
+          <div class="col-md-4 logo-container">
+            <a href="index.html">
+              <img src="image/logo_header.png" alt="RS Ridhoka Salma Logo" class="logo-img">
+            </a>
+          </div>
+  
+          <!-- Search and Contact Info -->
+          <div class="col-md-8">
+            <div class="search-contact-container">
+  
+      <!-- Search Bar -->
+<div class="search-bar-header">
+    <form class="search-form-header" action="halaman_pencarian.html" method="GET">
+      <div class="search-icon-header">
+        <img src="image/icon_search.png" alt="Search Icon">
+      </div>
+      <input type="text" placeholder="Cari yang Anda Butuhkan di Sini" class="search-input-header" name="q">
+      <button type="submit" class="search-button-header">Cari</button>
+    </form>
+  </div>
+  
+              <!-- Contact Center -->
+              <div class="contact-center-header">
+                
+                <div class="contact-title-header">Hubungi Kami</div>
+                
+                <div class="contact-items-header">
+                  <div class="contact-item-header">
+                    <a href="tel:+622189116527"  class="contact-link-header">
+                    <img src="image/icon_call.png" alt="Phone Icon" class="icon-contact-header"-header>
+                    <span>021 8911 6527</span>
+                    </a>
+                  </div>
+                  <div class="contact-item-header">
+                    <a href="https://wa.me/628118252322"  class="contact-link-header">
+                    <img src="image/icon_emergency.png" alt="Ambulance Icon" class="icon-contact-header">
+                    <span>0811 8252 322</span>
+                    </a>
+                  </div>
+                </div>
+  
+              </div>
+  
+            </div>
+          </div>
+  
+        </div>
+      </div>
+    </div>
+ 
+
+    <!-- Navigation Bar -->
+<nav style="background-color: #00928F; padding: 0;">
+    <div class="container">
+        <!-- Hamburger Menu untuk tampilan mobile -->
+        <div class="mobile-menu-toggle">
+            <span>Menu</span>
+            <div class="hamburger">
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
+        </div>
+        
+        <div class="nav-container">
+            <ul class="main-menu">
+                <li class="menu-item">
+                    <a href="index.html" class="menu-link">Beranda</a>
+                </li>
+                
+                <!-- Menu Tentang Kami -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Tentang Kami 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="halaman_sejarah.html">Sejarah</a></li>
+                        <li><a href="halaman_visi_misi.html">Visi Misi</a></li>
+                        <li><a href="halaman_struktur_organisasi.html">Struktur Organisasi</a></li>
+                        <li><a href="halaman_akreditasi.html">Akreditasi dan Penghargaan</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Menu Layanan -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Layanan 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="halaman_layanan.html?tab=fasilitas">Fasilitas</a></li>
+                        <li><a href="halaman_layanan.html?tab=layanan-unggulan">Layanan Unggulan</a></li>
+                        <li><a href="halaman_layanan.html?tab=rawat-inap">Rawat Inap</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Menu Spesialis -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Spesialis Kami 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_klinik_spesialis.php?id=1">Kebidanan dan Kandungan</a></li>
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_klinik_spesialis.php?id=2">Anak</a></li>
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_klinik_spesialis.php?id=3">Penyakit Dalam</a></li>
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_klinik_spesialis.php?id=4">Bedah Umum</a></li>
+                        <li><a href="http://localhost/WebsiteRidhokaSalma/halaman_spesialis.php">Lihat Semua</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Menu Informasi -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Informasi 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="halaman_promosi.html">Promosi</a></li>
+                        <li><a href="halaman_artikel_kesehatan.html">Artikel Kesehatan</a></li>
+                        <li><a href="halaman_artikel_islami.html">Artikel Islami</a></li>
+                        <li><a href="halaman_event.html">Event</a></li>
+                        <li><a href="halaman_karir.html">Karir</a></li>
+                    </ul>
+                </li>
+                
+                <!-- Menu Kesyariahan -->
+                <li class="menu-item dropdown">
+                    <a href="#" class="menu-link">
+                        Kesyariahan 
+                        <i class="dropdown-arrow"></i>
+                    </a>
+                    <ul class="submenu">
+                        <li><a href="halaman_kms.html">Kebijakan Mutu Syariah</a></li>
+                        <li><a href="halaman_program_kesyariahan.html">Program Kesyariahan</a></li>
+                        <li><a href="halaman_konsultasi_syariah.html">Konsultasi Syariah</a></li>
+                        <li><a href="halaman_profil_dps.html">Profil DPS dan Komite Syariah</a></li>
+                    </ul>
+                </li>
+                
+                <li class="menu-item">
+                    <a href="http://localhost/WebsiteRidhokaSalma/halaman_cari_dokter.php" class="menu-link">Cari Dokter</a>
+                </li>
+                <li class="menu-item">
+                    <a href="http://localhost/WebsiteRidhokaSalma/halaman_janji_temu.php" class="menu-link">Janji Temu</a>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+</header>
+
+
+<!-- Hero Section -->
+<!-- Hero Section with Carousel -->
+<section class="hero-section">
+    <div id="heroCarousel" class="carousel slide" data-bs-ride="carousel">
+      <!-- Indicators/dots -->
+      <div class="carousel-indicators">
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="0" class="active" aria-current="true" aria-label="Slide 1"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="1" aria-label="Slide 2"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="2" aria-label="Slide 3"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="3" aria-label="Slide 4"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="4" aria-label="Slide 5"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="5" aria-label="Slide 6"></button>
+        <button type="button" data-bs-target="#heroCarousel" data-bs-slide-to="6" aria-label="Slide 7"></button>
+      </div>
+      
+      <!-- The slideshow/carousel -->
+      <div class="carousel-inner">
+        <div class="carousel-item active">
+          <img src="image/banner1.png" alt="Banner 1" class="d-block w-100 hero-image">
+        </div>
+        <div class="carousel-item">
+            <img src="image/banner2.png" alt="Banner 2" class="d-block w-100 hero-image">
+        </div>
+        <div class="carousel-item">
+            <img src="image/banner3.png" alt="Banner 3" class="d-block w-100 hero-image">
+        </div>
+        <div class="carousel-item">
+          <img src="image/banner4.png" alt="Banner 4" class="d-block w-100 hero-image">
+        </div>
+        <div class="carousel-item">
+          <img src="image/banner5.png" alt="Banner 5" class="d-block w-100 hero-image">
+        </div>
+        <div class="carousel-item">
+          <img src="image/banner6.png" alt="Banner 6" class="d-block w-100 hero-image">
+        </div>
+        <div class="carousel-item">
+          <img src="image/banner7.png" alt="Banner 7" class="d-block w-100 hero-image">
+        </div>
+      </div>
+      
+      <!-- Left and right controls/icons -->
+      <button class="carousel-control-prev" type="button" data-bs-target="#heroCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#heroCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+  </section>
+ 
+<!-- Quick Access dengan map yang proporsional -->
+<div class="content-container">
+    <div class="section-card quick-access">
+        <h2 class="section-title">Akses cepat layanan kami</h2>
+        <p>Lakukan reservasi janji temu melalui:</p>
+        <div class="row">
+            <div class="col-md-6">
+                <!-- Tombol lebih kecil -->
+                <a href="http://localhost/WebsiteRidhokaSalma/halaman_janji_temu.php" class="btn btn-primary btn-rounded mb-3" style="width: 200px;">Buat Janji Temu</a>
+
+                <p>Atau hubungi kami melalui:</p>
+
+                <div class="contact-box d-flex align-items-center mb-2">
+                    <div class="contact-icon me-2">
+                        <img src="image/icon_emergency.png" alt="igd" style="width: 24px; height: 24px;">
+
+                    </div>
+                    <div class="contact-info">
+                        <div class="label">IGD 24 Jam:</div>
+                        <div class="value"><a href="https://wa.me/628118252322" target="_blank"  style="text-decoration: none; color: inherit;">0811 8252 322</a></div>
+                    </div>
+                </div>
+
+                <div class="contact-box d-flex align-items-center mb-2">
+                    <div class="contact-icon me-2">
+                        <img src="image/icon_call.png" alt="Phone Icon" style="width: 24px; height: 24px;">
+                    </div>
+                    <div class="contact-info">
+                        <div class="label">Telepon:</div>
+                        <div class="value"><a href="tel:02189116627" style="text-decoration: none; color: inherit;">021 8911 6627</a></div>
+                    </div>
+                </div>
+
+                <div class="contact-box d-flex align-items-center mb-2">
+                    <div class="contact-icon me-2">
+                        <img src="https://img.icons8.com/color/144/whatsapp--v1.png" alt="whatsapp--v1" style="width: 28px; height: 28px;">
+                    </div>
+                    <div class="contact-info">
+                        <div class="label">Call Center WhatsApp:</div>
+                        <div class="value"><a href="https://wa.me/6281317182223" target="_blank" style="text-decoration: none; color: inherit;">0813 1718 2223</a></div>
+                    </div>
+                </div>
+
+                <div class="contact-box d-flex align-items-center mb-2">
+                    <div class="contact-icon me-2">
+                        <img src="image/icon_mail.png" alt="Email Icon" style="width: 22px; height: 22px;">
+                    </div>
+                    <div class="contact-info">
+                        <div class="label">E-mail:</div>
+                        <div class="value"><a href="mailto:info@ridhokasalma.com" style="text-decoration: none; color: inherit;">info@ridhokasalma.com</a></div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-6">
+                <!-- Map container dengan posisi proporsional -->
+                <div class="map-container">
+                    <iframe 
+                        src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d991.8578507881939!2d107.1210483!3d-6.2693136!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x2e698541daea087d%3A0x46944132307d0cb!2sRumah%20Sakit%20Ridhoka%20Salma%20Cikarang%20RS%20Terakreditasi%20Syariah!5e0!3m2!1sen!2sid!4v1714374241415!5m2!1sen!2sid" 
+                        allowfullscreen="" 
+                        loading="lazy" 
+                        referrerpolicy="no-referrer-when-downgrade">
+                    </iframe>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+    <!-- Facilities -->
+    <div class="content-container">
+        <div class="section-card">
+            <div class="section-header">
+                <h2 class="section-title">Fasilitas Kami</h2>
+                <a href="halaman_layanan.html?tab=fasilitas" class="view-more">
+                    Lihat fasilitas lainnya 
+                    <img src="image/icon_chevron_right.png" alt="Lihat lebih banyak" class="icon" style="width: 12px; height: 12px; margin-left: 10px;" />
+                  </a>
+                  
+            </div>
+            <p class="section-description">Kami menghadirkan fasilitas kesehatan lengkap dengan standar terbaik
+                dalam nuansa islami, menjadikan rasa aman untuk kesembuhan.</p>
+            
+
+                <div class="row">
+    <div class="col-md-4 mb-4">
+            <div class="item-card">
+                <div class="item-image">
+                    <img src="image/Foto_igd.png" alt="IGD 24 Jam">
+                </div>
+                <div class="item-title">IGD 24 Jam</div>
+            </div>
+    </div>
+
+                <div class="col-md-4 mb-4">
+                    <div class="item-card">
+                        <div class="item-image">
+                            <img src="image/Foto_icu.png" alt="ICU">
+                        </div>
+                        <div class="item-title">ICU</div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="item-card">
+                        <div class="item-image">
+                            <img src="image/Foto_nicu.png" alt="NICU">
+                        </div>
+                        <div class="item-title">NICU</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Services -->
+    <div class="content-container">
+        <div class="section-card">
+            <div class="section-header">
+                <h2 class="section-title">Layanan Unggulan Kami</h2>
+                <a href="halaman_layanan.html?tab=layanan-unggulan" class="view-more">
+                    Lihat layanan lainnya 
+                    <img src="image/icon_chevron_right.png" alt="Lihat lebih banyak" class="icon" style="width: 12px; height: 12px; margin-left: 10px;" />
+                  </a>
+                </a>
+            </div>
+            <p class="section-description">Kami juga menawarkan berbagai layanan kesehatan yang lengkap dan 
+                berkualitas, menjadikan berdasarkan prinsip syariah untuk mendukung 
+                tumbuh kembang dan kesejahteraan keluarga.</p>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="item-card">
+                        <div class="item-image">
+                            <img src="image/layanan_medicalcheck.png" alt="Medical Check Up (MCU)">
+                        </div>
+                        <div class="item-title">Medical Check Up (MCU)</div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="item-card">
+                        <div class="item-image">
+                            <img src="image/layanan_tka.png" alt="Klinik Tumbuh Kembang">
+                        </div>
+                        <div class="item-title">Klinik Tumbuh Kembang</div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="item-card">
+                        <div class="item-image">
+                            <img src="image/layanan_rose.png" alt="Rose Aesthetic Clinic">
+                        </div>
+                        <div class="item-title">Rose Aesthetic Clinic</div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    
+    <!-- Promotions -->
+    <div class="content-container">
+        <div class="section-card">
+            <div class="section-header">
+                <h2 class="section-title">Temukan Promosi Menarik</h2>
+                <a href="halaman_promosi.html" class="view-more">
+                    Lihat promosi lainnya
+                    <img src="image/icon_chevron_right.png" alt="Lihat lebih banyak" class="icon" style="width: 12px; height: 12px; margin-left: 10px;" />
+                  </a>
+            </div>
+            <p class="section-description">Temukan berbagai promosi menarik dengan harga terjangkau, 
+                siap memberikan solusi perawatan yang Anda butuhkan dengan 
+                kualitas terbaik.</p>
+            
+            <div class="row">
+                <div class="col-md-4 mb-4">
+                    <div class="promo-card">
+                        <div class="promo-image">
+                            <img src="image/paketpromo_1.jpg" alt="Paket Vaksin Meningitis dan Influenza">
+                        </div>
+                        <div class="promo-title">Paket Vaksin Internasional</div>
+                        <div class="promo-footer">
+                            <div class="promo-price">Mulai dari Rp 150.000</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="promo-card">
+                        <div class="promo-image">
+                            <img src="image/paketpromo_2.jpg"alt="Promo Ramadhan Glowing">
+                        </div>
+                        <div class="promo-title">Promo Special Skin Booster</div>
+                        <div class="promo-footer">
+                            <div class="promo-price">Mulai dari Rp 450.000</div>
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="col-md-4 mb-4">
+                    <div class="promo-card">
+                        <div class="promo-image">
+                            <img src="image/paketpromo_3.jpg" alt="Paket Maternity">
+                        </div>
+                        <div class="promo-title">Paket Terapi Wicara Anak</div>
+                        <div class="promo-footer">
+                            <div class="promo-price">Mulai dari Rp 150.000</div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+  
+<!---------------------------------------------------------------------------------------------------------------------------->
+<!-- Footer -->
+<footer class="footer">
+    <link rel="stylesheet" href="css/footer_style.css">
+    <div class="container">
+        <!-- Top Row: Logo, Info dan Kontak -->
+        <div class="footer-top">
+            <div class="footer-logo">
+                <img src="image/logo_header.png" alt="RS Ridhoka Salma Logo">
+            </div>
+            <div class="footer-address">
+                <p>Jl. Raya Imam Bonjol No.7, Kalijaya,<br>
+                   Kec. Cikarang Bar., Kabupaten<br>
+                   Bekasi, Jawa Barat 17530</p>
+            </div>
+            <div class="footer-contact">
+                <div class="contact-wrapper">
+                    <table class="contact-table">
+                        <tr>
+                            <td class="contact-label">IGD 24 Jam</td>
+                            <td class="contact-separator">:</td>
+                            <td class="contact-value">
+                                <a href="https://wa.me/628118252322" style="color: inherit; text-decoration: none;">0811 8252 322</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="contact-label">Telepon</td>
+                            <td class="contact-separator">:</td>
+                            <td class="contact-value">
+                                <a href="tel:+622189116527" style="color: inherit; text-decoration: none;">021 8911 6527</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="contact-label">WhatsApp</td>
+                            <td class="contact-separator">:</td>
+                            <td class="contact-value">
+                                <a href="https://wa.me/6281317182223" style="color: inherit; text-decoration: none;">0813 1718 2223</a>
+                            </td>
+                        </tr>
+                        <tr>
+                            <td class="contact-label">E-mail</td>
+                            <td class="contact-separator">:</td>
+                            <td class="contact-value no-space">
+                                <a href="mailto:info@rsridhokasalma.com" style="color: inherit; text-decoration: none;">info@rsridhokasalma.com</a>
+                            </td>
+                        </tr>
+                    </table>
+                </div>
+            </div>
+        </div>
+        
+        <!-- Divider -->
+        <div class="footer-divider"></div>
+        
+        <!-- Footer Menu -->
+        <div class="footer-menu">
+            <div class="footer-menu-column">
+                <h4>Tentang Kami</h4>
+                <ul>
+                    <li><a href="halaman_sejarah.html">Sejarah</a></li>
+                    <li><a href="halaman_visi_misi.html">Visi Misi</a></li>
+                    <li><a href="halaman_struktur_organisasi.html">Struktur Organisasi</a></li>
+                    <li><a href="halaman_akreditasi.html">Akreditasi dan Penghargaan</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-menu-column">
+                <h4>Layanan</h4>
+                <ul>
+                    <li><a href="halaman_layanan.html?tab=fasilitas">Fasilitas</a></li>
+                    <li><a href="halaman_layanan.html?tab=layanan-unggulan">Layanan Unggulan</a></li>
+                    <li><a href="halaman_layanan.html?tab=rawat-inap">Rawat Inap</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-menu-column">
+                <h4>Informasi</h4>
+                <ul>
+                    <li><a href="halaman_promosi.html">Promosi</a></li>
+                    <li><a href="halaman_artikel_kesehatan.html">Artikel Kesehatan</a></li>
+                    <li><a href="halaman_artikel_islami.html">Artikel Islami</a></li>
+                    <li><a href="halaman_event.html">Event</a></li>
+                    <li><a href="halaman_karir.html">Karir</a></li>
+                </ul>
+            </div>
+            
+            <div class="footer-menu-column">
+                <h4>Kesyariahan</h4>
+                <ul>
+                    <li><a href="halaman_kms.html">Kebijakan Mutu Syariah</a></li>
+                    <li><a href="halaman_program_kesyariahan.html">Program Kesyariahan</a></li>
+                    <li><a href="halaman_konsultasi_syariah.html">Konsultasi Syariah</a></li>
+                    <li><a href="halaman_profil_dps.html">Profil DPS dan Komite Syariah</a></li>
+                </ul>
+            </div>
+        </div>
+        
+        <!-- Divider -->
+        <div class="footer-divider"></div>
+        
+        <!-- Social Media -->
+        <div class="footer-social">
+            <div class="social-label">Ikuti Kami</div>
+            <div class="social-icons">
+                <a href="https://www.facebook.com/rumahsakitridhokasalma/?locale=id_ID" class="social-icon">
+                    <img width="20" height="20" src="https://img.icons8.com/ios-filled/150/ffffff/facebook-new.png" alt="facebook-new"/>
+                </a>
+                <a href="https://www.instagram.com/ridhokasalma/" class="social-icon">
+                    <img width="192" height="192" src="https://img.icons8.com/material-outlined/192/ffffff/instagram-new--v1.png" alt="instagram-new--v1"/>    
+                </a>
+                <a href="https://www.youtube.com/@rs.ridhokasalma2727" class="social-icon">
+                    <img width="150" height="150" src="https://img.icons8.com/ios-filled/150/ffffff/youtube-play.png" alt="youtube-play"/>
+                </a>
+                <a href="https://www.tiktok.com/@ridhokasalma" class="social-icon">
+                    <img width="150" height="150" src="https://img.icons8.com/ios-filled/150/ffffff/tiktok--v1.png" alt="tiktok--v1"/>
+                </a>
+                <a href="https://x.com/ridhokasalma" class="social-icon">
+                    <img width="150" height="150" src="https://img.icons8.com/ios-filled/150/ffffff/twitterx--v2.png" alt="twitterx--v2"/>
+                </a>
+            </div>
+        </div>
+        
+        <!-- Copyright -->
+        <div class="footer-copyright">
+            <p>&copy; 2025 RS Ridhoka Salma. All Right Reserved.</p>
+        </div>
+    </div>
+</footer>
+
+<!-- HTML untuk Floating WhatsApp Button -->
+<div class="floating-whatsapp">
+    
+    <div class="whatsapp-button" id="whatsappButton">
+        <img src="image/icon_whatsapp.png" alt="WhatsApp Icon" class="whatsapp-icon">
+    </div>
+    <div class="whatsapp-popup" id="whatsappPopup">
+      <div class="whatsapp-popup-header">Mulai Percakapan</div>
+      <p class="whatsapp-popup-text">Klik nomor Customer Care kami untuk memulai percakapan di <strong>WhatsApp</strong>:</p>
+      <a href="https://wa.me/6281317182223" class="whatsapp-popup-number" target="_blank">0813 1718 2223</a>
+    </div>
+  </div>
+
+ <!-- JavaScript untuk WhatsApp Button -->
+    <script src="javascript/floating_button.js"></script>
+<!---------------------------------------------------------------------------------------------------------------------------->
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0-alpha1/dist/js/bootstrap.bundle.min.js"></script>
+</body>
+    </html>
